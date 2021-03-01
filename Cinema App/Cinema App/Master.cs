@@ -2,7 +2,7 @@
 
 namespace Cinema_App
 {
-    class Program
+    class Master
     {
         static void Main(string[] args)
         {
