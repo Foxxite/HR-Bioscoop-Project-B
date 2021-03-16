@@ -25,12 +25,12 @@ namespace Cinema_App
 
             // ToDo create Main Menu
 
-            
+            View testView = new TestView(this, "test");
         }
 
         public void ShowMainMenu()
         {
-
+            Console.WriteLine("Hoofdmenu");
         }
 
         public void SwitchView(View newView)
