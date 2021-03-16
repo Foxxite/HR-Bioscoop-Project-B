@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Cinema_App
 {
-    class Menu : View
+    class View
     {
     }
 }

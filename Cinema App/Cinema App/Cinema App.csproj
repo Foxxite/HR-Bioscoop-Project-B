@@ -6,6 +6,10 @@
     <RootNamespace>Cinema_App</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>F:\School\Project B\HR Bioscoop (Project B)\Cinema App\Cinema App\Cinema App.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>

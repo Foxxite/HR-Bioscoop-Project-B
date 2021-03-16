@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cinema App</name>
+    </assembly>
+    <members>
+        <member name="M:Cinema_App.Controller.#ctor(System.String[])">
+            <summary>
+                Main apllication controller.
+                Controls thhe flow and state of the application.
+            </summary>
+            <param name="args">Arguments passed to the app. Will be ignored for now.</param>
+        </member>
+    </members>
+</doc>
