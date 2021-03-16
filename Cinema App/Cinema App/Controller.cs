@@ -25,7 +25,15 @@ namespace Cinema_App
 
             // ToDo create Main Menu
 
-            View testView = new TestView(this, "test");
+            string password = "yannick";
+            var salt = PasswordManager.CreateSalt("123");
+            string hash = PasswordManager.HashPassword(password, salt);
+            Console.WriteLine(hash);
+            bool same = PasswordManager.VerifyPassword(password, hash, salt);
+            Console.WriteLine(same);
+            same = PasswordManager.VerifyPassword("3", hash, salt);
+            Console.WriteLine(same);
+            //View testView = new TestView(this, "test");
         }
 
         public void ShowMainMenu()
