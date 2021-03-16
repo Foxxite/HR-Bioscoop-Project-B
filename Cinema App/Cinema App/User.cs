@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Konscious.Security.Cryptography;
+using System;
 using System.Text;
 
 namespace Cinema_App
@@ -13,33 +14,27 @@ namespace Cinema_App
         private int Permlevel;
 
         private string Name;
-        private string Address;1
+        private string Address;
         private int Age;
 
-
         private byte[] CreateSalt(string enterPassword)
-        { 
-            var buffer = Encoding.UTF8.GetBytes(Age + Name + enterPassword + Address + Username);
-            for(int i = 0; i < buffer.Length; i++)
-            {
-                buffer[i] += 0b1011001;
-
-
-            }
-            return buffer;
-        }
-
-
-        public bool VerifyPassword(string password)
         {
-            
+            return PasswordManager.CreateSalt(Age + Name + enterPassword + Address + Username);
+        }
 
+        public string HashPassword (string enteredPassword)
+        {
+            return PasswordManager.HashPassword(enteredPassword, CreateSalt(enteredPassword));
+        }
 
-            return true;
+        public bool VerifyPassword(string enteredPassword)
+        {
+             return PasswordManager.VerifyPassword(enteredPassword, Password, CreateSalt(enteredPassword))
         }
 
 
-       
+
+
 
     }
 }
