@@ -7,9 +7,9 @@ namespace Cinema_App
     class Controller
     {
         private User CurrentUser { get; set; }
-        private View CurrentView { get; }
-        private Basket Basket { get; }
-        private Menu MainMenu { get; }
+        private View CurrentView { get; set; }
+        private Basket Basket { get; set; }
+        private Menu MainMenu { get; set; }
 
 
         /// <summary>
@@ -28,6 +28,9 @@ namespace Cinema_App
             //View testView = new TestView(this, "test");
         }
 
+        /// <summary>
+        /// Clears the current View and makes the application return to the Main Menu.
+        /// </summary>
         public void ShowMainMenu()
         {
             Menu mainMenu = new Menu(this, "Main Menu");
@@ -37,9 +40,14 @@ namespace Cinema_App
             SwitchView(mainMenu);
         }
 
+        /// <summary>
+        /// Clears the current View and makes the application show the supplied View.
+        /// </summary>
+        /// <param name="newView">View to use.</param>
         public void SwitchView(View newView)
         {
             ClearScreen();
+            CurrentView = newView;
             newView.Render();
         }
 
@@ -56,6 +64,9 @@ namespace Cinema_App
             Console.BackgroundColor = ConsoleColor.Black;
         }
 
+        /// <summary>
+        /// Shows a crude about message.
+        /// </summary>
         private void About()
         {
             ClearScreen();
@@ -73,6 +84,9 @@ namespace Cinema_App
             ShowMainMenu();
         }
 
+        /// <summary>
+        /// Closes the app.
+        /// </summary>
         private void CloseApp()
         {
             Environment.Exit(1);
