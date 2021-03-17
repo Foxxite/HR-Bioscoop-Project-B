@@ -23,27 +23,24 @@ namespace Cinema_App
         {
             Console.WriteLine("Loading...");
 
-            // ToDo create Main Menu
+            ShowMainMenu();
 
-            string password = "yannick";
-            var salt = PasswordManager.CreateSalt("123");
-            string hash = PasswordManager.HashPassword(password, salt);
-            Console.WriteLine(hash);
-            bool same = PasswordManager.VerifyPassword(password, hash, salt);
-            Console.WriteLine(same);
-            same = PasswordManager.VerifyPassword("3", hash, salt);
-            Console.WriteLine(same);
             //View testView = new TestView(this, "test");
         }
 
         public void ShowMainMenu()
         {
-            Console.WriteLine("Hoofdmenu");
+            Menu mainMenu = new Menu(this, "Main Menu");
+            mainMenu.AddMenuOption("About", new Action(About));
+            mainMenu.AddMenuOption("Exit", new Action(CloseApp));
+
+            SwitchView(mainMenu);
         }
 
         public void SwitchView(View newView)
         {
             ClearScreen();
+            newView.Render();
         }
 
         /// <summary>
@@ -57,6 +54,28 @@ namespace Cinema_App
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.Black;
+        }
+
+        private void About()
+        {
+            ClearScreen();
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Cinema App \n");
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Created by: INF1C Groep 3\n\n");
+
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("Press any key to return to the Main Menu.");
+            
+            Console.ReadKey();
+            ShowMainMenu();
+        }
+
+        private void CloseApp()
+        {
+            Environment.Exit(1);
         }
     }
 }
