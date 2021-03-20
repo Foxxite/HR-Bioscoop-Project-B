@@ -4,7 +4,12 @@ using System.Text;
 
 namespace Cinema_App
 {
-    class Item
+    abstract class Item
     {
+        protected string Name;
+        protected double Price;
+        protected int StockAvailable;
+
+        public abstract bool IsAvailable();
     }
 }
