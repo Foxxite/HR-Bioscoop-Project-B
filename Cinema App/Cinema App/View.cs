@@ -8,9 +8,9 @@ namespace Cinema_App
     abstract class View
     {
         protected Controller Controller;
-        private string Title;
-        private string SubTitle = "";
-        private int NeededPermLevel = 0;
+        protected string Title;
+        protected string SubTitle = "";
+        protected int NeededPermLevel = 0;
 
         /// <summary>
         ///     Base View Class.

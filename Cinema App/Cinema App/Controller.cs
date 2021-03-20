@@ -7,9 +7,9 @@ namespace Cinema_App
     class Controller
     {
         private User CurrentUser { get; set; }
-        private View CurrentView { get; }
-        private Basket Basket { get; }
-        private Menu MainMenu { get; }
+        private View CurrentView { get; set; }
+        private Basket Basket { get; set; }
+        private Menu MainMenu { get; set; }
 
 
         /// <summary>
@@ -23,27 +23,32 @@ namespace Cinema_App
         {
             Console.WriteLine("Loading...");
 
-            // ToDo create Main Menu
+            ShowMainMenu();
 
-            string password = "yannick";
-            var salt = PasswordManager.CreateSalt("123");
-            string hash = PasswordManager.HashPassword(password, salt);
-            Console.WriteLine(hash);
-            bool same = PasswordManager.VerifyPassword(password, hash, salt);
-            Console.WriteLine(same);
-            same = PasswordManager.VerifyPassword("3", hash, salt);
-            Console.WriteLine(same);
             //View testView = new TestView(this, "test");
         }
 
+        /// <summary>
+        /// Clears the current View and makes the application return to the Main Menu.
+        /// </summary>
         public void ShowMainMenu()
         {
-            Console.WriteLine("Hoofdmenu");
+            Menu mainMenu = new Menu(this, "Main Menu");
+            mainMenu.AddMenuOption("About", new Action(About));
+            mainMenu.AddMenuOption("Exit", new Action(CloseApp));
+
+            SwitchView(mainMenu);
         }
 
+        /// <summary>
+        /// Clears the current View and makes the application show the supplied View.
+        /// </summary>
+        /// <param name="newView">View to use.</param>
         public void SwitchView(View newView)
         {
             ClearScreen();
+            CurrentView = newView;
+            newView.Render();
         }
 
         /// <summary>
@@ -57,6 +62,34 @@ namespace Cinema_App
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.Black;
+        }
+
+        /// <summary>
+        /// Shows a crude about message.
+        /// </summary>
+        private void About()
+        {
+            ClearScreen();
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Cinema App \n");
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Created by: INF1C Groep 3\n\n");
+
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("Press any key to return to the Main Menu.");
+            
+            Console.ReadKey();
+            ShowMainMenu();
+        }
+
+        /// <summary>
+        /// Closes the app.
+        /// </summary>
+        private void CloseApp()
+        {
+            Environment.Exit(1);
         }
     }
 }
