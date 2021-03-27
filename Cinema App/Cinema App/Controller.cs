@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +7,7 @@ namespace Cinema_App
 {
     class Controller
     {
+        private DataStore DataStore { get; set; }
         private User CurrentUser { get; set; }
         private View CurrentView { get; set; }
         private Basket Basket { get; set; }
@@ -23,9 +25,18 @@ namespace Cinema_App
         {
             Console.WriteLine("Loading...");
 
-            ShowMainMenu();
+            DataStore = new DataStore();
 
-            //View testView = new TestView(this, "test");
+            //ShowMainMenu();
+
+            //User user = new User("John Doe", "Password", "John");
+            //var json = JsonConvert.SerializeObject(user);
+            //Console.WriteLine(json);
+            //var user2 = JsonConvert.DeserializeObject<User>(json);
+            //DataStore.AddUser(user);
+            //DataStore.AddUser(user2);
+
+            ////View testView = new TestView(this, "test");
         }
 
         /// <summary>

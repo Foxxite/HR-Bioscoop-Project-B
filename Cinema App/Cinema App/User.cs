@@ -1,4 +1,5 @@
 ﻿using Konscious.Security.Cryptography;
+using Newtonsoft.Json;
 using System;
 using System.Text;
 
@@ -7,19 +8,37 @@ namespace Cinema_App
     /// <summary>
     /// Class representing a user.
     /// </summary>
-    
+    [JsonObject(MemberSerialization.OptIn)]
     class User
     {
+        [JsonProperty]
         private Guid GUID;
 
+        [JsonProperty]
         private string Username;
+        [JsonProperty]
         private string Password;
 
+        [JsonProperty]
         private int Permlevel;
 
+        [JsonProperty]
         private string Name;
+        [JsonProperty]
         private string Address;
+        [JsonProperty]
         private int Age;
+
+        public User(string username, string password, string name, string address = "", int age = 0)
+        {
+            Username = username;
+            Password = password;
+            Name = name;
+            Address = address;
+            Age = age;
+
+            Permlevel = 0;
+        }
 
         /// <summary>
         /// Creates salt based on user info.
