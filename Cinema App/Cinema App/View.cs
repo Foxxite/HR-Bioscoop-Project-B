@@ -34,6 +34,17 @@ namespace Cinema_App
         abstract public void Render();
 
         /// <summary>
+        /// Draw's the views title bar
+        /// </summary>
+        public void DrawTitleBar()
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"========== {Title} ==========");
+            Console.WriteLine(!String.IsNullOrEmpty(SubTitle) ? SubTitle : "\n");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+
+        /// <summary>
         ///     Determines if the user has the permission to view.
         /// </summary>
         /// <param name="user">The user you want to check the permission of.</param>

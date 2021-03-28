@@ -31,6 +31,8 @@ namespace Cinema_App
 
         public User(string username, string password, string name, string address = "", int age = 0)
         {
+            GUID = Guid.NewGuid();
+
             Username = username;
             Password = password;
             Name = name;
@@ -58,6 +60,14 @@ namespace Cinema_App
         public string HashPassword (string enteredPassword)
         {
             return PasswordManager.HashPassword(enteredPassword, CreateSalt(enteredPassword));
+        }
+
+        /// <summary>
+        /// Converts the stored password to a Argon2 hash
+        /// </summary>
+        public void ConvertPasswordToHash()
+        {
+            Password = HashPassword(Password);
         }
 
         /// <summary>

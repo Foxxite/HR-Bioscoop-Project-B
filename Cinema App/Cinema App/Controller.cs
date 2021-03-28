@@ -7,7 +7,7 @@ namespace Cinema_App
 {
     class Controller
     {
-        private DataStore DataStore { get; set; }
+        public DataStore DataStore { get; }
         private User CurrentUser { get; set; }
         private View CurrentView { get; set; }
         private Basket Basket { get; set; }
@@ -27,7 +27,7 @@ namespace Cinema_App
 
             DataStore = new DataStore();
 
-            //ShowMainMenu();
+            ShowMainMenu();
 
             //User user = new User("John Doe", "Password", "John");
             //var json = JsonConvert.SerializeObject(user);
@@ -45,11 +45,13 @@ namespace Cinema_App
         public void ShowMainMenu()
         {
             Menu mainMenu = new Menu(this, "Main Menu");
+            mainMenu.AddMenuOption("Register New Account", new Action(ShowRegistationScreen));
             mainMenu.AddMenuOption("About", new Action(About));
             mainMenu.AddMenuOption("Exit", new Action(CloseApp));
 
             SwitchView(mainMenu);
         }
+
 
         /// <summary>
         /// Clears the current View and makes the application show the supplied View.
@@ -73,6 +75,12 @@ namespace Cinema_App
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.Black;
+        }
+
+        private void ShowRegistationScreen()
+        {
+            RegistrationScreen rs = new RegistrationScreen(this, "Registration Screen");
+            SwitchView(rs);
         }
 
         /// <summary>
