@@ -38,7 +38,7 @@ namespace Cinema_App
             argon2.Salt = salt;
             argon2.DegreeOfParallelism = 8; // four cores
             argon2.Iterations = 4;
-            argon2.MemorySize = 1024; // 1 GB
+            argon2.MemorySize = 1024; // 1 MB
 
             return Convert.ToBase64String(argon2.GetBytes(16));
         }
