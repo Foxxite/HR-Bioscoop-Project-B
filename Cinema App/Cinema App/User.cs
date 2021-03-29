@@ -15,9 +15,9 @@ namespace Cinema_App
         private Guid GUID;
 
         [JsonProperty]
-        private string Username;
+        public string Username;
         [JsonProperty]
-        private string Password;
+        public string Password;
 
         [JsonProperty]
         private int Permlevel;

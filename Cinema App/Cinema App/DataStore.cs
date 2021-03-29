@@ -60,5 +60,25 @@ namespace Cinema_App
             var itemData = JsonConvert.SerializeObject(Items);
             File.WriteAllText(ITEM_FILE, itemData);
         }
+
+        public List<User> GetUsers()
+        {
+            return Users;
+        }
+
+        public List<Item> GetItems()
+        {
+            return Items;
+        }
+
+        public User GetUserByUsername(string username)
+        {
+            foreach (User u in GetUsers())
+                if (u.Username.Equals(username))
+                    return u;
+
+            return null;
+        }
+
     }
 }

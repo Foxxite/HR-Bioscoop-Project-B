@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace Cinema_App
 {
@@ -12,18 +13,28 @@ namespace Cinema_App
             return;
         }
 
-        
         public override void Render()
         {
             DrawTitleBar();
 
             Console.WriteLine("  Enter your username:");
             string enteredUsername = Console.ReadLine().Trim();
+
+            
             
             while(String.IsNullOrEmpty(enteredUsername))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("  Username can not be empty!");
+                Console.ForegroundColor = ConsoleColor.White;
+
+                enteredUsername = Console.ReadLine().Trim();
+            }
+
+            while (DoesUsernameExist(enteredUsername))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("  Username already in use!");
                 Console.ForegroundColor = ConsoleColor.White;
 
                 enteredUsername = Console.ReadLine().Trim();
@@ -109,6 +120,21 @@ namespace Cinema_App
             Console.WriteLine("  Account has been created successfully!");
             
             Console.ForegroundColor = ConsoleColor.White;
+
+            Thread.Sleep(3000);
+
+            Controller.SwitchView(new LoginScreen(Controller, "Login Screen"));
+        }
+
+
+
+        private bool DoesUsernameExist(string username)
+        {
+            foreach(User u in Controller.DataStore.GetUsers())
+                if (u.Username.Equals(username))
+                    return true;
+
+            return false;
         }
     }
 }

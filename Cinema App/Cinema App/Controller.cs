@@ -8,7 +8,7 @@ namespace Cinema_App
     class Controller
     {
         public DataStore DataStore { get; }
-        private User CurrentUser { get; set; }
+        public User CurrentUser { get; set; }
         private View CurrentView { get; set; }
         private Basket Basket { get; set; }
         private Menu MainMenu { get; set; }
@@ -46,6 +46,7 @@ namespace Cinema_App
         {
             Menu mainMenu = new Menu(this, "Main Menu");
             mainMenu.AddMenuOption("Register New Account", new Action(ShowRegistationScreen));
+            mainMenu.AddMenuOption("Login with existing account", new Action(ShowLoginScreen));
             mainMenu.AddMenuOption("About", new Action(About));
             mainMenu.AddMenuOption("Exit", new Action(CloseApp));
 
@@ -81,6 +82,12 @@ namespace Cinema_App
         {
             RegistrationScreen rs = new RegistrationScreen(this, "Registration Screen");
             SwitchView(rs);
+        }
+
+        private void ShowLoginScreen()
+        {
+            LoginScreen ls = new LoginScreen(this, "Login screen");
+            SwitchView(ls);
         }
 
         /// <summary>
