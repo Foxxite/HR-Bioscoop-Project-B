@@ -12,7 +12,7 @@ namespace Cinema_App
         {
             return;
         }
-
+        
         public override void Render()
         {
             DrawTitleBar();
@@ -21,7 +21,7 @@ namespace Cinema_App
             string enteredUsername = Console.ReadLine().Trim();
 
             
-            
+           
             while(String.IsNullOrEmpty(enteredUsername))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -30,7 +30,7 @@ namespace Cinema_App
 
                 enteredUsername = Console.ReadLine().Trim();
             }
-
+            
             while (DoesUsernameExist(enteredUsername))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -44,7 +44,7 @@ namespace Cinema_App
 
             Console.WriteLine("  Enter your password:");
             string enteredPassword = Console.ReadLine().Trim();
-
+            
             while (String.IsNullOrEmpty(enteredPassword))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -127,7 +127,11 @@ namespace Cinema_App
         }
 
 
-
+        /// <summary>
+        /// Checks if username is already in database.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
         private bool DoesUsernameExist(string username)
         {
             foreach(User u in Controller.DataStore.GetUsers())

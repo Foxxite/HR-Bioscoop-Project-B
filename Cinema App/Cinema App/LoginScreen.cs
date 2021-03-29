@@ -54,7 +54,11 @@ namespace Cinema_App
 
             Controller.ShowMainMenu();
         }
-
+        /// <summary>
+        /// Method to check if username already exists in Json.
+        /// </summary>
+        /// <param name="username">The username inputted by user.</param>
+        /// <returns></returns>
         private bool DoesUsernameExist(string username)
         {
             foreach (User u in Controller.DataStore.GetUsers())
@@ -64,7 +68,12 @@ namespace Cinema_App
             return false;
         }
 
-
+        /// <summary>
+        /// Method to check if password given is correct.
+        /// </summary>
+        /// <param name="username">Username given by user.</param>
+        /// <param name="password">Password given by user.</param>
+        /// <returns></returns>
         private bool CorrectPassword(string username, string password)
         {
             User user = Controller.DataStore.GetUserByUsername(username);
