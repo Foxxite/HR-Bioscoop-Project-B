@@ -15,19 +15,19 @@ namespace Cinema_App
         private Guid GUID;
 
         [JsonProperty]
-        public string Username;
+        public string Username { get;  }
         [JsonProperty]
-        public string Password;
+        public string Password { get; set; }
 
         [JsonProperty]
-        private int Permlevel;
+        public int Permlevel { get; }
 
         [JsonProperty]
-        private string Name;
+        public string Name { get; }
         [JsonProperty]
-        private string Address;
+        public string Address { get; }
         [JsonProperty]
-        private int Age;
+        public int Age { get; }
 
         public User(string username, string password, string name, string address = "", int age = 0)
         {

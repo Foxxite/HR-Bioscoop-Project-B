@@ -118,6 +118,7 @@ namespace Cinema_App
             Console.WriteLine();
             Console.Beep();
             Console.WriteLine("  Account has been created successfully!");
+            Console.WriteLine("  You will be asked to log in in a few moments...");
             
             Console.ForegroundColor = ConsoleColor.White;
 

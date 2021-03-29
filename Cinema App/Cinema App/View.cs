@@ -39,7 +39,7 @@ namespace Cinema_App
         public void DrawTitleBar()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine($"========== {Title} ==========");
+            Console.WriteLine($"========== {Title} ========== \t {(Controller.CurrentUser != null ? "Welcome " + Controller.CurrentUser.Name : "")}");
             Console.WriteLine(!String.IsNullOrEmpty(SubTitle) ? SubTitle : "\n");
             Console.ForegroundColor = ConsoleColor.White;
         }

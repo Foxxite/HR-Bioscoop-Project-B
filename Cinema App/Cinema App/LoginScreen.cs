@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace Cinema_App
 {
@@ -51,6 +52,17 @@ namespace Cinema_App
             }
 
             Controller.CurrentUser = Controller.DataStore.GetUserByUsername(enteredUsername);
+
+            Console.ForegroundColor = ConsoleColor.Green;
+
+            Console.WriteLine();
+            Console.Beep();
+            Console.WriteLine($"  Welcome {Controller.CurrentUser.Name},");
+            Console.WriteLine("  You will be redirected to the main menu in in a few moments...");
+
+            Console.ForegroundColor = ConsoleColor.White;
+
+            Thread.Sleep(3000);
 
             Controller.ShowMainMenu();
         }

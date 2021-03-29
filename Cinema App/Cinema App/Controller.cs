@@ -28,15 +28,6 @@ namespace Cinema_App
             DataStore = new DataStore();
 
             ShowMainMenu();
-
-            //User user = new User("John Doe", "Password", "John");
-            //var json = JsonConvert.SerializeObject(user);
-            //Console.WriteLine(json);
-            //var user2 = JsonConvert.DeserializeObject<User>(json);
-            //DataStore.AddUser(user);
-            //DataStore.AddUser(user2);
-
-            ////View testView = new TestView(this, "test");
         }
 
         /// <summary>
@@ -45,8 +36,20 @@ namespace Cinema_App
         public void ShowMainMenu()
         {
             Menu mainMenu = new Menu(this, "Main Menu");
-            mainMenu.AddMenuOption("Register New Account", new Action(ShowRegistationScreen));
-            mainMenu.AddMenuOption("Login with existing account", new Action(ShowLoginScreen));
+
+            // Show options if user isn't logged in.
+            if(CurrentUser == null)
+            {
+                mainMenu.AddMenuOption("Register New Account", new Action(ShowRegistationScreen));
+                mainMenu.AddMenuOption("Login with existing account", new Action(ShowLoginScreen));
+            }
+            // Show options if user is logged in.
+            else
+            {
+                mainMenu.AddMenuOption("Log out", new Action(LogOut));
+            }
+            
+            //Always show those options
             mainMenu.AddMenuOption("About", new Action(About));
             mainMenu.AddMenuOption("Exit", new Action(CloseApp));
 
@@ -116,6 +119,15 @@ namespace Cinema_App
         private void CloseApp()
         {
             Environment.Exit(1);
+        }
+
+        /// <summary>
+        /// Log out the current user
+        /// </summary>
+        private void LogOut()
+        {
+            CurrentUser = null;
+            ShowMainMenu();
         }
     }
 }
