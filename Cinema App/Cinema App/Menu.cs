@@ -68,9 +68,7 @@ namespace Cinema_App
 
             Controller.ClearScreen();
 
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine($"========== {Title} ==========");
-            Console.WriteLine(!String.IsNullOrEmpty(SubTitle) ? SubTitle : "\n");
+            DrawTitleBar();
 
             for(int i = 0; i < MenuOptions.Count; i++)
             {
@@ -87,7 +85,7 @@ namespace Cinema_App
 
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("\n  Use the ↑ and ↓ keys to selection and item.");
-            Console.WriteLine("  Press return to make your chooise.");
+            Console.WriteLine("  Press return to make your choice.");
         }
 
         /// <summary>
