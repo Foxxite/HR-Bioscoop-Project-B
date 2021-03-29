@@ -4,27 +4,32 @@ using System.Text;
 
 namespace Cinema_App
 {
+    ///<summary>
+    /// Makes a new class called Item
+    ///</summary>
     abstract class Item
-
-        ///<summary>
-        ///makes a new class called Item
-        ///</summary>
     {
-        protected string Name;
-        protected double Price;
-        protected int StockAvailable;
+        public string Name { get;  }
+        public double Price { get; }
+        public int StockAvailable { get; }
 
         /// <summary>
-        /// Name = gives the name of the movie as a string
-        /// Price = gives the price of the movie as a double
-        /// StockAvailable = shows what stock is available as a integer
+        /// Create a new instance of an Item
         /// </summary>
-        /// <returns></returns>
+        /// <param name="name"></param>
+        /// <param name="price"></param>
+        /// <param name="stock"></param>        
+        public Item(String name, double price = 0.0, int stock = 0)
+        {
+            Name = name;
+            Price = price;
+            StockAvailable = stock;
+        }
 
         public abstract bool IsAvailable();
 
         ///<summary>
-        ///method to check if seats are available
+        /// Method to check if seats are available
         ///</summary>
     }
 }

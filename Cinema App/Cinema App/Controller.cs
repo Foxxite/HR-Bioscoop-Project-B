@@ -47,6 +47,7 @@ namespace Cinema_App
             else
             {
                 mainMenu.AddMenuOption("Log out", new Action(LogOut));
+                mainMenu.AddMenuOption("View Current Movies", new Action(ViewMovies));
             }
             
             //Always show those options
@@ -91,6 +92,12 @@ namespace Cinema_App
         {
             LoginScreen ls = new LoginScreen(this, "Login screen");
             SwitchView(ls);
+        }
+
+        private void ViewMovies()
+        {
+            MovieCatalogue mc = new MovieCatalogue(this, "");
+            SwitchView(mc);
         }
 
         /// <summary>
