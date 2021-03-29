@@ -4,33 +4,46 @@ using System.Text;
 
 namespace Cinema_App
 {
+    /// <summary> 
+    /// inheritates the item class
+    /// </summary>
     class Movie : Item
-
-        /// <summary> 
-        /// inheritates the item class
-        /// </summary>
     {
-        private string Description;
-        private int AgeRating;
-        private int ReviewScore;
-        private string TrailerUrl;
-        private Auditorium Auditorium;
+        public string Description { get; }
+        public int AgeRating { get; }
+        public double ReviewScore { get; }
+        public string TrailerUrl { get; }
+        public Auditorium Auditorium { get; }
 
         /// <summary>
-        /// Description = shows a description of the movie as a string
-        /// AgeRating = shows what the minimum age of a movie is as a integer
-        /// ReviewScore = the score of the movie based on the reviews given by people as a integer
-        /// TrailerUrl = gives a link to the trailer of the movie as a string
-        /// Auditorium = shows how many seats are left in the auditorium to reserve by the people
+        /// Create a new instance of a Movie
         /// </summary>
-        /// <returns></returns>
+        /// <param name="name"></param>
+        /// <param name="desc"></param>
+        /// <param name="ageRating"></param>
+        /// <param name="reviewScore"></param>
+        /// <param name="trailerUrl"></param>
+        /// <param name="auditorium"></param>
+        /// <param name="price"></param>
+        /// <param name="stock"></param>
+        public Movie(String name, string desc, int ageRating, double reviewScore, string trailerUrl, Auditorium auditorium = null, double price = 0.0, int stock = 0)
+            : base(name, price, stock)
+        {
+            Description = desc;
+            AgeRating = ageRating;
+            ReviewScore = reviewScore;
+            TrailerUrl = trailerUrl;
+            Auditorium = auditorium;
+        }
+       
+
+
+        ///<summary>
+        /// Methods to check if seats are available
+        ///</summary>
         public override bool IsAvailable()
         {
             throw new NotImplementedException();
-
-            ///<summary>
-            ///methods to check if seats are available
-            ///</summary>
         }
     }
 }

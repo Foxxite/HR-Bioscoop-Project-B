@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Resources;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Cinema_App
 {
@@ -72,5 +73,32 @@ namespace Cinema_App
             Controller.ShowMainMenu();
         }
 
+        /// <summary>
+        /// Write a long string pritty to the console
+        /// </summary>
+        /// <param name="paragraph"></param>
+        protected void WordWrap(string paragraph)
+        {
+            if(paragraph.Length < 100)
+                Console.WriteLine(paragraph);
+            else
+            {
+                paragraph = new Regex(@" {2,}").Replace(paragraph.Trim(), @" ");
+                var left = Console.CursorLeft; var top = Console.CursorTop; var lines = new List<string>();
+
+                for (var i = 0; paragraph.Length > 0; i++)
+                {
+                    lines.Add(paragraph.Substring(0, Math.Min(Console.WindowWidth, paragraph.Length)));
+                    var length = lines[i].LastIndexOf(" ", StringComparison.Ordinal);
+
+                    if (length > 0) lines[i] = lines[i].Remove(length);
+
+                    paragraph = paragraph.Substring(Math.Min(lines[i].Length + 1, paragraph.Length));
+
+                    Console.SetCursorPosition(left, top + i);
+                    Console.WriteLine(lines[i]);
+                }
+            }
+        }
     }
 }
