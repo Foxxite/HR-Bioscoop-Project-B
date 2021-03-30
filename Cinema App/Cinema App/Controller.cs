@@ -13,6 +13,7 @@ namespace Cinema_App
         private Basket Basket { get; set; }
         private Menu MainMenu { get; set; }
 
+       
 
         /// <summary>
         ///     Main apllication controller.
@@ -46,8 +47,9 @@ namespace Cinema_App
             // Show options if user is logged in.
             else
             {
-                mainMenu.AddMenuOption("Log out", new Action(LogOut));
                 mainMenu.AddMenuOption("View Current Movies", new Action(ViewMovies));
+                mainMenu.AddMenuOption("View account information", new Action(ViewUserInfo));
+                mainMenu.AddMenuOption("Log out", new Action(LogOut));
             }
             
             //Always show those options
@@ -96,8 +98,14 @@ namespace Cinema_App
 
         private void ViewMovies()
         {
-            MovieCatalogue mc = new MovieCatalogue(this, "");
+            MovieCatalogue mc = new MovieCatalogue(this, "Movie Catalogue");
             SwitchView(mc);
+        }
+
+        private void ViewUserInfo()
+        {
+            UserInformation ui = new UserInformation(this, "Account Information");
+            SwitchView(ui);
         }
 
         /// <summary>

@@ -32,7 +32,7 @@ namespace Cinema_App
         public User(string username, string password, string name, string address = "", int age = 0)
         {
             GUID = Guid.NewGuid();
-
+            
             Username = username;
             Password = password;
             Name = name;
