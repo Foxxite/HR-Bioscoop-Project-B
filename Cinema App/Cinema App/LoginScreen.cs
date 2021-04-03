@@ -36,7 +36,7 @@ namespace Cinema_App
 
             int wrongPasswordCounter = 0;
 
-            while(!CorrectPassword(enteredUsername, enteredPassword))
+            while(String.IsNullOrEmpty(enteredPassword) || !CorrectPassword(enteredUsername, enteredPassword))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("  Wrong password, please try again.");
@@ -52,6 +52,10 @@ namespace Cinema_App
             }
 
             Controller.CurrentUser = Controller.DataStore.GetUserByUsername(enteredUsername);
+
+            Controller.ClearScreen();
+
+            DrawTitleBar();
 
             Console.ForegroundColor = ConsoleColor.Green;
 

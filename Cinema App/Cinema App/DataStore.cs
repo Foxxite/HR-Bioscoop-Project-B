@@ -43,7 +43,7 @@ namespace Cinema_App
             SaveUserData();
         }
 
-        private void SaveUserData()
+        public void SaveUserData()
         {
             var userData = JsonConvert.SerializeObject(Users);
             File.WriteAllText(USER_FILE, userData);
@@ -55,7 +55,7 @@ namespace Cinema_App
             SaveItemData();
         }
 
-        private void SaveItemData()
+        public void SaveItemData()
         {
             var itemData = JsonConvert.SerializeObject(Items);
             File.WriteAllText(ITEM_FILE, itemData);
