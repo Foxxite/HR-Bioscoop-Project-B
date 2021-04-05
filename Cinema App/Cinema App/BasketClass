@@ -1,0 +1,32 @@
+namespace Cinema_App
+{
+    class Basket
+    {      
+        private Item[] Items;
+
+        public double TotalPrice()
+        {
+
+        }
+
+        public void Checkout()
+        {
+
+        }
+
+        private bool VerifyCard(string cardNumber)
+        {
+
+        }
+
+        private void ShowReservationCode()
+        {
+
+        }
+
+        private void ShowPaymentError()
+        {
+
+        }
+    }      
+}
