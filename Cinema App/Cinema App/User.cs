@@ -15,7 +15,7 @@ namespace Cinema_App
         private Guid GUID;
 
         [JsonProperty]
-        public string Username { get;  }
+        public string Username { get; set; }
         [JsonProperty]
         public string Password { get; set; }
 
@@ -23,11 +23,11 @@ namespace Cinema_App
         public int Permlevel { get; }
 
         [JsonProperty]
-        public string Name { get; }
+        public string Name { get; set; }
         [JsonProperty]
-        public string Address { get; }
+        public string Address { get; set; }
         [JsonProperty]
-        public int Age { get; }
+        public int Age { get; set; }
 
         public User(string username, string password, string name, string address = "", int age = 0)
         {
@@ -49,7 +49,7 @@ namespace Cinema_App
         /// <returns>Salt based on user info.</returns>
         private byte[] CreateSalt(string enterPassword)
         {
-            return PasswordManager.CreateSalt(Age + Name + enterPassword + Address + Username);
+            return PasswordManager.CreateSalt(GUID + enterPassword);
         }
 
         /// <summary>
@@ -80,9 +80,51 @@ namespace Cinema_App
             return PasswordManager.VerifyPassword(enteredPassword, Password, CreateSalt(enteredPassword));
         }
 
+        /// <summary>
+        /// Changes the username.
+        /// </summary>
+        /// <param name="newUserName"></param>
+        public void ChangeUsername(string newUserName)
+        {
+            Username = newUserName;
+        }
 
+        /// <summary>
+        /// Changes the password.
+        /// </summary>
+        /// <param name="newPassword"></param>
+        public void ChangePassword(string newPassword)
+        {
+            Password = newPassword;
+            ConvertPasswordToHash();
+        }
 
+        /// <summary>
+        /// Changes the name.
+        /// </summary>
+        /// <param name="newName"></param>
+        public void ChangeName(string newName)
+        {
+            Name = newName;
+        }
 
+        /// <summary>
+        /// Changes the age.
+        /// </summary>
+        /// <param name="newAge"></param>
+        public void ChangeAge(int newAge)
+        {
+            Age = newAge;
+        }
+
+        /// <summary>
+        /// Changes the address.
+        /// </summary>
+        /// <param name="newAddress"></param>
+        public void ChangeAddress(string newAddress)
+        {
+            Address = newAddress;
+        }
 
     }
 }

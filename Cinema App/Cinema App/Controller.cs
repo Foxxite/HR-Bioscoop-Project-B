@@ -49,6 +49,7 @@ namespace Cinema_App
             {
                 mainMenu.AddMenuOption("View Current Movies", new Action(ViewMovies));
                 mainMenu.AddMenuOption("View account information", new Action(ViewUserInfo));
+                mainMenu.AddMenuOption("Change account information", new Action(ChangeUserInfo));
                 mainMenu.AddMenuOption("Log out", new Action(LogOut));
             }
             
@@ -106,6 +107,12 @@ namespace Cinema_App
         {
             UserInformation ui = new UserInformation(this, "Account Information");
             SwitchView(ui);
+        }
+
+        private void ChangeUserInfo()
+        {
+            ChangeUserInformation cui = new ChangeUserInformation(this, "Change Account Information");
+            SwitchView(cui);
         }
 
         /// <summary>
