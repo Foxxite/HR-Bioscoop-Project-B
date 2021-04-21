@@ -81,7 +81,7 @@ namespace Cinema_App
                     enteredAge = Int32.Parse(Console.ReadLine());
                     correctAge = true;
                 }
-                catch (Exception e)
+                catch
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine($"  Please enter a valid number!");
