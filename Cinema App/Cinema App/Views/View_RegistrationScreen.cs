@@ -81,7 +81,7 @@ namespace Cinema_App
                     enteredAge = Int32.Parse(Console.ReadLine());
                     correctAge = true;
                 }
-                catch (Exception e)
+                catch
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine($"  Please enter a valid number!");
@@ -91,16 +91,16 @@ namespace Cinema_App
 
             Console.WriteLine();
 
-            Console.WriteLine("  Enter your address:");
-            string enteredAddress = Console.ReadLine().Trim();
+            Console.WriteLine("  Enter your emial-address:");
+            string enteredEmailAddress = Console.ReadLine().Trim();
 
-            while (String.IsNullOrEmpty(enteredAddress))
+            while (String.IsNullOrEmpty(enteredEmailAddress))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("  Address can not be empty!");
+                Console.WriteLine("  Email-address can not be empty!");
                 Console.ForegroundColor = ConsoleColor.White;
 
-                enteredAddress = Console.ReadLine().Trim();
+                enteredEmailAddress = Console.ReadLine().Trim();
             }
 
             Controller.ClearScreen();
@@ -110,7 +110,7 @@ namespace Cinema_App
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("  Please wait while we are creating your account, this might take a few seconds...");
 
-            User newUser = new User(enteredUsername, enteredPassword, enteredName, enteredAddress, enteredAge);
+            User newUser = new User(enteredUsername, enteredPassword, enteredName, enteredEmailAddress, enteredAge);
             newUser.ConvertPasswordToHash();
 
             Controller.DataStore.AddUser(newUser);
