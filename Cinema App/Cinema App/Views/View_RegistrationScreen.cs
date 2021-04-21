@@ -5,9 +5,9 @@ using System.Threading;
 
 namespace Cinema_App
 {
-    class RegistrationScreen : View
+    class View_RegistrationScreen : View
     {
-        public RegistrationScreen(Controller controller, string title, string subTitle = "", int permLevel = 0)
+        public View_RegistrationScreen(Controller controller, string title, string subTitle = "", int permLevel = 0)
             : base(controller, title, subTitle, permLevel)
         {
             return;
@@ -124,7 +124,7 @@ namespace Cinema_App
 
             Thread.Sleep(3000);
 
-            Controller.SwitchView(new LoginScreen(Controller, "Login Screen"));
+            Controller.SwitchView(new View_LoginScreen(Controller, "Login Screen"));
         }
 
 

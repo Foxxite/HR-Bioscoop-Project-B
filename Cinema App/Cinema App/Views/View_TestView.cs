@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Cinema_App
 {
-    class TestView : View
+    class View_TestView : View
     {
-        public TestView(Controller controller, string title, string subTitle = "", int permLevel = 0) : base(controller, title, subTitle, permLevel)
+        public View_TestView(Controller controller, string title, string subTitle = "", int permLevel = 0) : base(controller, title, subTitle, permLevel)
         {
             ShowPermError();
             return;

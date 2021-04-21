@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Cinema_App
 {
-    class UserInformation : View
+    class View_UserInformation : View
     {
-        public UserInformation(Controller controller, string title, string subTitle = "", int permLevel = 0) : base(controller, title, subTitle, permLevel)
+        public View_UserInformation(Controller controller, string title, string subTitle = "", int permLevel = 0) : base(controller, title, subTitle, permLevel)
         {
             return;
         }

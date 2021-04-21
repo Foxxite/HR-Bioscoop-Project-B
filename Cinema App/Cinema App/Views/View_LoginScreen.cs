@@ -5,9 +5,9 @@ using System.Threading;
 
 namespace Cinema_App
 {
-    class LoginScreen : View
+    class View_LoginScreen : View
     {
-        public LoginScreen(Controller controller, string title, string subTitle = "", int permLevel = 0)
+        public View_LoginScreen(Controller controller, string title, string subTitle = "", int permLevel = 0)
             : base(controller, title, subTitle, permLevel)
         {
             return;

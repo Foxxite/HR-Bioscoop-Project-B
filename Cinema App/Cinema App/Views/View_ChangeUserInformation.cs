@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Cinema_App
 {
-    class ChangeUserInformation : View
+    class View_ChangeUserInformation : View
     {
         Menu UserMenu;
 
-        public ChangeUserInformation(Controller controller, string title, string subTitle = "", int permLevel = 0)
+        public View_ChangeUserInformation(Controller controller, string title, string subTitle = "", int permLevel = 0)
            : base(controller, title, subTitle, permLevel)
         {
             return;
