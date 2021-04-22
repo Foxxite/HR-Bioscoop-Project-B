@@ -145,7 +145,6 @@ namespace Cinema_App
             User user = Controller.CurrentUser;
 
             Console.WriteLine("  Enter your age:");
-         
 
             bool correctAge = false;
             int enteredAge = 0;
@@ -186,10 +185,10 @@ namespace Cinema_App
             Console.WriteLine("  Enter your email-address:");
             string enteredEmailAddress = Console.ReadLine().Trim();
 
-            while (String.IsNullOrEmpty(enteredEmailAddress))
+            while (String.IsNullOrEmpty(enteredEmailAddress) && !IsValidEmail(enteredEmailAddress))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("  Email-address can not be empty!");
+                Console.WriteLine("  Enter a valid emailaddress!");
                 Console.ForegroundColor = ConsoleColor.White;
 
                 enteredEmailAddress = Console.ReadLine().Trim();
@@ -206,6 +205,19 @@ namespace Cinema_App
             Console.ReadKey();
             
             Controller.SwitchView(UserMenu);
+        }
+
+        bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
     }
