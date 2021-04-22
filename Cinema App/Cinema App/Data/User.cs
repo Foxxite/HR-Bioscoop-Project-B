@@ -120,8 +120,8 @@ namespace Cinema_App
         /// <summary>
         /// Changes the address.
         /// </summary>
-        /// <param name="newAddress"></param>
-        public void ChangeEmailaddress(string newEmailAddress)
+        /// <param name="newEmailAddress"></param>
+        public void ChangeEmailAddress(string newEmailAddress)
         {
             Emailaddress = newEmailAddress;
         }
