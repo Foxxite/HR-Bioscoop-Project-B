@@ -41,7 +41,7 @@ namespace Cinema_App
         /// </summary>
         public void AddEmptyLine()
         {
-            MenuOptions.Add(new Tuple<string, Action>("**empty**", null));
+            MenuOptions.Add(new Tuple<string, Action>(Strings.EmptyString, null));
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Cinema_App
                 // Convert Tuple to named Tuple
                 (string name, Action cb) option = (MenuOptions[i].Item1, MenuOptions[i].Item2);
 
-                if(option.name != "**empty**")
+                if(option.name != Strings.EmptyString)
                 {
                     // Write Selection Visual
                     if (i == SelectionIndex)
@@ -107,8 +107,8 @@ namespace Cinema_App
             }
 
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine("\n  Use the ↑ and ↓ keys to selection and item.");
-            Console.WriteLine("  Press return to make your choice.");
+            Console.WriteLine(Strings.PressArrow);
+            Console.WriteLine(Strings.PressReturn);
         }
 
         /// <summary>
