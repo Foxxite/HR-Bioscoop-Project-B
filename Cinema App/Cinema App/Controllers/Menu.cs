@@ -37,6 +37,14 @@ namespace Cinema_App
         }
 
         /// <summary>
+        /// Adds an emtpy line into the menu
+        /// </summary>
+        public void AddEmptyLine()
+        {
+            MenuOptions.Add(new Tuple<string, Action>("**empty**", null));
+        }
+
+        /// <summary>
         /// Adds multiple options to the menu.
         /// </summary>
         /// <param name="options">
@@ -75,12 +83,27 @@ namespace Cinema_App
                 // Convert Tuple to named Tuple
                 (string name, Action cb) option = (MenuOptions[i].Item1, MenuOptions[i].Item2);
 
-                // Write Selection Visual
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write($"  {(i == SelectionIndex ? "»" : " ")} ");
+                if(option.name != "**empty**")
+                {
+                    // Write Selection Visual
+                    if (i == SelectionIndex)
+                    {
+                        Console.Write(" ");
+                        Console.BackgroundColor = ConsoleColor.White;
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.Write("» ");
+                    }
+                    else
+                    {
+                        Console.Write("   ");
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
 
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.Write($"{i}: {option.name} \n");
+                    Console.Write($"{i}: {option.name} \n");
+                    Console.BackgroundColor = ConsoleColor.Black;
+                }
+                else
+                    Console.WriteLine();
             }
 
             Console.ForegroundColor = ConsoleColor.Gray;

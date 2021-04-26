@@ -22,7 +22,9 @@ namespace Cinema_App
             mainMenu.AddMenuOption("The War With Grandpa", new Action(Movie2));
             mainMenu.AddMenuOption("The Dark and the Wicked", new Action(Movie3));
             mainMenu.AddMenuOption("Bigfoot Family", new Action(Movie4));
-            mainMenu.AddMenuOption("Fatman\n", new Action(Movie5));
+            mainMenu.AddMenuOption("Fatman", new Action(Movie5));
+
+            //mainMenu.AddEmptyLine();
 
             mainMenu.AddMenuOption("Return to Main Menu", new Action(Controller.ShowMainMenu));
 
