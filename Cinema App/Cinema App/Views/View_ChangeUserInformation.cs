@@ -24,7 +24,7 @@ namespace Cinema_App
             UserMenu.AddMenuOption("Change password", new Action(ChangePassword));
             UserMenu.AddMenuOption("Change name", new Action(ChangeName));
             UserMenu.AddMenuOption("Change age", new Action(ChangeAge));
-            UserMenu.AddMenuOption("Change address\n", new Action(ChangeAddress));
+            UserMenu.AddMenuOption("Change email-address\n", new Action(ChangeEmailAddress));
 
             UserMenu.AddMenuOption("Return to Main Menu", new Action(Controller.ShowMainMenu));
 
@@ -145,7 +145,6 @@ namespace Cinema_App
             User user = Controller.CurrentUser;
 
             Console.WriteLine("  Enter your age:");
-         
 
             bool correctAge = false;
             int enteredAge = 0;
@@ -176,36 +175,49 @@ namespace Cinema_App
 
             Controller.SwitchView(UserMenu);
         }
-        void ChangeAddress()
+        void ChangeEmailAddress()
         {
             Controller.ClearScreen();
             DrawTitleBar();
 
             User user = Controller.CurrentUser;
 
-            Console.WriteLine("  Enter your address:");
-            string enteredAddress = Console.ReadLine().Trim();
+            Console.WriteLine("  Enter your email-address:");
+            string enteredEmailAddress = Console.ReadLine().Trim();
 
-            while (String.IsNullOrEmpty(enteredAddress))
+            while (String.IsNullOrEmpty(enteredEmailAddress) && !IsValidEmail(enteredEmailAddress))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("  Address can not be empty!");
+                Console.WriteLine("  Enter a valid emailaddress!");
                 Console.ForegroundColor = ConsoleColor.White;
 
-                enteredAddress = Console.ReadLine().Trim();
+                enteredEmailAddress = Console.ReadLine().Trim();
             }
 
-            user.ChangeAddress(enteredAddress);
+            user.ChangeEmailAddress(enteredEmailAddress);
             Controller.DataStore.SaveUserData();
 
             Console.WriteLine();
             Console.Beep();
-            Console.WriteLine("Address has been changed successfully!");
+            Console.WriteLine("Email-address has been changed successfully!");
 
             Console.WriteLine("\nPress any key to return to the menu...");
             Console.ReadKey();
             
             Controller.SwitchView(UserMenu);
+        }
+
+        bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
     }

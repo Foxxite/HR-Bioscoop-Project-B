@@ -25,18 +25,18 @@ namespace Cinema_App
         [JsonProperty]
         public string Name { get; set; }
         [JsonProperty]
-        public string Address { get; set; }
+        public string Emailaddress { get; set; }
         [JsonProperty]
         public int Age { get; set; }
 
-        public User(string username, string password, string name, string address = "", int age = 0)
+        public User(string username, string password, string name, string emailaddress = "", int age = 0)
         {
             GUID = Guid.NewGuid();
             
             Username = username;
             Password = password;
             Name = name;
-            Address = address;
+            Emailaddress = emailaddress;
             Age = age;
 
             Permlevel = 0;
@@ -120,10 +120,10 @@ namespace Cinema_App
         /// <summary>
         /// Changes the address.
         /// </summary>
-        /// <param name="newAddress"></param>
-        public void ChangeAddress(string newAddress)
+        /// <param name="newEmailAddress"></param>
+        public void ChangeEmailAddress(string newEmailAddress)
         {
-            Address = newAddress;
+            Emailaddress = newEmailAddress;
         }
 
     }

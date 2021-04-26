@@ -20,8 +20,6 @@ namespace Cinema_App
             Console.WriteLine("  Enter your username:");
             string enteredUsername = Console.ReadLine().Trim();
 
-            
-           
             while(String.IsNullOrEmpty(enteredUsername))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -91,16 +89,16 @@ namespace Cinema_App
 
             Console.WriteLine();
 
-            Console.WriteLine("  Enter your address:");
-            string enteredAddress = Console.ReadLine().Trim();
+            Console.WriteLine("  Enter your emial-address:");
+            string enteredEmailAddress = Console.ReadLine().Trim();
 
-            while (String.IsNullOrEmpty(enteredAddress))
+            while (String.IsNullOrEmpty(enteredEmailAddress) && !IsValidEmail(enteredEmailAddress))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("  Address can not be empty!");
+                Console.WriteLine("  Enter a valid emailaddress!");
                 Console.ForegroundColor = ConsoleColor.White;
 
-                enteredAddress = Console.ReadLine().Trim();
+                enteredEmailAddress = Console.ReadLine().Trim();
             }
 
             Controller.ClearScreen();
@@ -110,7 +108,7 @@ namespace Cinema_App
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("  Please wait while we are creating your account, this might take a few seconds...");
 
-            User newUser = new User(enteredUsername, enteredPassword, enteredName, enteredAddress, enteredAge);
+            User newUser = new User(enteredUsername, enteredPassword, enteredName, enteredEmailAddress, enteredAge);
             newUser.ConvertPasswordToHash();
 
             Controller.DataStore.AddUser(newUser);
@@ -127,7 +125,6 @@ namespace Cinema_App
             Controller.SwitchView(new View_LoginScreen(Controller, "Login Screen"));
         }
 
-
         /// <summary>
         /// Checks if username is already in database.
         /// </summary>
@@ -140,6 +137,19 @@ namespace Cinema_App
                     return true;
 
             return false;
+        }
+
+        bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }
