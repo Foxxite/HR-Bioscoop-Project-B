@@ -48,9 +48,9 @@ namespace Cinema_App
             else
             {
                 mainMenu.AddMenuOption("View Current Movies", new Action(ViewMovies));
-                mainMenu.AddMenuOption("View account information", new Action(ViewUserInfo));
-                mainMenu.AddMenuOption("Change account information", new Action(ChangeUserInfo));
-                mainMenu.AddMenuOption("Log out", new Action(LogOut));
+                mainMenu.AddMenuOption("View Account Information", new Action(ViewUserInfo));
+                mainMenu.AddMenuOption("Change Account Information", new Action(ChangeUserInfo));
+                mainMenu.AddMenuOption("Log Out", new Action(LogOut));
             }
             
             //Always show those options
