@@ -12,8 +12,8 @@ namespace Cinema_App
         protected List<User> Users = new List<User>();
         protected List<Item> Items = new List<Item>();
 
-        private string USER_FILE = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/users.json";
-        private string ITEM_FILE = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/items.json";
+        private string USER_FILE = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation + "/users.json";
+        private string ITEM_FILE = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation + "/items.json";
 
         /// <summary>
         /// Initializes the DataStore class for use
