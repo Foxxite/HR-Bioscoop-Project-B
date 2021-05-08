@@ -36,26 +36,26 @@ namespace Cinema_App
         /// </summary>
         public void ShowMainMenu()
         {
-            Menu mainMenu = new Menu(this, "Main Menu");
+            Menu mainMenu = new Menu(this, Strings.MainMenuName);
 
             // Show options if user isn't logged in.
             if(CurrentUser == null)
             {
-                mainMenu.AddMenuOption("Register New Account", new Action(ShowRegistationScreen));
-                mainMenu.AddMenuOption("Login with existing account", new Action(ShowLoginScreen));
+                mainMenu.AddMenuOption(Strings.RegisterNew, new Action(ShowRegistationScreen));
+                mainMenu.AddMenuOption(Strings.LoginMenu, new Action(ShowLoginScreen));
             }
             // Show options if user is logged in.
             else
             {
-                mainMenu.AddMenuOption("View Current Movies", new Action(ViewMovies));
-                mainMenu.AddMenuOption("View Account Information", new Action(ViewUserInfo));
-                mainMenu.AddMenuOption("Change Account Information", new Action(ChangeUserInfo));
-                mainMenu.AddMenuOption("Log Out", new Action(LogOut));
+                mainMenu.AddMenuOption(Strings.ViewCurrentMovies, new Action(ViewMovies));
+                mainMenu.AddMenuOption(Strings.ViewAcc, new Action(ViewUserInfo));
+                mainMenu.AddMenuOption(Strings.ChangeAcc, new Action(ChangeUserInfo));
+                mainMenu.AddMenuOption(Strings.LogOut, new Action(LogOut));
             }
             
             //Always show those options
-            mainMenu.AddMenuOption("About", new Action(About));
-            mainMenu.AddMenuOption("Exit", new Action(CloseApp));
+            mainMenu.AddMenuOption(Strings.About, new Action(About));
+            mainMenu.AddMenuOption(Strings.Exit, new Action(CloseApp));
 
             SwitchView(mainMenu);
         }
@@ -87,31 +87,31 @@ namespace Cinema_App
 
         private void ShowRegistationScreen()
         {
-            View_RegistrationScreen rs = new View_RegistrationScreen(this, "Registration Screen");
+            View_RegistrationScreen rs = new View_RegistrationScreen(this, Strings.RegScreen);
             SwitchView(rs);
         }
 
         private void ShowLoginScreen()
         {
-            View_LoginScreen ls = new View_LoginScreen(this, "Login screen");
+            View_LoginScreen ls = new View_LoginScreen(this, Strings.LogScreen);
             SwitchView(ls);
         }
 
         private void ViewMovies()
         {
-            View_MovieCatalogue mc = new View_MovieCatalogue(this, "Movie Catalogue");
+            View_MovieCatalogue mc = new View_MovieCatalogue(this, Strings.MovCat);
             SwitchView(mc);
         }
 
         private void ViewUserInfo()
         {
-            View_UserInformation ui = new View_UserInformation(this, "Account Information");
+            View_UserInformation ui = new View_UserInformation(this, Strings.Accinfo);
             SwitchView(ui);
         }
 
         private void ChangeUserInfo()
         {
-            View_ChangeUserInformation cui = new View_ChangeUserInformation(this, "Change Account Information");
+            View_ChangeUserInformation cui = new View_ChangeUserInformation(this, Strings.ChangeAcc);
             SwitchView(cui);
         }
 
@@ -123,13 +123,13 @@ namespace Cinema_App
             ClearScreen();
 
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Cinema App \n");
+            Console.WriteLine(Strings.NameApp);
 
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Created by: INF1C Groep 3\n\n");
+            Console.WriteLine(Strings.GroupInfo);
 
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine("Press any key to return to the Main Menu.");
+            Console.WriteLine(Strings.KeyPressToReturn);
             
             Console.ReadKey();
             ShowMainMenu();

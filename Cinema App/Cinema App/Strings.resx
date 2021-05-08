@@ -117,10 +117,193 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AccCreateSucces" xml:space="preserve">
+    <value>  Account has been created succesfully!</value>
+  </data>
+  <data name="Accinfo" xml:space="preserve">
+    <value>Account information</value>
+  </data>
+  <data name="AgeChangeSucces" xml:space="preserve">
+    <value>Age has been changed succesfully!</value>
+  </data>
+  <data name="AgeNotValid" xml:space="preserve">
+    <value>  Please enter a valid number!</value>
+  </data>
+  <data name="ChangeAcc" xml:space="preserve">
+    <value>Change account information</value>
+  </data>
+  <data name="ChangeAge" xml:space="preserve">
+    <value>Change age</value>
+  </data>
+  <data name="ChangeMail" xml:space="preserve">
+    <value>Change email-address\n</value>
+  </data>
+  <data name="ChangeName" xml:space="preserve">
+    <value>Change name</value>
+  </data>
+  <data name="ChangePass" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="ChangeUserInfo" xml:space="preserve">
+    <value>Change user information</value>
+  </data>
+  <data name="ChangeUserName" xml:space="preserve">
+    <value>Change username</value>
+  </data>
+  <data name="EmailChangeSucces" xml:space="preserve">
+    <value>Email-address has been changed succesfully!</value>
+  </data>
+  <data name="EmailNotValid" xml:space="preserve">
+    <value>  Enter a valid email-address!</value>
+  </data>
+  <data name="EmptyString" xml:space="preserve">
+    <value>**empty**</value>
+  </data>
+  <data name="EnterAge" xml:space="preserve">
+    <value>  Enter your age:</value>
+  </data>
+  <data name="EnterMail" xml:space="preserve">
+    <value>  Enter your email-address:</value>
+  </data>
+  <data name="EnterName" xml:space="preserve">
+    <value>  Enter your name:</value>
+  </data>
+  <data name="EnterPW" xml:space="preserve">
+    <value>  Enter new password:</value>
+  </data>
+  <data name="EnterUserName" xml:space="preserve">
+    <value>  Enter your username:</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="GroupInfo" xml:space="preserve">
+    <value>Created by: INF1C group 3\n\n</value>
+  </data>
+  <data name="KeyPressToReturn" xml:space="preserve">
+    <value>\nPress any key to return to the main menu</value>
+  </data>
+  <data name="LoadingMessage" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="LoginMenu" xml:space="preserve">
+    <value>Login with existing account</value>
+  </data>
+  <data name="LoginMessage" xml:space="preserve">
+    <value>  You will be asked to login in a few moments...</value>
+  </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>Log Out</value>
+  </data>
+  <data name="LogScreen" xml:space="preserve">
+    <value>Login screen</value>
+  </data>
+  <data name="MainMenuName" xml:space="preserve">
+    <value>Main Menu</value>
+  </data>
+  <data name="MovCat" xml:space="preserve">
+    <value>Movie Catalogue</value>
+  </data>
+  <data name="MoveReviewScore" xml:space="preserve">
+    <value>Review Score</value>
+  </data>
+  <data name="MovieAge" xml:space="preserve">
+    <value>Age Rating</value>
+  </data>
+  <data name="MovieDesc" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="MoviePrice" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="MovieTitle" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="MovieTrailer" xml:space="preserve">
+    <value>Trailer</value>
+  </data>
+  <data name="NameApp" xml:space="preserve">
+    <value>Cinema App\n</value>
+  </data>
+  <data name="NameChangeSucces" xml:space="preserve">
+    <value>Name has been changed succesfully!</value>
+  </data>
+  <data name="NameNotEmpty" xml:space="preserve">
+    <value>  Name cannot be empty!</value>
+  </data>
+  <data name="PressArrow" xml:space="preserve">
+    <value>\n  Use the ↑ and ↓ keys to selection and item.</value>
+  </data>
+  <data name="PressKeyToMovCat" xml:space="preserve">
+    <value>\nPress any key to return to the movie catalogue...</value>
+  </data>
+  <data name="PressReturn" xml:space="preserve">
+    <value>Press return to make your choice</value>
+  </data>
+  <data name="PWChangeSucces" xml:space="preserve">
+    <value>Password has been changed succesfully</value>
+  </data>
+  <data name="PWNotEmpty" xml:space="preserve">
+    <value>  Password cannot be empty</value>
+  </data>
+  <data name="RegisterNew" xml:space="preserve">
+    <value>Register New Account</value>
+  </data>
+  <data name="RegScreen" xml:space="preserve">
+    <value>Registration Screen</value>
+  </data>
   <data name="ReturnToMain" xml:space="preserve">
     <value>Press any key to return to the main menu...</value>
   </data>
+  <data name="ReturnToMainOption" xml:space="preserve">
+    <value>Return to Main Menu</value>
+  </data>
+  <data name="UserNameChangeSucces" xml:space="preserve">
+    <value>Username has been changed succesfully!</value>
+  </data>
+  <data name="UsernameInUse" xml:space="preserve">
+    <value>  Username is already in use!</value>
+  </data>
+  <data name="UsernameNotEmpty" xml:space="preserve">
+    <value>  Username cannot be empty!</value>
+  </data>
+  <data name="UserNotExist" xml:space="preserve">
+    <value>  This user does not exist.</value>
+  </data>
+  <data name="VarAge" xml:space="preserve">
+    <value>Age</value>
+  </data>
+  <data name="VarEmailAddress" xml:space="preserve">
+    <value>Email-address</value>
+  </data>
+  <data name="VarName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="VarUserName" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="ViewAcc" xml:space="preserve">
+    <value>View account information</value>
+  </data>
+  <data name="ViewCurrentMovies" xml:space="preserve">
+    <value>View Current Movies</value>
+  </data>
   <data name="ViewPermError" xml:space="preserve">
     <value>You don't have permission to view this.</value>
+  </data>
+  <data name="WaitAccCreateMess" xml:space="preserve">
+    <value>  Please wait while we are creating your account, this might take a few seconds...</value>
+  </data>
+  <data name="WaitingMess" xml:space="preserve">
+    <value>  You will be redirected to the main menu in a few moments...</value>
+  </data>
+  <data name="WelcomeMessage" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="WrongPW" xml:space="preserve">
+    <value>  Wrong password, please try again.</value>
   </data>
 </root>

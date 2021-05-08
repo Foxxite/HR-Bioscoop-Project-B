@@ -15,15 +15,15 @@ namespace Cinema_App
         {
             DrawTitleBar();
 
-            DrawField("Username", Controller.CurrentUser.Username);
-            DrawField("Name", Controller.CurrentUser.Name);
-            DrawField("Age", Controller.CurrentUser.Age.ToString());
-            DrawField("Email-address", Controller.CurrentUser.Emailaddress);
+            DrawField(Strings.VarUserName, Controller.CurrentUser.Username);
+            DrawField(Strings.VarName, Controller.CurrentUser.Name);
+            DrawField(Strings.VarAge, Controller.CurrentUser.Age.ToString());
+            DrawField(Strings.VarEmailAddress Controller.CurrentUser.Emailaddress);
 
             Console.WriteLine();
 
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine("\nPress any key to return to the main menu...");
+            Console.WriteLine(Strings.KeyPressToReturn);
             Console.ReadKey();
             Controller.ShowMainMenu();
         }
