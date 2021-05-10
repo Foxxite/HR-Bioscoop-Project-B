@@ -66,16 +66,19 @@ namespace Cinema_App
             SaveItemData();
         }
 
+
         public void SaveItemData()
         {
             var itemData = JsonConvert.SerializeObject(Items);
             File.WriteAllText(ITEM_FILE, itemData);
         }
+
         public void AddMovie(Movie movie)
         {
             Movies.Add(movie);
             SaveMovieData();
         }
+
         public void SaveMovieData()
         {
             var movieData = JsonConvert.SerializeObject(Movies);
@@ -91,6 +94,7 @@ namespace Cinema_App
         {
             return Items;
         }
+
 
         public List<Movie> GetMovies()
         {
