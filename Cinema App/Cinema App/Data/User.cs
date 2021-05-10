@@ -123,7 +123,7 @@ namespace Cinema_App
         /// <param name="newEmailAddress"></param>
         public void ChangeEmailAddress(string newEmailAddress)
         {
-            Emailaddress = newEmailAddress;
+            EmailAddress = newEmailAddress;
         }
 
     }

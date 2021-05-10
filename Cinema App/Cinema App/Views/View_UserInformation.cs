@@ -18,7 +18,7 @@ namespace Cinema_App
             DrawField(Strings.VarUserName, Controller.CurrentUser.Username);
             DrawField(Strings.VarName, Controller.CurrentUser.Name);
             DrawField(Strings.VarAge, Controller.CurrentUser.Age.ToString());
-            DrawField(Strings.VarEmailAddress, Controller.CurrentUser.Emailaddress);
+            DrawField(Strings.VarEmailAddress, Controller.CurrentUser.EmailAddress);
 
             Console.WriteLine();
 
