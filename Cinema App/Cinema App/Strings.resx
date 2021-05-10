@@ -171,6 +171,9 @@
   <data name="EnterName" xml:space="preserve">
     <value>  Enter your name:</value>
   </data>
+  <data name="EnterNewPW" xml:space="preserve">
+    <value>Enter your new password</value>
+  </data>
   <data name="EnterPW" xml:space="preserve">
     <value>  Enter new password:</value>
   </data>
