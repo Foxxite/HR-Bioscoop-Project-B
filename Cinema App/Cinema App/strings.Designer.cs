@@ -223,6 +223,15 @@ namespace Cinema_App {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter your new password.
+        /// </summary>
+        public static string EnterNewPW {
+            get {
+                return ResourceManager.GetString("EnterNewPW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to   Enter new password:.
         /// </summary>
         public static string EnterPW {
