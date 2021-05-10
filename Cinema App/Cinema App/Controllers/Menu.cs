@@ -55,7 +55,7 @@ namespace Cinema_App
         /// </summary>
         public void AddEmptyLine()
         {
-            MenuOptions.Add(new Tuple<string, Action>(Strings.EmptyString, null));
+            MenuOptions.Add(new Tuple<string, Action<dynamic>>(Strings.EmptyString, null));
         }
 
         /// <summary>
@@ -127,14 +127,12 @@ namespace Cinema_App
                     SelectionIndex -= 1;
                     if (SelectionIndex < 0) SelectionIndex = MenuOptions.Count - 1;
                 }
-
-                if (key.Equals(ConsoleKey.DownArrow))
+                else if (key.Equals(ConsoleKey.DownArrow))
                 {
                     SelectionIndex += 1;
                     if (SelectionIndex > MenuOptions.Count - 1) SelectionIndex = 0;
                 }
-
-                if (key.Equals(ConsoleKey.Enter))
+                else if (key.Equals(ConsoleKey.Enter))
                 {
                     MenuActive = false;
                     MenuOptions[SelectionIndex].Item2();

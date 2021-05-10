@@ -9,8 +9,8 @@ namespace Cinema_App
     {
         public DataStore DataStore { get; }
         public User CurrentUser { get; set; }
+        public Basket Basket { get; }
         private View CurrentView { get; set; }
-        private View_Basket Basket { get; set; }
         private Menu MainMenu { get; set; }
 
        
@@ -27,6 +27,7 @@ namespace Cinema_App
             Console.WriteLine("Loading...");
 
             DataStore = new DataStore();
+            Basket = new Basket();
 
             ShowMainMenu();
         }
