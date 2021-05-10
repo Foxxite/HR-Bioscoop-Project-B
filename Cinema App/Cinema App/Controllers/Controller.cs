@@ -123,10 +123,10 @@ namespace Cinema_App
             ClearScreen();
 
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine(Strings.NameApp);
+            Console.WriteLine(Strings.NameApp  + "\n");
 
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(Strings.GroupInfo);
+            Console.WriteLine(Strings.GroupInfo + "\n\n");
 
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine(Strings.KeyPressToReturn);
