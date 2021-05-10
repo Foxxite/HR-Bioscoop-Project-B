@@ -112,13 +112,13 @@ namespace Cinema_App
 
             User user = Controller.CurrentUser;
 
-            Console.WriteLine("  Enter your name:");
+            Console.WriteLine(Strings.EnterName);
             string enteredName = Console.ReadLine().Trim();
 
             while (String.IsNullOrEmpty(enteredName))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("  Name can not be empty!");
+                Console.WriteLine(Strings.NameNotEmpty);
                 Console.ForegroundColor = ConsoleColor.White;
 
                 enteredName = Console.ReadLine().Trim();
@@ -129,9 +129,9 @@ namespace Cinema_App
 
             Console.WriteLine();
             Console.Beep();
-            Console.WriteLine("Name has been changed successfully!");
+            Console.WriteLine(Strings.NameChangeSucces);
 
-            Console.WriteLine("\nPress any key to return to the menu...");
+            Console.WriteLine("\n" + Strings.KeyPressToReturn);
             Console.ReadKey();
 
             Controller.SwitchView(UserMenu);
@@ -144,7 +144,7 @@ namespace Cinema_App
 
             User user = Controller.CurrentUser;
 
-            Console.WriteLine("  Enter your age:");
+            Console.WriteLine(Strings.EnterAge);
 
             bool correctAge = false;
             int enteredAge = 0;
@@ -158,7 +158,7 @@ namespace Cinema_App
                 catch
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"  Please enter a valid number!");
+                    Console.WriteLine(Strings.AgeNotValid);
                     Console.ForegroundColor = ConsoleColor.White;
                 }
             }
@@ -168,9 +168,9 @@ namespace Cinema_App
 
             Console.WriteLine();
             Console.Beep();
-            Console.WriteLine("Age has been changed successfully!");
+            Console.WriteLine(Strings.AgeChangeSucces);
 
-            Console.WriteLine("\nPress any key to return to the menu...");
+            Console.WriteLine("\n" + Strings.KeyPressToReturn);
             Console.ReadKey();
 
             Controller.SwitchView(UserMenu);
@@ -182,13 +182,13 @@ namespace Cinema_App
 
             User user = Controller.CurrentUser;
 
-            Console.WriteLine("  Enter your email-address:");
+            Console.WriteLine(Strings.EnterMail);
             string enteredEmailAddress = Console.ReadLine().Trim();
 
             while (String.IsNullOrEmpty(enteredEmailAddress) && !IsValidEmail(enteredEmailAddress))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("  Enter a valid emailaddress!");
+                Console.WriteLine(Strings.EmailNotValid);
                 Console.ForegroundColor = ConsoleColor.White;
 
                 enteredEmailAddress = Console.ReadLine().Trim();
@@ -199,9 +199,9 @@ namespace Cinema_App
 
             Console.WriteLine();
             Console.Beep();
-            Console.WriteLine("Email-address has been changed successfully!");
+            Console.WriteLine(Strings.EmailChangeSucces);
 
-            Console.WriteLine("\nPress any key to return to the menu...");
+            Console.WriteLine("\n" + Strings.KeyPressToReturn);
             Console.ReadKey();
             
             Controller.SwitchView(UserMenu);
