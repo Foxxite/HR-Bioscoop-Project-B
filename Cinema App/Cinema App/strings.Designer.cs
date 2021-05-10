@@ -232,7 +232,7 @@ namespace Cinema_App {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to   Enter new password:.
+        ///   Looks up a localized string similar to   Enter your password:.
         /// </summary>
         public static string EnterPW {
             get {
@@ -259,7 +259,7 @@ namespace Cinema_App {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Created by: INF1C group 3\n\n.
+        ///   Looks up a localized string similar to Created by: INF1C group 3.
         /// </summary>
         public static string GroupInfo {
             get {
@@ -268,7 +268,7 @@ namespace Cinema_App {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to \nPress any key to return to the main menu.
+        ///   Looks up a localized string similar to Press any key to return to the main menu.
         /// </summary>
         public static string KeyPressToReturn {
             get {
@@ -421,7 +421,7 @@ namespace Cinema_App {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to \n  Use the ↑ and ↓ keys to selection and item..
+        ///   Looks up a localized string similar to   Use the ↑ and ↓ keys to selection and item..
         /// </summary>
         public static string PressArrow {
             get {
@@ -430,7 +430,7 @@ namespace Cinema_App {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to \nPress any key to return to the movie catalogue....
+        ///   Looks up a localized string similar to Press any key to return to the movie catalogue....
         /// </summary>
         public static string PressKeyToMovCat {
             get {
