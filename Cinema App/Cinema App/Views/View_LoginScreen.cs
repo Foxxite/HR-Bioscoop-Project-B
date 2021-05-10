@@ -17,13 +17,13 @@ namespace Cinema_App
         {
             DrawTitleBar();
 
-            Console.WriteLine("  Enter your username here:");
+            Console.WriteLine(Strings.EnterUserName);
             string enteredUsername = Console.ReadLine();
             
             while(!DoesUsernameExist(enteredUsername))
                 {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("  This user does not exist.");
+                Console.WriteLine(Strings.UserNotExist);
                 Console.ForegroundColor = ConsoleColor.White;
 
                 enteredUsername = Console.ReadLine();
@@ -31,7 +31,7 @@ namespace Cinema_App
 
             Console.WriteLine();
 
-            Console.WriteLine("  Enter your password here:");
+            Console.WriteLine(Strings.EnterPW);
             string enteredPassword = Console.ReadLine();
 
             int wrongPasswordCounter = 0;
@@ -39,7 +39,7 @@ namespace Cinema_App
             while(String.IsNullOrEmpty(enteredPassword) || !CorrectPassword(enteredUsername, enteredPassword))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("  Wrong password, please try again.");
+                Console.WriteLine(Strings.WrongPW);
                 Console.ForegroundColor = ConsoleColor.White;
 
                 wrongPasswordCounter++;
@@ -62,7 +62,7 @@ namespace Cinema_App
             Console.WriteLine();
             Console.Beep();
             Console.WriteLine($"  Welcome {Controller.CurrentUser.Name},");
-            Console.WriteLine("  You will be redirected to the main menu in in a few moments...");
+            Console.WriteLine(Strings.WaitingMess);
 
             Console.ForegroundColor = ConsoleColor.White;
 
