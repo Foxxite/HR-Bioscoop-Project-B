@@ -83,17 +83,32 @@ namespace Cinema_App
             Console.WriteLine(Strings.EnterPW);
 
             string enteredPassword = Console.ReadLine().Trim();
+            int wrongPasswordCounter = 0;
 
-            while (String.IsNullOrEmpty(enteredPassword))
+            while (String.IsNullOrEmpty(enteredPassword) || !CorrectPassword(user.Username, enteredPassword))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(Strings.PWNotEmpty);
                 Console.ForegroundColor = ConsoleColor.White;
-
+                wrongPasswordCounter++;
+                if (wrongPasswordCounter > 3)
+                {
+                    Controller.ShowMainMenu();
+                }
                 enteredPassword = Console.ReadLine().Trim();
             }
 
-            user.ChangePassword(enteredPassword);
+            Console.WriteLine(Strings.EnterNewPW);
+            string newPassword = Console.ReadLine().Trim();
+            while (String.IsNullOrEmpty(newPassword))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(Strings.PWNotEmpty);
+                Console.ForegroundColor = ConsoleColor.White;
+                newPassword = Console.ReadLine().Trim();
+            }
+            
+            user.ChangePassword(newPassword);
             Controller.DataStore.SaveUserData();
 
             Console.WriteLine();
@@ -205,6 +220,15 @@ namespace Cinema_App
             Console.ReadKey();
             
             Controller.SwitchView(UserMenu);
+        }
+
+        private bool CorrectPassword(string username, string password)
+        {
+            User user = Controller.DataStore.GetUserByUsername(username);
+            if (user != null)
+                return user.VerifyPassword(password);
+
+            return false;
         }
 
         bool IsValidEmail(string email)

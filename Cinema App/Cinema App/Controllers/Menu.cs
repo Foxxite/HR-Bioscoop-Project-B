@@ -37,14 +37,6 @@ namespace Cinema_App
         }
 
         /// <summary>
-        /// Adds an emtpy line into the menu
-        /// </summary>
-        public void AddEmptyLine()
-        {
-            MenuOptions.Add(new Tuple<string, Action>(Strings.EmptyString, null));
-        }
-
-        /// <summary>
         /// Adds multiple options to the menu.
         /// </summary>
         /// <param name="options">
@@ -52,10 +44,18 @@ namespace Cinema_App
         /// <para>Name displayed in the menu.</para>
         /// <para>Methoud (void) to call when option is selected.</para>
         /// </param>
-        public void AddMenuOptions(Tuple<string, Action>[] options)
+        public void AddMenuOption(Tuple<string, Action>[] options)
         {
             foreach(Tuple<string, Action> option in options)
                 MenuOptions.Add(option);
+        }
+
+        /// <summary>
+        /// Adds an emtpy line into the menu
+        /// </summary>
+        public void AddEmptyLine()
+        {
+            MenuOptions.Add(new Tuple<string, Action>(Strings.EmptyString, null));
         }
 
         /// <summary>
