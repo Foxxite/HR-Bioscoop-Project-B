@@ -6,7 +6,7 @@ using System.Text;
 namespace Cinema_App
 {
     /// <summary>
-    /// Class representing a user.
+    /// Class representing an user.
     /// </summary>
     [JsonObject(MemberSerialization.OptIn)]
     class User
@@ -25,7 +25,7 @@ namespace Cinema_App
         [JsonProperty]
         public string Name { get; set; }
         [JsonProperty]
-        public string Emailaddress { get; set; }
+        public string EmailAddress { get; set; }
         [JsonProperty]
         public int Age { get; set; }
 
@@ -36,7 +36,7 @@ namespace Cinema_App
             Username = username;
             Password = password;
             Name = name;
-            Emailaddress = emailaddress;
+            EmailAddress = emailaddress;
             Age = age;
 
             Permlevel = 0;
@@ -118,7 +118,7 @@ namespace Cinema_App
         }
 
         /// <summary>
-        /// Changes the address.
+        /// Changes the email-address.
         /// </summary>
         /// <param name="newEmailAddress"></param>
         public void ChangeEmailAddress(string newEmailAddress)
