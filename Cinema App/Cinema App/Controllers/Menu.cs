@@ -4,12 +4,26 @@ using System.Text;
 
 namespace Cinema_App
 {
+    struct MenuItem
+    {
+        public String name { get; }
+        public Action<dynamic> callback { get; }
+        public dynamic cbValue { get;  }
+
+        public MenuItem(string name, Action<dynamic> callback, dynamic cbValue)
+        {
+            this.name = name;
+            this.callback = callback;
+            this.cbValue = cbValue;
+        }
+    }
+
     /// <summary>
     /// Renders and handles user input for a full screen console menu.
     /// </summary>
     class Menu : View
     {
-        private List<Tuple<string, Action>> MenuOptions = new List<Tuple<string, Action>>();
+        private List<MenuItem> MenuOptions = new List<MenuItem>();
         private bool MenuActive = false;
         private int SelectionIndex = 0;
 
@@ -30,24 +44,11 @@ namespace Cinema_App
         /// Adds an option to the menu.
         /// </summary>
         /// <param name="name">Name displayed in the menu.</param>
-        /// <param name="callback">Methoud (void) to call when option is selected.</param>
-        public void AddMenuOption(string name, Action callback)
+        /// <param name="callback">Action (void) to call when option is selected, will be passed the Callback Value.</param>
+        /// <param name="cbValue">Any value to be passed to the callback.</param>
+        public void AddMenuOption(string name, Action<dynamic> callback, dynamic cbValue)
         {
-            MenuOptions.Add(Tuple.Create(name, callback));
-        }
-
-        /// <summary>
-        /// Adds multiple options to the menu.
-        /// </summary>
-        /// <param name="options">
-        /// A tuple of type (String, Action) containing;
-        /// <para>Name displayed in the menu.</para>
-        /// <para>Methoud (void) to call when option is selected.</para>
-        /// </param>
-        public void AddMenuOption(Tuple<string, Action>[] options)
-        {
-            foreach(Tuple<string, Action> option in options)
-                MenuOptions.Add(option);
+            MenuOptions.Add(new MenuItem(name, callback, cbValue));
         }
 
         /// <summary>
@@ -55,7 +56,7 @@ namespace Cinema_App
         /// </summary>
         public void AddEmptyLine()
         {
-            MenuOptions.Add(new Tuple<string, Action>(Strings.EmptyString, null));
+            MenuOptions.Add(new MenuItem("", null, null));
         }
 
         /// <summary>
@@ -80,8 +81,7 @@ namespace Cinema_App
 
             for(int i = 0; i < MenuOptions.Count; i++)
             {
-                // Convert Tuple to named Tuple
-                (string name, Action cb) option = (MenuOptions[i].Item1, MenuOptions[i].Item2);
+                MenuItem option = MenuOptions[i];
 
                 if(option.name != Strings.EmptyString)
                 {
@@ -127,17 +127,17 @@ namespace Cinema_App
                     SelectionIndex -= 1;
                     if (SelectionIndex < 0) SelectionIndex = MenuOptions.Count - 1;
                 }
-
-                if (key.Equals(ConsoleKey.DownArrow))
+                else if (key.Equals(ConsoleKey.DownArrow))
                 {
                     SelectionIndex += 1;
                     if (SelectionIndex > MenuOptions.Count - 1) SelectionIndex = 0;
                 }
-
-                if (key.Equals(ConsoleKey.Enter))
+                else if (key.Equals(ConsoleKey.Enter))
                 {
                     MenuActive = false;
-                    MenuOptions[SelectionIndex].Item2();
+                    MenuItem selectedOption = MenuOptions[SelectionIndex];
+
+                    selectedOption.callback(selectedOption.cbValue);
                 }
 
                 if (MenuActive)

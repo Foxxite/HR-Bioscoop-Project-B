@@ -238,13 +238,14 @@
     <value>  Name cannot be empty!</value>
   </data>
   <data name="PressArrow" xml:space="preserve">
-    <value>  Use the ↑ and ↓ keys to selection and item.</value>
+    <value>
+  Use the ↑ and ↓ keys to selection and item.</value>
   </data>
   <data name="PressKeyToMovCat" xml:space="preserve">
     <value>Press any key to return to the movie catalogue...</value>
   </data>
   <data name="PressReturn" xml:space="preserve">
-    <value>Press return to make your choice</value>
+    <value>  Press return to make your choice</value>
   </data>
   <data name="PWChangeSucces" xml:space="preserve">
     <value>Password has been changed succesfully</value>

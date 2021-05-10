@@ -10,10 +10,7 @@ namespace Cinema_App
         public DataStore DataStore { get; }
         public User CurrentUser { get; set; }
         private View CurrentView { get; set; }
-        private View_Basket Basket { get; set; }
         private Menu MainMenu { get; set; }
-
-       
 
         /// <summary>
         ///     Main apllication controller.
@@ -41,21 +38,21 @@ namespace Cinema_App
             // Show options if user isn't logged in.
             if(CurrentUser == null)
             {
-                mainMenu.AddMenuOption(Strings.RegisterNew, new Action(ShowRegistationScreen));
-                mainMenu.AddMenuOption(Strings.LoginMenu, new Action(ShowLoginScreen));
+                mainMenu.AddMenuOption(Strings.RegisterNew, (x) => { ShowRegistationScreen(); }, false);
+                mainMenu.AddMenuOption(Strings.LoginMenu, (x) => { ShowLoginScreen(); }, false);
             }
             // Show options if user is logged in.
             else
             {
-                mainMenu.AddMenuOption(Strings.ViewCurrentMovies, new Action(ViewMovies));
-                mainMenu.AddMenuOption(Strings.ViewAcc, new Action(ViewUserInfo));
-                mainMenu.AddMenuOption(Strings.ChangeAcc, new Action(ChangeUserInfo));
-                mainMenu.AddMenuOption(Strings.LogOut, new Action(LogOut));
+                mainMenu.AddMenuOption(Strings.ViewCurrentMovies, (x) => { ViewMovies(); }, false);
+                mainMenu.AddMenuOption(Strings.ViewAcc, (x) => { ViewUserInfo(); }, false);
+                mainMenu.AddMenuOption(Strings.ChangeAcc, (x) => { ChangeUserInfo(); }, false);
+                mainMenu.AddMenuOption(Strings.LogOut, (x) => { LogOut(); }, false);
             }
             
             //Always show those options
-            mainMenu.AddMenuOption(Strings.About, new Action(About));
-            mainMenu.AddMenuOption(Strings.Exit, new Action(CloseApp));
+            mainMenu.AddMenuOption(Strings.About, (x) => { About(); }, false);
+            mainMenu.AddMenuOption(Strings.Exit, (x) => { CloseApp(); }, false);
 
             SwitchView(mainMenu);
         }
@@ -123,10 +120,10 @@ namespace Cinema_App
             ClearScreen();
 
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine(Strings.NameApp  + "\n");
+            Console.WriteLine(Strings.NameApp);
 
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(Strings.GroupInfo + "\n\n");
+            Console.WriteLine(Strings.GroupInfo);
 
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine(Strings.KeyPressToReturn);

@@ -421,7 +421,8 @@ namespace Cinema_App {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to   Use the ↑ and ↓ keys to selection and item..
+        ///   Looks up a localized string similar to 
+        ///  Use the ↑ and ↓ keys to selection and item..
         /// </summary>
         public static string PressArrow {
             get {
@@ -439,7 +440,7 @@ namespace Cinema_App {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Press return to make your choice.
+        ///   Looks up a localized string similar to   Press return to make your choice.
         /// </summary>
         public static string PressReturn {
             get {

@@ -18,15 +18,15 @@ namespace Cinema_App
 
             Menu mainMenu = new Menu(Controller, "Movie Catalogue");
 
-            mainMenu.AddMenuOption("Honest Thief", new Action(Movie));
-            mainMenu.AddMenuOption("The War With Grandpa", new Action(Movie2));
-            mainMenu.AddMenuOption("The Dark and the Wicked", new Action(Movie3));
-            mainMenu.AddMenuOption("Bigfoot Family", new Action(Movie4));
-            mainMenu.AddMenuOption("Fatman", new Action(Movie5));
+            mainMenu.AddMenuOption("Honest Thief", (x) => { Movie(); }, false);
+            mainMenu.AddMenuOption("The War With Grandpa", (x) => { Movie2(); }, false);
+            mainMenu.AddMenuOption("The Dark and the Wicked", (x) => { Movie3(); }, false);
+            mainMenu.AddMenuOption("Bigfoot Family", (x) => { Movie4(); }, false);
+            mainMenu.AddMenuOption("Fatman", (x) => { Movie5(); }, false);
 
             //mainMenu.AddEmptyLine();
 
-            mainMenu.AddMenuOption("Return to Main Menu", new Action(Controller.ShowMainMenu));
+            mainMenu.AddMenuOption("Return to Main Menu", (x) => { Controller.ShowMainMenu(); }, false);
 
             Controller.SwitchView(mainMenu);
         }
