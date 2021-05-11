@@ -17,13 +17,13 @@ namespace Cinema_App
         {
             DrawTitleBar();
 
-            Console.WriteLine("  Enter your username:");
+            Console.WriteLine(Strings.EnterUserName);
             string enteredUsername = Console.ReadLine().Trim();
 
             while(String.IsNullOrEmpty(enteredUsername))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("  Username can not be empty!");
+                Console.WriteLine(Strings.UsernameNotEmpty);
                 Console.ForegroundColor = ConsoleColor.White;
 
                 enteredUsername = Console.ReadLine().Trim();
@@ -32,7 +32,7 @@ namespace Cinema_App
             while (DoesUsernameExist(enteredUsername))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("  Username already in use!");
+                Console.WriteLine(Strings.UsernameInUse);
                 Console.ForegroundColor = ConsoleColor.White;
 
                 enteredUsername = Console.ReadLine().Trim();
@@ -40,13 +40,13 @@ namespace Cinema_App
 
             Console.WriteLine();
 
-            Console.WriteLine("  Enter your password:");
+            Console.WriteLine(Strings.EnterPW);
             string enteredPassword = Console.ReadLine().Trim();
             
             while (String.IsNullOrEmpty(enteredPassword))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("  Password can not be empty!");
+                Console.WriteLine(Strings.PWNotEmpty);
                 Console.ForegroundColor = ConsoleColor.White;
 
                 enteredPassword = Console.ReadLine().Trim();
@@ -54,13 +54,13 @@ namespace Cinema_App
 
             Console.WriteLine();
 
-            Console.WriteLine("  Enter your name:");
+            Console.WriteLine(Strings.EnterName);
             string enteredName = Console.ReadLine().Trim();
 
             while (String.IsNullOrEmpty(enteredName))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("  Name can not be empty!");
+                Console.WriteLine(Strings.NameNotEmpty);
                 Console.ForegroundColor = ConsoleColor.White;
 
                 enteredName = Console.ReadLine().Trim();
@@ -68,7 +68,7 @@ namespace Cinema_App
 
             Console.WriteLine();
 
-            Console.WriteLine("  Enter your age:");
+            Console.WriteLine(Strings.EnterAge);
 
             bool correctAge = false;
             int enteredAge = 0;
@@ -82,20 +82,20 @@ namespace Cinema_App
                 catch
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"  Please enter a valid number!");
+                    Console.WriteLine(Strings.AgeNotValid);
                     Console.ForegroundColor = ConsoleColor.White;
                 }
             }
 
             Console.WriteLine();
 
-            Console.WriteLine("  Enter your emial-address:");
+            Console.WriteLine(Strings.EnterMail);
             string enteredEmailAddress = Console.ReadLine().Trim();
 
             while (String.IsNullOrEmpty(enteredEmailAddress) && !IsValidEmail(enteredEmailAddress))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("  Enter a valid emailaddress!");
+                Console.WriteLine(Strings.EmailNotValid);
                 Console.ForegroundColor = ConsoleColor.White;
 
                 enteredEmailAddress = Console.ReadLine().Trim();
@@ -106,7 +106,7 @@ namespace Cinema_App
             DrawTitleBar();
 
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("  Please wait while we are creating your account, this might take a few seconds...");
+            Console.WriteLine(Strings.WaitAccCreateMess);
 
             User newUser = new User(enteredUsername, enteredPassword, enteredName, enteredEmailAddress, enteredAge);
             newUser.ConvertPasswordToHash();
@@ -115,14 +115,14 @@ namespace Cinema_App
 
             Console.WriteLine();
             Console.Beep();
-            Console.WriteLine("  Account has been created successfully!");
-            Console.WriteLine("  You will be asked to log in in a few moments...");
+            Console.WriteLine(Strings.AccCreateSucces);
+            Console.WriteLine(Strings.LoginMessage);
             
             Console.ForegroundColor = ConsoleColor.White;
 
             Thread.Sleep(3000);
 
-            Controller.SwitchView(new View_LoginScreen(Controller, "Login Screen"));
+            Controller.SwitchView(new View_LoginScreen(Controller, Strings.LoginMenu));
         }
 
         /// <summary>

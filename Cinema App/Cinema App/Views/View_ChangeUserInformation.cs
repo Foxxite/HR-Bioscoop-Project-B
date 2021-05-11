@@ -20,13 +20,13 @@ namespace Cinema_App
 
             UserMenu = new Menu(Controller, Strings.ChangeUserInfo);
 
-            UserMenu.AddMenuOption(Strings.ChangeUserName, new Action(ChangeUsername));
-            UserMenu.AddMenuOption(Strings.ChangePass, new Action(ChangePassword));
-            UserMenu.AddMenuOption(Strings.ChangeName, new Action(ChangeName));
-            UserMenu.AddMenuOption(Strings.ChangeAge, new Action(ChangeAge));
-            UserMenu.AddMenuOption(Strings.ChangeMail, new Action(ChangeEmailAddress));
+            UserMenu.AddMenuOption(Strings.ChangeUserName, (x) => { ChangeUsername(); }, false);
+            UserMenu.AddMenuOption(Strings.ChangePass, (x) => { ChangePassword(); }, false);
+            UserMenu.AddMenuOption(Strings.ChangeName, (x) => { ChangeName(); }, false);
+            UserMenu.AddMenuOption(Strings.ChangeAge, (x) => { ChangeAge(); }, false);
+            UserMenu.AddMenuOption(Strings.ChangeMail + "\n", (x) => { ChangeEmailAddress(); }, false);
 
-            UserMenu.AddMenuOption(Strings.ReturnToMainOption, new Action(Controller.ShowMainMenu));
+            UserMenu.AddMenuOption(Strings.ReturnToMainOption, (x) => { Controller.ShowMainMenu(); }, false);
 
             Controller.SwitchView(UserMenu);
         }
@@ -66,7 +66,7 @@ namespace Cinema_App
             Console.Beep();
             Console.WriteLine(Strings.UserNameChangeSucces);
 
-            Console.WriteLine(Strings.KeyPressToReturn);
+            Console.WriteLine("\n" + Strings.ReturnToMain);
             Console.ReadKey();
 
             Controller.SwitchView(UserMenu);
@@ -88,7 +88,7 @@ namespace Cinema_App
             while (String.IsNullOrEmpty(enteredPassword) || !CorrectPassword(user.Username, enteredPassword))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine(Strings.WrongPW);
+                Console.WriteLine(Strings.PWNotEmpty);
                 Console.ForegroundColor = ConsoleColor.White;
                 wrongPasswordCounter++;
                 if (wrongPasswordCounter > 3)
@@ -115,7 +115,7 @@ namespace Cinema_App
             Console.Beep();
             Console.WriteLine(Strings.PWChangeSucces);
 
-            Console.WriteLine(Strings.KeyPressToReturn);
+            Console.WriteLine("\n" + Strings.KeyPressToReturn);
             Console.ReadKey();
 
             Controller.SwitchView(UserMenu);
@@ -146,7 +146,7 @@ namespace Cinema_App
             Console.Beep();
             Console.WriteLine(Strings.NameChangeSucces);
 
-            Console.WriteLine(Strings.KeyPressToReturn);
+            Console.WriteLine("\n" + Strings.KeyPressToReturn);
             Console.ReadKey();
 
             Controller.SwitchView(UserMenu);
@@ -185,7 +185,7 @@ namespace Cinema_App
             Console.Beep();
             Console.WriteLine(Strings.AgeChangeSucces);
 
-            Console.WriteLine(Strings.KeyPressToReturn);
+            Console.WriteLine("\n" + Strings.KeyPressToReturn);
             Console.ReadKey();
 
             Controller.SwitchView(UserMenu);
@@ -216,7 +216,7 @@ namespace Cinema_App
             Console.Beep();
             Console.WriteLine(Strings.EmailChangeSucces);
 
-            Console.WriteLine(Strings.KeyPressToReturn);
+            Console.WriteLine("\n" + Strings.KeyPressToReturn);
             Console.ReadKey();
             
             Controller.SwitchView(UserMenu);
