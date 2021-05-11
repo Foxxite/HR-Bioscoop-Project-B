@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,10 +10,15 @@ namespace Cinema_App
     /// </summary>
     class Movie : Item
     {
+        [JsonProperty]
         public string Description { get; }
+        [JsonProperty]
         public int AgeRating { get; }
+        [JsonProperty]
         public double ReviewScore { get; }
+        [JsonProperty]
         public string TrailerUrl { get; }
+        [JsonProperty]
         public Auditorium Auditorium { get; }
 
         /// <summary>
@@ -26,10 +32,10 @@ namespace Cinema_App
         /// <param name="auditorium"></param>
         /// <param name="price"></param>
         /// <param name="stock"></param>
-        public Movie(String name, string desc, int ageRating, double reviewScore, string trailerUrl, Auditorium auditorium = null, double price = 0.0, int stock = 0)
+        public Movie(String name, string description, int ageRating, double reviewScore, string trailerUrl, Auditorium auditorium = null, double price = 0.0, int stock = 0)
             : base(name, price, stock)
         {
-            Description = desc;
+            Description = description;
             AgeRating = ageRating;
             ReviewScore = reviewScore;
             TrailerUrl = trailerUrl;
