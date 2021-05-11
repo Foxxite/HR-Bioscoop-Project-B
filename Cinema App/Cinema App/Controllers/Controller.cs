@@ -9,11 +9,9 @@ namespace Cinema_App
     {
         public DataStore DataStore { get; }
         public User CurrentUser { get; set; }
+        public Basket Basket { get; }
         private View CurrentView { get; set; }
-        private View_Basket Basket { get; set; }
         private Menu MainMenu { get; set; }
-
-       
 
         /// <summary>
         ///     Main apllication controller.
@@ -27,6 +25,7 @@ namespace Cinema_App
             Console.WriteLine("Loading...");
 
             DataStore = new DataStore();
+            Basket = new Basket();
 
             ShowMainMenu();
         }
@@ -39,23 +38,24 @@ namespace Cinema_App
             Menu mainMenu = new Menu(this, Strings.MainMenuName);
 
             // Show options if user isn't logged in.
-            if(CurrentUser == null)
+            if (CurrentUser == null)
             {
-                mainMenu.AddMenuOption(Strings.RegisterNew, new Action(ShowRegistationScreen));
-                mainMenu.AddMenuOption(Strings.LoginMenu, new Action(ShowLoginScreen));
+                mainMenu.AddMenuOption(Strings.RegisterNew, (x) => { ShowRegistationScreen(); }, null);
+                mainMenu.AddMenuOption(Strings.LoginMenu, (x) => { ShowLoginScreen(); }, null);
             }
             // Show options if user is logged in.
             else
             {
-                mainMenu.AddMenuOption(Strings.ViewCurrentMovies, new Action(ViewMovies));
-                mainMenu.AddMenuOption(Strings.ViewAcc, new Action(ViewUserInfo));
-                mainMenu.AddMenuOption(Strings.ChangeAcc, new Action(ChangeUserInfo));
-                mainMenu.AddMenuOption(Strings.LogOut, new Action(LogOut));
+                mainMenu.AddMenuOption(Strings.ViewCurrentMovies, (x) => { ViewMovies(); }, null);
+                mainMenu.AddMenuOption("Basket", (x) => { ViewBasket(); }, null); 
+                mainMenu.AddMenuOption(Strings.ViewAcc, (x) => { ViewUserInfo(); }, null);
+                mainMenu.AddMenuOption(Strings.ChangeAcc, (x) => { ChangeUserInfo(); }, null);
+                mainMenu.AddMenuOption(Strings.LogOut, (x) => { LogOut(); }, null);
             }
             
             //Always show those options
-            mainMenu.AddMenuOption(Strings.About, new Action(About));
-            mainMenu.AddMenuOption(Strings.Exit, new Action(CloseApp));
+            mainMenu.AddMenuOption(Strings.About, (x) => { About(); }, null);
+            mainMenu.AddMenuOption(Strings.Exit, (x) => { CloseApp(); }, null);
 
             SwitchView(mainMenu);
         }
@@ -101,6 +101,12 @@ namespace Cinema_App
         {
             View_MovieCatalogue mc = new View_MovieCatalogue(this, Strings.MovCat);
             SwitchView(mc);
+        }
+
+        private void ViewBasket()
+        {
+            View_Basket vb = new View_Basket(this, "Basket");
+            SwitchView(vb);
         }
 
         private void ViewUserInfo()

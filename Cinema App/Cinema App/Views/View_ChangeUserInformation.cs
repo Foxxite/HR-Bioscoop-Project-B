@@ -20,13 +20,13 @@ namespace Cinema_App
 
             UserMenu = new Menu(Controller, Strings.ChangeUserInfo);
 
-            UserMenu.AddMenuOption(Strings.ChangeUserName, new Action(ChangeUsername));
-            UserMenu.AddMenuOption(Strings.ChangePass, new Action(ChangePassword));
-            UserMenu.AddMenuOption(Strings.ChangeName, new Action(ChangeName));
-            UserMenu.AddMenuOption(Strings.ChangeAge, new Action(ChangeAge));
-            UserMenu.AddMenuOption(Strings.ChangeMail + "\n" ,new Action(ChangeEmailAddress));
+            UserMenu.AddMenuOption(Strings.ChangeUserName, (x) => { ChangeUsername(); }, false);
+            UserMenu.AddMenuOption(Strings.ChangePass, (x) => { ChangePassword(); }, false);
+            UserMenu.AddMenuOption(Strings.ChangeName, (x) => { ChangeName(); }, false);
+            UserMenu.AddMenuOption(Strings.ChangeAge, (x) => { ChangeAge(); }, false);
+            UserMenu.AddMenuOption(Strings.ChangeMail + "\n", (x) => { ChangeEmailAddress(); }, false);
 
-            UserMenu.AddMenuOption(Strings.ReturnToMainOption, new Action(Controller.ShowMainMenu));
+            UserMenu.AddMenuOption(Strings.ReturnToMainOption, (x) => { Controller.ShowMainMenu(); }, false);
 
             Controller.SwitchView(UserMenu);
         }

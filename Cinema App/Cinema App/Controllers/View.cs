@@ -41,7 +41,7 @@ namespace Cinema_App
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine($"========== {Title} ========== \t {(Controller.CurrentUser != null ? "Welcome " + Controller.CurrentUser.Name : "")}");
-            Console.WriteLine(!String.IsNullOrEmpty(SubTitle) ? SubTitle : "\n");
+            Console.WriteLine(!String.IsNullOrEmpty(SubTitle) ? $"  {SubTitle}\n" : "\n");
             Console.ForegroundColor = ConsoleColor.White;
         }
 
