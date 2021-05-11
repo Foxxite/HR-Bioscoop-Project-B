@@ -1,35 +1,36 @@
-﻿namespace Cinema_App
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Cinema_App
 {
-    class View_Basket
+    class View_Basket : View
     {
-        private Item[] Items;
-        
-        public double TotalPrice()
+        Basket Basket;
+
+        public View_Basket(Controller controller, string title, string subTitle = "", int permLevel = 0)
+           : base(controller, title, subTitle, permLevel)
         {
-            // Todo Implement
-            return 0.0;
+            Basket = Controller.Basket;
+            return;
         }
 
-        public void Checkout()
+        public override void Render()
         {
-            // Todo Implement
-        }
+            DrawTitleBar();
 
-        private bool VerifyCard(string cardNumber)
-        {
-            // Todo Implement
-            return false;
-        }
+            List<BasketItem> basketItems = Basket.GetAllItems();
 
-        private void ShowReservationCode()
-        {
-            // Todo Implement
-        }
+            Menu basketMenu = new Menu(Controller, "Basket", $"Total: €{String.Format("{0:N}", Basket.TotalPrice())}");
 
-        private void ShowPaymentError()
-        {
-            // Todo Implement
-        }
+            foreach (BasketItem item in Basket.GetAllItems())
+            {
+                basketMenu.AddMenuOption(item.Item.Name + " " + item.Quantity + "x", null, null);
+            }
 
+            basketMenu.AddMenuOption(Strings.ReturnToMainOption, (x) => { Controller.ShowMainMenu(); }, null);
+
+            Controller.SwitchView(basketMenu);
+        }
     }
 }
