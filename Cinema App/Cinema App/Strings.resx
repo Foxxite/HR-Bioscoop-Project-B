@@ -132,6 +132,9 @@
   <data name="AgeNotValid" xml:space="preserve">
     <value>  Please enter a valid number!</value>
   </data>
+  <data name="AmountMess" xml:space="preserve">
+    <value>Enter the amount you want to enter, press enter if you want to return to the catering menu:</value>
+  </data>
   <data name="CateringMenu" xml:space="preserve">
     <value>Catering menu</value>
   </data>
@@ -244,7 +247,8 @@
     <value>  Name cannot be empty!</value>
   </data>
   <data name="PressArrow" xml:space="preserve">
-    <value>  Use the ↑ and ↓ keys to selection and item.</value>
+    <value>
+  Use the ↑ and ↓ keys to selection and item.</value>
   </data>
   <data name="PressKeyToMovCat" xml:space="preserve">
     <value>Press any key to return to the movie catalogue...</value>

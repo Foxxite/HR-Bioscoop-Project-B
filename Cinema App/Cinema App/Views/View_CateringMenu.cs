@@ -12,6 +12,7 @@ namespace Cinema_App
             return;
         }
 
+        
         public override void Render()
         {
             DrawTitleBar();
@@ -20,7 +21,7 @@ namespace Cinema_App
 
             foreach (CateringItem caterItem in Controller.DataStore.GetCateringItems())
             {
-                mainmenu.AddMenuOption(caterItem.Name, (catitem) => ShowItemInformation(catitem), caterItem);
+                mainmenu.AddMenuOption($"{caterItem.Name}; €{caterItem.Price}", (catitem) => ShowCaterItemInformation(catitem), caterItem);
             }
 
 
@@ -31,9 +32,9 @@ namespace Cinema_App
             Controller.SwitchView(mainmenu);
         }
 
-        void ShowItemInformation(Movie movie)
+        void ShowCaterItemInformation(CateringItem caterItem)
         {
-            View_OrderItem ii = new View_OrderItem(Controller, movie.Name, this, movie);
+            View_OrderItem ii = new View_OrderItem(Controller, caterItem.Name, this, caterItem);
 
             Controller.SwitchView(ii);
         }

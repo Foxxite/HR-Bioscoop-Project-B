@@ -106,6 +106,15 @@ namespace Cinema_App {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter the amount you want to enter, press enter if you want to return to the catering menu:.
+        /// </summary>
+        public static string AmountMess {
+            get {
+                return ResourceManager.GetString("AmountMess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Catering menu.
         /// </summary>
         public static string CateringMenu {
@@ -439,7 +448,8 @@ namespace Cinema_App {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to   Use the ↑ and ↓ keys to selection and item..
+        ///   Looks up a localized string similar to 
+        ///  Use the ↑ and ↓ keys to selection and item..
         /// </summary>
         public static string PressArrow {
             get {

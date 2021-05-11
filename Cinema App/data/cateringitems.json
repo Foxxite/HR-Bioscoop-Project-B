@@ -1,28 +1,28 @@
 [
   {
  
-    "Name": "Honest Thief",
+    "Name": "Popcorn",
     "Price": 4.99,
     "StockAvailable": 0
   },
   {
-    "Name": "The War With Grandpa",
-    "Price": 4.99,
+    "Name": "Coke",
+    "Price": 3.99,
     "StockAvailable": 0
   },
   {
-    "Name": "The Dark and the Wicked",
-    "Price": 4.99,
+    "Name": "Fanta",
+    "Price": 3.99,
     "StockAvailable": 0
   },
   {
-    "Name": "Bigfoot Family",
-    "Price": 4.99,
+    "Name": "Chips",
+    "Price": 2.95,
     "StockAvailable": 0
   },
   {
-    "Name": "Fatman",
-    "Price": 4.99,
+    "Name": "Redbull",
+    "Price": 4.50,
     "StockAvailable": 0
   }
 ]

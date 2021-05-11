@@ -23,20 +23,42 @@ namespace Cinema_App
             DrawTitleBar();
 
             DrawField(Strings.CaterName, Item.Name);
-            DrawField(Strings.MoviePrice, "" + Item.Price);
+            DrawField(Strings.MoviePrice, "€" + Item.Price);
 
             Console.WriteLine();
 
+            
 
             Console.WriteLine();
 
             Console.WriteLine();
-
 
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine("\n" + Strings.KeyPressToReturn);
-            Console.ReadKey();
+
+            Console.WriteLine(Strings.AmountMess);
+            bool correctAmount = false;
+            int enteredAmount = 0;
+
+            while (!correctAmount)
+            {
+                try
+                {
+                    enteredAmount = Int32.Parse(Console.ReadLine());
+                    correctAmount = true;
+                }
+                catch
+                {
+                    //Console.ForegroundColor = ConsoleColor.Red;
+                    //Console.WriteLine(Strings.AgeNotValid);
+                    //Console.ForegroundColor = ConsoleColor.White;
+                    Controller.SwitchView(cateringMenu);
+                }
+            }
+
+            Controller.Basket.AddItem(Item, enteredAmount);
             Controller.SwitchView(cateringMenu);
+
+            
         }
         private void DrawField(string name, string field)
         {
