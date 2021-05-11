@@ -12,10 +12,14 @@ namespace Cinema_App
         protected List<User> Users = new List<User>();
         protected List<Item> Items = new List<Item>();
         protected List<Movie> Movies = new List<Movie>();
+        protected List<CateringItem> CateringItems = new List<CateringItem>();
+
+        private string PATH = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation;
 
         private string USER_FILE = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation + "/users.json";
         private string ITEM_FILE = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation + "/items.json";
         private string MOVIE_FILE = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation + "/movies.json";
+        private string CATERINGITEM_FILE = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation + "/cateringitems.json";
 
         /// <summary>
         /// Initializes the DataStore class for use
@@ -34,6 +38,10 @@ namespace Cinema_App
             if (!File.Exists(MOVIE_FILE))
                 File.Create(MOVIE_FILE);
 
+            // Create the cateringitem file if not exist.
+            if (!File.Exists(CATERINGITEM_FILE))
+                File.Create(CATERINGITEM_FILE);
+
             var users = JsonConvert.DeserializeObject<List<User>>(File.ReadAllText(USER_FILE));
             if (users != null)
                 Users = users;
@@ -45,6 +53,10 @@ namespace Cinema_App
             var movies = JsonConvert.DeserializeObject<List<Movie>>(File.ReadAllText(MOVIE_FILE));
             if (movies != null)
                 Movies = movies;
+
+            var cateritems = JsonConvert.DeserializeObject<List<CateringItem>>(File.ReadAllText(CATERINGITEM_FILE));
+            if (cateritems != null)
+                CateringItems = cateritems;
         }
     
 
@@ -85,6 +97,19 @@ namespace Cinema_App
             File.WriteAllText(MOVIE_FILE, movieData);
         }
 
+        public void AddCaterItem(CateringItem cateringItem)
+        {
+            CateringItems.Add(cateringItem);
+            SaveCaterItemData();
+        }
+
+
+        public void SaveCaterItemData()
+        {
+            var cateritemData = JsonConvert.SerializeObject(Items, Formatting.Indented);
+            File.WriteAllText(CATERINGITEM_FILE, cateritemData);
+        }
+
         public List<User> GetUsers()
         {
             return Users;
@@ -99,6 +124,11 @@ namespace Cinema_App
         public List<Movie> GetMovies()
         {
             return Movies;
+        }
+
+        public List<CateringItem> GetCateringItems()
+        {
+            return CateringItems;
         }
 
         public User GetUserByUsername(string username)

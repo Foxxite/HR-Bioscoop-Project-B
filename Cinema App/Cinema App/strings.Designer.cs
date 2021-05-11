@@ -106,6 +106,24 @@ namespace Cinema_App {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Catering menu.
+        /// </summary>
+        public static string CateringMenu {
+            get {
+                return ResourceManager.GetString("CateringMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Currently selected menu-item: .
+        /// </summary>
+        public static string CaterName {
+            get {
+                return ResourceManager.GetString("CaterName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change account information.
         /// </summary>
         public static string ChangeAcc {
@@ -421,8 +439,7 @@ namespace Cinema_App {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 
-        ///  Use the ↑ and ↓ keys to selection and item..
+        ///   Looks up a localized string similar to   Use the ↑ and ↓ keys to selection and item..
         /// </summary>
         public static string PressArrow {
             get {

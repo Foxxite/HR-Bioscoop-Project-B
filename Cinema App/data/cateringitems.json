@@ -1,0 +1,28 @@
+[
+  {
+ 
+    "Name": "Honest Thief",
+    "Price": 4.99,
+    "StockAvailable": 0
+  },
+  {
+    "Name": "The War With Grandpa",
+    "Price": 4.99,
+    "StockAvailable": 0
+  },
+  {
+    "Name": "The Dark and the Wicked",
+    "Price": 4.99,
+    "StockAvailable": 0
+  },
+  {
+    "Name": "Bigfoot Family",
+    "Price": 4.99,
+    "StockAvailable": 0
+  },
+  {
+    "Name": "Fatman",
+    "Price": 4.99,
+    "StockAvailable": 0
+  }
+]

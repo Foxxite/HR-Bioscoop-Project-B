@@ -22,25 +22,25 @@ namespace Cinema_App
         {
             DrawTitleBar();
 
-            DrawField("Title", Movie.Name);
-            DrawField("Description", Movie.Description);
+            DrawField(Strings.MovieTitle, Movie.Name);
+            DrawField(Strings.MovieDesc, Movie.Description);
 
             Console.WriteLine();
 
-            DrawField("Trailer", Movie.TrailerUrl);
+            DrawField(Strings.MovieTrailer, Movie.TrailerUrl);
 
             Console.WriteLine();
 
-            DrawField("Age Rating", Movie.AgeRating.ToString());
-            DrawField("Review Score", Movie.ReviewScore.ToString());
+            DrawField(Strings.MovieAge, Movie.AgeRating.ToString());
+            DrawField(Strings.MoveReviewScore, Movie.ReviewScore.ToString());
 
             Console.WriteLine();
 
-            DrawField("Price", Movie.Price.ToString());
+            DrawField(Strings.MoviePrice, Movie.Price.ToString());
 
 
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine("\nPress any key to return to the movie catalogue...");
+            Console.WriteLine("\n" + Strings.PressKeyToMovCat);
             Console.ReadKey();
             Controller.SwitchView(MovieCatalogue);
         }
