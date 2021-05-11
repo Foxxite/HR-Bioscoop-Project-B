@@ -11,9 +11,11 @@ namespace Cinema_App
     {
         protected List<User> Users = new List<User>();
         protected List<Item> Items = new List<Item>();
+        protected List<Movie> Movies = new List<Movie>();
 
         private string USER_FILE = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation + "/users.json";
         private string ITEM_FILE = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation + "/items.json";
+        private string MOVIE_FILE = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation + "/movies.json";
 
         /// <summary>
         /// Initializes the DataStore class for use
@@ -28,6 +30,10 @@ namespace Cinema_App
             if (!File.Exists(ITEM_FILE))
                 File.Create(ITEM_FILE);
 
+            // Create the movies file if not exist.
+            if (!File.Exists(MOVIE_FILE))
+                File.Create(MOVIE_FILE);
+
             var users = JsonConvert.DeserializeObject<List<User>>(File.ReadAllText(USER_FILE));
             if (users != null)
                 Users = users;
@@ -35,7 +41,12 @@ namespace Cinema_App
             var items = JsonConvert.DeserializeObject<List<Item>>(File.ReadAllText(ITEM_FILE));
             if (items != null)
                 Items = items;
+
+            var movies = JsonConvert.DeserializeObject<List<Movie>>(File.ReadAllText(MOVIE_FILE));
+            if (movies != null)
+                Movies = movies;
         }
+    
 
         public void AddUser(User user)
         {
@@ -45,7 +56,7 @@ namespace Cinema_App
 
         public void SaveUserData()
         {
-            var userData = JsonConvert.SerializeObject(Users);
+            var userData = JsonConvert.SerializeObject(Users, Formatting.Indented);
             File.WriteAllText(USER_FILE, userData);
         }
 
@@ -55,10 +66,23 @@ namespace Cinema_App
             SaveItemData();
         }
 
+
         public void SaveItemData()
         {
-            var itemData = JsonConvert.SerializeObject(Items);
+            var itemData = JsonConvert.SerializeObject(Items, Formatting.Indented);
             File.WriteAllText(ITEM_FILE, itemData);
+        }
+
+        public void AddMovie(Movie movie)
+        {
+            Movies.Add(movie);
+            SaveMovieData();
+        }
+
+        public void SaveMovieData()
+        {
+            var movieData = JsonConvert.SerializeObject(Movies, Formatting.Indented);
+            File.WriteAllText(MOVIE_FILE, movieData);
         }
 
         public List<User> GetUsers()
@@ -69,6 +93,12 @@ namespace Cinema_App
         public List<Item> GetItems()
         {
             return Items;
+        }
+
+
+        public List<Movie> GetMovies()
+        {
+            return Movies;
         }
 
         public User GetUserByUsername(string username)
