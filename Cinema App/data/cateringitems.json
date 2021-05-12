@@ -1,0 +1,28 @@
+[
+  {
+ 
+    "Name": "Popcorn",
+    "Price": 4.99,
+    "StockAvailable": 0
+  },
+  {
+    "Name": "Coke",
+    "Price": 3.99,
+    "StockAvailable": 0
+  },
+  {
+    "Name": "Fanta",
+    "Price": 3.99,
+    "StockAvailable": 0
+  },
+  {
+    "Name": "Chips",
+    "Price": 2.95,
+    "StockAvailable": 0
+  },
+  {
+    "Name": "Redbull",
+    "Price": 4.50,
+    "StockAvailable": 0
+  }
+]

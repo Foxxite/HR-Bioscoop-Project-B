@@ -106,6 +106,33 @@ namespace Cinema_App {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter the amount you want to enter, press enter if you want to return to the catering menu:.
+        /// </summary>
+        public static string AmountMess {
+            get {
+                return ResourceManager.GetString("AmountMess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Catering menu.
+        /// </summary>
+        public static string CateringMenu {
+            get {
+                return ResourceManager.GetString("CateringMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Currently selected menu-item: .
+        /// </summary>
+        public static string CaterName {
+            get {
+                return ResourceManager.GetString("CaterName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change account information.
         /// </summary>
         public static string ChangeAcc {

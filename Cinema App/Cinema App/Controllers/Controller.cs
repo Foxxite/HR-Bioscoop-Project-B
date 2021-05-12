@@ -46,6 +46,7 @@ namespace Cinema_App
             // Show options if user is logged in.
             else
             {
+                mainMenu.AddMenuOption(Strings.CateringMenu, (x) => { ViewCateringMenu(); }, false);
                 mainMenu.AddMenuOption(Strings.ViewCurrentMovies, (x) => { ViewMovies(); }, null);
                 mainMenu.AddMenuOption("Basket", (x) => { ViewBasket(); }, null); 
                 mainMenu.AddMenuOption(Strings.ViewAcc, (x) => { ViewUserInfo(); }, null);
@@ -119,6 +120,12 @@ namespace Cinema_App
         {
             View_ChangeUserInformation cui = new View_ChangeUserInformation(this, Strings.ChangeAcc);
             SwitchView(cui);
+        }
+
+        private void ViewCateringMenu()
+        {
+            View_CateringMenu cmn = new View_CateringMenu(this, "Catering menu");
+            SwitchView(cmn);
         }
 
         /// <summary>
