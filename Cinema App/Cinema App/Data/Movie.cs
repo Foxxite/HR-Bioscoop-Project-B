@@ -47,7 +47,7 @@ namespace Cinema_App
         ///<summary>
         /// Methods to check if seats are available
         ///</summary>
-        public override bool IsAvailable()
+        public new bool IsAvailable()
         {
             throw new NotImplementedException();
         }

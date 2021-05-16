@@ -13,6 +13,7 @@ namespace Cinema_App
         protected List<Item> Items = new List<Item>();
         protected List<Movie> Movies = new List<Movie>();
         protected List<CateringItem> CateringItems = new List<CateringItem>();
+        protected List<Order> Orders = new List<Order>();
 
         private string PATH = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation;
 
@@ -20,6 +21,7 @@ namespace Cinema_App
         private string ITEM_FILE = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation + "/items.json";
         private string MOVIE_FILE = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation + "/movies.json";
         private string CATERINGITEM_FILE = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation + "/cateringitems.json";
+        private string ORDER_FILE = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation + "/orders.json";
 
         /// <summary>
         /// Initializes the DataStore class for use
@@ -42,6 +44,10 @@ namespace Cinema_App
             if (!File.Exists(CATERINGITEM_FILE))
                 File.Create(CATERINGITEM_FILE);
 
+            // Create the orders file if not exist.
+            if (!File.Exists(ORDER_FILE))
+                File.Create(ORDER_FILE);
+
             var users = JsonConvert.DeserializeObject<List<User>>(File.ReadAllText(USER_FILE));
             if (users != null)
                 Users = users;
@@ -57,6 +63,10 @@ namespace Cinema_App
             var cateritems = JsonConvert.DeserializeObject<List<CateringItem>>(File.ReadAllText(CATERINGITEM_FILE));
             if (cateritems != null)
                 CateringItems = cateritems;
+
+            var orderitems = JsonConvert.DeserializeObject<List<Order>>(File.ReadAllText(ORDER_FILE));
+            if (orderitems != null)
+                Orders = orderitems;
         }
     
 
@@ -77,7 +87,6 @@ namespace Cinema_App
             Items.Add(item);
             SaveItemData();
         }
-
 
         public void SaveItemData()
         {
@@ -103,11 +112,22 @@ namespace Cinema_App
             SaveCaterItemData();
         }
 
-
         public void SaveCaterItemData()
         {
-            var cateritemData = JsonConvert.SerializeObject(Items, Formatting.Indented);
+            var cateritemData = JsonConvert.SerializeObject(CateringItems, Formatting.Indented);
             File.WriteAllText(CATERINGITEM_FILE, cateritemData);
+        }
+
+        public void AddOrder(Order order)
+        {
+            Orders.Add(order);
+            SaveOrderData();
+        }
+
+        public void SaveOrderData()
+        {
+            var orderitemData = JsonConvert.SerializeObject(Orders, Formatting.Indented);
+            File.WriteAllText(ORDER_FILE, orderitemData);
         }
 
         public List<User> GetUsers()
@@ -131,14 +151,19 @@ namespace Cinema_App
             return CateringItems;
         }
 
-        public User GetUserByUsername(string username)
+        public List<Order> GetOrders()
         {
-            foreach (User u in GetUsers())
-                if (u.Username.Equals(username))
-                    return u;
-
-            return null;
+            return Orders;
         }
 
+        public User GetUserByUsername(string username)
+        {
+            return Users.Find(u => u.Username == username);
+        }
+
+        public Order GetOrderByID(short orderId)
+        {
+            return Orders.Find(o => o.OrderId == orderId);
+        }
     }
 }
