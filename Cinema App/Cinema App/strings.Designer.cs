@@ -232,6 +232,15 @@ namespace Cinema_App {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter your creditcard number: .
+        /// </summary>
+        public static string EnterCreditcard {
+            get {
+                return ResourceManager.GetString("EnterCreditcard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to   Enter your email-address:.
         /// </summary>
         public static string EnterMail {

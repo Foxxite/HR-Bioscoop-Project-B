@@ -15,7 +15,7 @@ namespace Cinema_App
             return;
         }
 
-        public override bool IsAvailable()
+        public new bool IsAvailable()
         {
             throw new NotImplementedException();
         }

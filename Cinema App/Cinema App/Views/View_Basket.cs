@@ -28,6 +28,12 @@ namespace Cinema_App
                 basketMenu.AddMenuOption(item.Item.Name + " " + item.Quantity + "x", null, null);
             }
 
+            
+
+            if (Basket.TotalPrice() > 0)
+            {
+                basketMenu.AddMenuOption("Checkout", (x) => { Controller.SwitchView(new View_Checkout(Controller, "Checkout")); }, null);
+            }
             basketMenu.AddMenuOption(Strings.ReturnToMainOption, (x) => { Controller.ShowMainMenu(); }, null);
 
             Controller.SwitchView(basketMenu);

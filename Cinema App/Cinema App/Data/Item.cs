@@ -7,7 +7,7 @@ namespace Cinema_App
     ///<summary>
     /// Makes a new class called Item
     ///</summary>
-    abstract class Item
+    class Item
     {
         public string Name { get;  }
         public double Price { get; }
@@ -26,7 +26,7 @@ namespace Cinema_App
             StockAvailable = stock;
         }
 
-        public abstract bool IsAvailable();
+        public bool IsAvailable() { return false; }
 
         ///<summary>
         /// Method to check if seats are available
