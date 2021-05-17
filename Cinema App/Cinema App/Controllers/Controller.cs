@@ -141,6 +141,58 @@ namespace Cinema_App
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(Strings.GroupInfo);
 
+            Console.WriteLine("\n\nColor Test");
+
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.Write("#");
+
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.Write("#");
+
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.Write("#");
+
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.Write("#");
+
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.Write("#");
+
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.Write("#");
+
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.Write("#");
+
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write("#");
+
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.Write("#");
+
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Write("#");
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("#");
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write("#");
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("#");
+
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.Write("#");
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write("#");
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("#");
+
+            Console.WriteLine();
+
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine(Strings.KeyPressToReturn);
             
