@@ -52,6 +52,7 @@ namespace Cinema_App
                 mainMenu.AddMenuOption(Strings.ViewAcc, (x) => { ViewUserInfo(); }, null);
                 mainMenu.AddMenuOption(Strings.ChangeAcc, (x) => { ChangeUserInfo(); }, null);
                 mainMenu.AddMenuOption(Strings.LogOut, (x) => { LogOut(); }, null);
+                mainMenu.AddMenuOption("import audi", (x) => { new AuditoriumImporter(this); }, null);
             }
             
             //Always show those options

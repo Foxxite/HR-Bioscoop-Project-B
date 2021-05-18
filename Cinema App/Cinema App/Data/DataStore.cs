@@ -14,6 +14,7 @@ namespace Cinema_App
         protected List<Movie> Movies = new List<Movie>();
         protected List<CateringItem> CateringItems = new List<CateringItem>();
         protected List<Order> Orders = new List<Order>();
+        protected List<Auditorium> Auditoria = new List<Auditorium>();
 
         private string PATH = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation;
 
@@ -22,6 +23,7 @@ namespace Cinema_App
         private string MOVIE_FILE = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation + "/movies.json";
         private string CATERINGITEM_FILE = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation + "/cateringitems.json";
         private string ORDER_FILE = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation + "/orders.json";
+        private string AUDITORIUM_FILE = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation + "/auditoria.json";
 
         /// <summary>
         /// Initializes the DataStore class for use
@@ -48,6 +50,10 @@ namespace Cinema_App
             if (!File.Exists(ORDER_FILE))
                 File.Create(ORDER_FILE);
 
+            // Create the auditoria file if not exist.
+            if (!File.Exists(AUDITORIUM_FILE))
+                File.Create(AUDITORIUM_FILE);
+
             var users = JsonConvert.DeserializeObject<List<User>>(File.ReadAllText(USER_FILE));
             if (users != null)
                 Users = users;
@@ -67,6 +73,12 @@ namespace Cinema_App
             var orderitems = JsonConvert.DeserializeObject<List<Order>>(File.ReadAllText(ORDER_FILE));
             if (orderitems != null)
                 Orders = orderitems;
+
+            var auditoria = JsonConvert.DeserializeObject<List<Auditorium>>(File.ReadAllText(AUDITORIUM_FILE));
+            if(auditoria != null)
+            {
+                Auditoria = auditoria;
+            }
         }
     
 
@@ -80,6 +92,18 @@ namespace Cinema_App
         {
             var userData = JsonConvert.SerializeObject(Users, Formatting.Indented);
             File.WriteAllText(USER_FILE, userData);
+        }
+
+        public void AddAuditorium(Auditorium auditorium)
+        {
+            Auditoria.Add(auditorium);
+            SaveAuditoriumData();
+        }
+
+        public void SaveAuditoriumData()
+        {
+            var auditoriumData = JsonConvert.SerializeObject(Auditoria, Formatting.Indented);
+            File.WriteAllText(AUDITORIUM_FILE, auditoriumData);
         }
 
         public void AddItem(Item item)
@@ -140,11 +164,17 @@ namespace Cinema_App
             return Items;
         }
 
+        public List<Auditorium> GetAuditoria()
+        {
+            return Auditoria;
+        }
+
 
         public List<Movie> GetMovies()
         {
             return Movies;
         }
+
 
         public List<CateringItem> GetCateringItems()
         {
