@@ -26,6 +26,11 @@ namespace Cinema_App
         private List<MenuItem> MenuOptions = new List<MenuItem>();
         private bool MenuActive = false;
         private int SelectionIndex = 0;
+        private bool FullScreen = true;
+
+        private int CurLeft = 0;
+        private int CurTop = 0;
+        private bool FirstDraw = true;
 
         /// <summary>
         /// Setups the Menu class with basic info based on View.
@@ -34,9 +39,10 @@ namespace Cinema_App
         /// <param name="title">Menu Title</param>
         /// <param name="subTitle">Menu Subtitle (can be used for description).</param>
         /// <param name="permLevel">Permission level needed to view.</param>
-        public Menu(Controller controller, string title, string subTitle = "", int permLevel = 0) 
+        public Menu(Controller controller, string title, string subTitle = "", int permLevel = 0, bool fullScreen = true) 
             : base(controller, title, subTitle, permLevel)
         {
+            FullScreen = fullScreen;
             return;
         }
 
@@ -75,9 +81,21 @@ namespace Cinema_App
         {
             MenuActive = true;
 
-            Controller.ClearScreen();
+            if (FullScreen && FirstDraw)
+            {
+                Controller.ClearScreen();
 
-            DrawTitleBar();
+                DrawTitleBar();
+            }
+
+            if (FirstDraw)
+            {
+                CurLeft = Console.CursorLeft;
+                CurTop = Console.CursorTop;
+                FirstDraw = false;
+            }
+
+            Console.SetCursorPosition(CurLeft, CurTop);
 
             for(int i = 0; i < MenuOptions.Count; i++)
             {

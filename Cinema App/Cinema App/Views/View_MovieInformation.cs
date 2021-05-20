@@ -38,11 +38,12 @@ namespace Cinema_App
 
             DrawField(Strings.MoviePrice, Movie.Price.ToString());
 
+            Menu movieMenu = new Menu(Controller, "Movie Menu", fullScreen: false);
 
-            Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine("\n" + Strings.PressKeyToMovCat);
-            Console.ReadKey();
-            Controller.SwitchView(MovieCatalogue);
+            movieMenu.AddMenuOption(Strings.ReturnToMainOption, (x) => { Controller.SwitchView(MovieCatalogue); }, null);
+            movieMenu.AddMenuOption("Set Audi", (x) => { }, null);
+
+            Controller.SwitchView(movieMenu, false);
         }
 
         /// <summary>

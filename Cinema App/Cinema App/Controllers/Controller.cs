@@ -67,9 +67,11 @@ namespace Cinema_App
         /// Clears the current View and makes the application show the supplied View.
         /// </summary>
         /// <param name="newView">View to use.</param>
-        public void SwitchView(View newView)
+        public void SwitchView(View newView, bool clearScreen = true)
         {
-            ClearScreen();
+            if (clearScreen)
+                ClearScreen();
+
             CurrentView = newView;
             newView.Render();
         }
