@@ -13,7 +13,7 @@ namespace Cinema_App
     class Auditorium
     {
         [JsonProperty]
-        private string Name;
+        public string Name;
         [JsonProperty]
         private Seat[][] Seats;
 

@@ -41,11 +41,24 @@ namespace Cinema_App
             Menu movieMenu = new Menu(Controller, "Movie Menu", fullScreen: false);
 
             movieMenu.AddMenuOption(Strings.ReturnToMainOption, (x) => { Controller.SwitchView(MovieCatalogue); }, null);
-            movieMenu.AddMenuOption("Set Audi", (x) => { }, null);
+            movieMenu.AddMenuOption("Set Audi", (x) => { NewMenuAudi(); }, null);
 
             Controller.SwitchView(movieMenu, false);
         }
+        void NewMenuAudi()
+        {
+            Menu AudiAdding = new Menu(Controller, "Add auditorium", "");
+            Controller.ClearScreen();
 
+            foreach (Auditorium audi in Controller.DataStore.GetAuditoria())
+            {
+                AudiAdding.AddMenuOption(audi.Name, (audi) => { Movie.SetAuditorium(audi); Controller.DataStore.SaveMovieData(); }, audi);
+            }
+
+
+
+            Controller.SwitchView(AudiAdding);
+        }
         /// <summary>
         /// Draws a field from the movie class in a pretty way.
         /// </summary>
