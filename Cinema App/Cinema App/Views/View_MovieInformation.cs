@@ -42,6 +42,7 @@ namespace Cinema_App
 
             movieMenu.AddMenuOption(Strings.ReturnToMainOption, (x) => { Controller.SwitchView(MovieCatalogue); }, null);
             movieMenu.AddMenuOption("Set Audi", (x) => { NewMenuAudi(); }, null);
+            movieMenu.AddMenuOption("Reservate seat", (x) => { Controller.SwitchView(new View_ReserveSeats(Movie, Controller, "Seat Reservation")); }, null);
 
             Controller.SwitchView(movieMenu, false);
         }
@@ -59,6 +60,8 @@ namespace Cinema_App
 
             Controller.SwitchView(AudiAdding);
         }
+
+        
         /// <summary>
         /// Draws a field from the movie class in a pretty way.
         /// </summary>

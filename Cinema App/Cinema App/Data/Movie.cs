@@ -12,14 +12,18 @@ namespace Cinema_App
     {
         [JsonProperty]
         public string Description { get; }
+        
         [JsonProperty]
         public int AgeRating { get; }
+        
         [JsonProperty]
         public double ReviewScore { get; }
+        
         [JsonProperty]
         public string TrailerUrl { get; }
+
         [JsonProperty]
-        private Auditorium Auditorium;
+        public Auditorium Auditorium;
 
         /// <summary>
         /// Create a new instance of a Movie

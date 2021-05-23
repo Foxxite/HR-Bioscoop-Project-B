@@ -13,6 +13,8 @@ namespace Cinema_App
         private View CurrentView { get; set; }
         private Menu MainMenu { get; set; }
 
+        private View LastView;
+
         /// <summary>
         ///     Main apllication controller.
         ///     Controls the flow and state of the application.
@@ -72,8 +74,14 @@ namespace Cinema_App
             if (clearScreen)
                 ClearScreen();
 
+            LastView = CurrentView;
             CurrentView = newView;
             newView.Render();
+        }
+
+        public void SwitchToLastView()
+        {
+            SwitchView(LastView);
         }
 
         /// <summary>

@@ -10,17 +10,12 @@ namespace Cinema_App
 {
     class AuditoriumImporter
     {
-        Dictionary<Color, double> PriceMapping = new Dictionary<Color, double>();
         public Auditorium Auditorium;
 
         Controller Controller;
         public AuditoriumImporter(Controller controller)
         {
             Controller = controller;
-
-            PriceMapping.Add(Color.FromArgb(255, 255, 0, 0), 9.99);
-            PriceMapping.Add(Color.FromArgb(255, 0, 255, 0), 7.49);
-            PriceMapping.Add(Color.FromArgb(255, 0, 0, 255), 4.99);
 
             string AuditoriumName = "";
             Console.WriteLine("Enter the auditorium name: ");
@@ -55,7 +50,8 @@ namespace Cinema_App
                     Color pixel = img.GetPixel(x, y);
                     if (!pixel.Equals(Color.White))
                     {
-                        seats[x][y] = new Seat($"{x}:{y}", PriceMapping.GetValueOrDefault(pixel), 1);
+                        var PriceMap = new SeatPriceMapping();
+                        seats[x][y] = new Seat($"{x}:{y}", PriceMap.Mapping.GetValueOrDefault(pixel), 1);
                     }
                     else
                     {
