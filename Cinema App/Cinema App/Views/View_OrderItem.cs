@@ -27,7 +27,7 @@ namespace Cinema_App
 
             Console.WriteLine();
 
-            
+
 
             Console.WriteLine();
 
@@ -58,7 +58,7 @@ namespace Cinema_App
             Controller.Basket.AddItem(Item, enteredAmount);
             Controller.SwitchView(cateringMenu);
 
-            
+
         }
         private void DrawField(string name, string field)
         {
@@ -69,16 +69,4 @@ namespace Cinema_App
         }
     }
 
-
 }
-//private Movie Movie;
-//private View_MovieCatalogue MovieCatalogue;
-
-//public View_MovieInformation(Controller controller, string title, View_MovieCatalogue mc, Movie movie, string subTitle = "", int permLevel = 0)
-//          : base(controller, title, subTitle, permLevel)
-//        {
-//    MovieCatalogue = mc;
-//    Movie = movie;
-
-//    return;
-//}

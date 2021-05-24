@@ -9,7 +9,7 @@ namespace Cinema_App
     ///</summary>
     class Item
     {
-        public string Name { get;  }
+        public string Name { get; set; }
         public double Price { get; }
         public int StockAvailable { get; }
 

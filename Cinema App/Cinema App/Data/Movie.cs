@@ -12,20 +12,24 @@ namespace Cinema_App
     {
         [JsonProperty]
         public string Description { get; }
+        
         [JsonProperty]
         public int AgeRating { get; }
+        
         [JsonProperty]
         public double ReviewScore { get; }
+        
         [JsonProperty]
         public string TrailerUrl { get; }
+
         [JsonProperty]
-        public Auditorium Auditorium { get; }
+        public Auditorium Auditorium;
 
         /// <summary>
         /// Create a new instance of a Movie
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="desc"></param>
+        /// <param name="description"></param>
         /// <param name="ageRating"></param>
         /// <param name="reviewScore"></param>
         /// <param name="trailerUrl"></param>
@@ -42,7 +46,7 @@ namespace Cinema_App
             Auditorium = auditorium;
         }
        
-
+        
 
         ///<summary>
         /// Methods to check if seats are available
@@ -50,6 +54,11 @@ namespace Cinema_App
         public new bool IsAvailable()
         {
             throw new NotImplementedException();
+        }
+
+        public void SetAuditorium(Auditorium auditorium)
+        {
+            Auditorium = auditorium;
         }
     }
 }

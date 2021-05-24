@@ -38,13 +38,30 @@ namespace Cinema_App
 
             DrawField(Strings.MoviePrice, Movie.Price.ToString());
 
+            Menu movieMenu = new Menu(Controller, "Movie Menu", fullScreen: false);
 
-            Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine("\n" + Strings.PressKeyToMovCat);
-            Console.ReadKey();
-            Controller.SwitchView(MovieCatalogue);
+            movieMenu.AddMenuOption(Strings.ReturnToMainOption, (x) => { Controller.SwitchView(MovieCatalogue); }, null);
+            movieMenu.AddMenuOption("Set Audi", (x) => { NewMenuAudi(); }, null);
+            movieMenu.AddMenuOption("Reservate seat", (x) => { Controller.SwitchView(new View_ReserveSeats(Movie, Controller, "Seat Reservation")); }, null);
+
+            Controller.SwitchView(movieMenu, false);
+        }
+        void NewMenuAudi()
+        {
+            Menu AudiAdding = new Menu(Controller, "Add auditorium", "");
+            Controller.ClearScreen();
+
+            foreach (Auditorium audi in Controller.DataStore.GetAuditoria())
+            {
+                AudiAdding.AddMenuOption(audi.Name, (audi) => { Movie.SetAuditorium(audi); Controller.DataStore.SaveMovieData(); }, audi);
+            }
+
+
+
+            Controller.SwitchView(AudiAdding);
         }
 
+        
         /// <summary>
         /// Draws a field from the movie class in a pretty way.
         /// </summary>

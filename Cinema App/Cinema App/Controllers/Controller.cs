@@ -13,6 +13,8 @@ namespace Cinema_App
         private View CurrentView { get; set; }
         private Menu MainMenu { get; set; }
 
+        private View LastView;
+
         /// <summary>
         ///     Main apllication controller.
         ///     Controls the flow and state of the application.
@@ -52,6 +54,7 @@ namespace Cinema_App
                 mainMenu.AddMenuOption(Strings.ViewAcc, (x) => { ViewUserInfo(); }, null);
                 mainMenu.AddMenuOption(Strings.ChangeAcc, (x) => { ChangeUserInfo(); }, null);
                 mainMenu.AddMenuOption(Strings.LogOut, (x) => { LogOut(); }, null);
+                mainMenu.AddMenuOption("import audi", (x) => { new AuditoriumImporter(this); }, null);
             }
             
             //Always show those options
@@ -66,11 +69,19 @@ namespace Cinema_App
         /// Clears the current View and makes the application show the supplied View.
         /// </summary>
         /// <param name="newView">View to use.</param>
-        public void SwitchView(View newView)
+        public void SwitchView(View newView, bool clearScreen = true)
         {
-            ClearScreen();
+            if (clearScreen)
+                ClearScreen();
+
+            LastView = CurrentView;
             CurrentView = newView;
             newView.Render();
+        }
+
+        public void SwitchToLastView()
+        {
+            SwitchView(LastView);
         }
 
         /// <summary>
