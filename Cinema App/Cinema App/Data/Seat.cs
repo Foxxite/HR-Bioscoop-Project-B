@@ -13,6 +13,10 @@ namespace Cinema_App
             return;
         }
 
+        public void SetSeatName(string newseatname)
+        {
+            Name = newseatname;
+        }
         public new bool IsAvailable()
         {
             throw new NotImplementedException();
