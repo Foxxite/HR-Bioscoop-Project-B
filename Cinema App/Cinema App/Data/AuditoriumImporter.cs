@@ -13,6 +13,10 @@ namespace Cinema_App
         public Auditorium Auditorium;
 
         Controller Controller;
+        /// <summary>
+        /// Creates auditorium using png file
+        /// </summary>
+        /// <param name="controller"></param>
         public AuditoriumImporter(Controller controller)
         {
             Controller = controller;
@@ -31,10 +35,13 @@ namespace Cinema_App
             if (File.Exists(FilePath))
             {
                 ParseImageData(FilePath);
-
             }
         }
         
+        /// <summary>
+        /// Parses image data and creates a new jagged Seat array.
+        /// </summary>
+        /// <param name="fp"></param>
         void ParseImageData(string fp)
         {
             Bitmap img = new Bitmap(fp);
