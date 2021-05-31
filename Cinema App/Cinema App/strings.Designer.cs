@@ -115,6 +115,33 @@ namespace Cinema_App {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Basket.
+        /// </summary>
+        public static string Basket {
+            get {
+                return ResourceManager.GetString("Basket", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to cancel.
+        /// </summary>
+        public static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Catering.
+        /// </summary>
+        public static string Catering {
+            get {
+                return ResourceManager.GetString("Catering", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Catering menu.
         /// </summary>
         public static string CateringMenu {
@@ -192,6 +219,15 @@ namespace Cinema_App {
         public static string ChangeUserName {
             get {
                 return ResourceManager.GetString("ChangeUserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Checkout.
+        /// </summary>
+        public static string Checkout {
+            get {
+                return ResourceManager.GetString("Checkout", resourceCulture);
             }
         }
         
@@ -498,6 +534,24 @@ namespace Cinema_App {
         public static string NameNotEmpty {
             get {
                 return ResourceManager.GetString("NameNotEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your order-id: .
+        /// </summary>
+        public static string OrderID {
+            get {
+                return ResourceManager.GetString("OrderID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order created succesfully.
+        /// </summary>
+        public static string Ordersucces {
+            get {
+                return ResourceManager.GetString("Ordersucces", resourceCulture);
             }
         }
         

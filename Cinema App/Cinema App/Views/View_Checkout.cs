@@ -22,7 +22,7 @@ namespace Cinema_App
 
             List<BasketItem> basketItems = Basket.GetAllItems();
 
-            Menu basketMenu = new Menu(Controller, "Basket", $"Total: €{String.Format("{0:N}", Basket.TotalPrice())}");
+            Menu basketMenu = new Menu(Controller, Strings.Basket, $"Total: €{String.Format("{0:N}", Basket.TotalPrice())}");
 
             Console.WriteLine(Strings.EnterCreditcard);
             string cardNumber = Console.ReadLine();
@@ -39,12 +39,16 @@ namespace Cinema_App
             Order order = new Order(Basket.GetAllItems(), Controller);
             Controller.DataStore.AddOrder(order);
 
-            Console.WriteLine($"\nOrder created successfully!\n\nYour order ID: {order.OrderId}\n\n" + Strings.KeyPressToReturn);
+            Console.WriteLine("\n"+ Strings.Ordersucces +"\n\n" + Strings.OrderID  + $"{order.OrderId}\n\n" + Strings.KeyPressToReturn);
             
             Console.ReadKey();
             Controller.ShowMainMenu();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cardNumber"></param>
+        /// <returns></returns>
         private bool VerifyCard(string cardNumber)
         {
             int[] cardInt = new int[cardNumber.Length];

@@ -135,6 +135,15 @@
   <data name="AmountMess" xml:space="preserve">
     <value>Enter the amount you want to enter, press enter if you want to return to the catering menu:</value>
   </data>
+  <data name="Basket" xml:space="preserve">
+    <value>Basket</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>cancel</value>
+  </data>
+  <data name="Catering" xml:space="preserve">
+    <value>Catering</value>
+  </data>
   <data name="CateringMenu" xml:space="preserve">
     <value>Catering menu</value>
   </data>
@@ -161,6 +170,9 @@
   </data>
   <data name="ChangeUserName" xml:space="preserve">
     <value>Change username</value>
+  </data>
+  <data name="Checkout" xml:space="preserve">
+    <value>Checkout</value>
   </data>
   <data name="Done" xml:space="preserve">
     <value>done</value>
@@ -263,6 +275,12 @@
   </data>
   <data name="NameNotEmpty" xml:space="preserve">
     <value>  Name cannot be empty!</value>
+  </data>
+  <data name="OrderID" xml:space="preserve">
+    <value>Your order-id: </value>
+  </data>
+  <data name="Ordersucces" xml:space="preserve">
+    <value>Order created succesfully</value>
   </data>
   <data name="PressArrow" xml:space="preserve">
     <value>
