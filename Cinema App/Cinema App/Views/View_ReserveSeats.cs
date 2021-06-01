@@ -118,12 +118,12 @@ namespace Cinema_App
             for (int i = 0; i < input.Length; i++)
                 Console.Write(" ");
 
-            if (input.Equals("cancel", StringComparison.OrdinalIgnoreCase))
+            if (input.Equals(Strings.Cancel, StringComparison.OrdinalIgnoreCase))
             {
                 Controller.SwitchView(new View_MovieCatalogue(Controller, Strings.MovCat));
             }
 
-            if (input.Equals("done", StringComparison.OrdinalIgnoreCase))
+            if (input.Equals(Strings.Done, StringComparison.OrdinalIgnoreCase))
             {
                 foreach( var SeatCoord in SeatCoords)
                 {

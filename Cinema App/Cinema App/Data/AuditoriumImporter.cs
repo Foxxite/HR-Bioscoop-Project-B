@@ -22,14 +22,14 @@ namespace Cinema_App
             Controller = controller;
 
             string AuditoriumName = "";
-            Console.WriteLine("Enter the auditorium name: ");
+            Console.WriteLine(Strings.EnterAudi);
             AuditoriumName = Console.ReadLine();
 
             Auditorium = new Auditorium(AuditoriumName);
 
             string FilePath = "";
 
-            Console.WriteLine("Enter absolute path for image file: ");
+            Console.WriteLine(Strings.EnterAudiPath);
             FilePath = Console.ReadLine();
 
             if (File.Exists(FilePath))
@@ -69,7 +69,7 @@ namespace Cinema_App
 
             Auditorium.SetSeats(seats);
             Controller.DataStore.AddAuditorium(Auditorium);
-            Console.WriteLine("done");
+            Console.WriteLine(Strings.Done);
             Console.ReadLine();
         }
     }
