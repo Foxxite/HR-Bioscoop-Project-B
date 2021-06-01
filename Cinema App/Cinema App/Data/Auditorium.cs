@@ -12,6 +12,9 @@ namespace Cinema_App
         private Dictionary<Color, double> PriceMapping = new Dictionary<Color, double>();
         private Dictionary<double, ConsoleColor> ConsoleColorMapping = new Dictionary<double, ConsoleColor>();
 
+        /// <summary>
+        /// Creates pricemap for the seats.
+        /// </summary>
         public SeatPriceMapping()
         {
             PriceMapping.Add(Color.FromArgb(255, 255, 0, 0), 9.99);

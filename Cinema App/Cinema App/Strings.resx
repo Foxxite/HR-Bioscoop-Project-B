@@ -135,6 +135,15 @@
   <data name="AmountMess" xml:space="preserve">
     <value>Enter the amount you want to enter, press enter if you want to return to the catering menu:</value>
   </data>
+  <data name="Basket" xml:space="preserve">
+    <value>Basket</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>cancel</value>
+  </data>
+  <data name="Catering" xml:space="preserve">
+    <value>Catering</value>
+  </data>
   <data name="CateringMenu" xml:space="preserve">
     <value>Catering menu</value>
   </data>
@@ -162,6 +171,12 @@
   <data name="ChangeUserName" xml:space="preserve">
     <value>Change username</value>
   </data>
+  <data name="Checkout" xml:space="preserve">
+    <value>Checkout</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>done</value>
+  </data>
   <data name="EmailChangeSucces" xml:space="preserve">
     <value>Email-address has been changed succesfully!</value>
   </data>
@@ -173,6 +188,12 @@
   </data>
   <data name="EnterAge" xml:space="preserve">
     <value>  Enter your age:</value>
+  </data>
+  <data name="EnterAudi" xml:space="preserve">
+    <value>Enter the auditorium name: </value>
+  </data>
+  <data name="EnterAudiPath" xml:space="preserve">
+    <value>Enter absolute path for image file:</value>
   </data>
   <data name="EnterCreditcard" xml:space="preserve">
     <value>Enter your creditcard number: </value>
@@ -188,6 +209,12 @@
   </data>
   <data name="EnterPW" xml:space="preserve">
     <value>  Enter your password:</value>
+  </data>
+  <data name="EnterSeats" xml:space="preserve">
+    <value>Enter the desired seat(s), type 'cancel' to go back to the movies or press done if you want to add the seats to your basket:</value>
+  </data>
+  <data name="EnterSeatsExample" xml:space="preserve">
+    <value>Ex: For seat X:10 Y:12 enter '10,12' without the qoutes. For multiple seats enter the cooridinates seperated by a space. Ex: '10,12 10,13'.</value>
   </data>
   <data name="EnterUserName" xml:space="preserve">
     <value>  Enter your username:</value>
@@ -248,6 +275,12 @@
   </data>
   <data name="NameNotEmpty" xml:space="preserve">
     <value>  Name cannot be empty!</value>
+  </data>
+  <data name="OrderID" xml:space="preserve">
+    <value>Your order-id: </value>
+  </data>
+  <data name="Ordersucces" xml:space="preserve">
+    <value>Order created succesfully</value>
   </data>
   <data name="PressArrow" xml:space="preserve">
     <value>

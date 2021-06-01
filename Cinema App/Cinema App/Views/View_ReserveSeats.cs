@@ -109,21 +109,21 @@ namespace Cinema_App
 
 
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine("Enter the desired seat(s), type 'cancel' to go back to the movies or press done if you want to add the seats to your basket: \n");
-            Console.WriteLine("Ex: For seat X:10 Y:12 enter '10,12' without the qoutes. For multiple seats enter the cooridinates seperated by a space. Ex: '10,12 10,13'.\n");
-            Console.WriteLine("To reserve multiple seats in the same row, enter the coordinate of the seat and add *(amount). Ex: 10,12*3.\n");
+            Console.WriteLine(Strings.EnterSeats + "\n");
+            Console.WriteLine(Strings.EnterSeatsExample + "\n");
+            //Console.WriteLine("To reserve multiple seats in the same row, enter the coordinate of the seat and add *(amount). Ex: 10,12*3.\n");
 
             string input = Console.ReadLine();
             Console.SetCursorPosition(0, Console.CursorTop-1);
             for (int i = 0; i < input.Length; i++)
                 Console.Write(" ");
 
-            if (input.Equals("cancel", StringComparison.OrdinalIgnoreCase))
+            if (input.Equals(Strings.Cancel, StringComparison.OrdinalIgnoreCase))
             {
                 Controller.SwitchView(new View_MovieCatalogue(Controller, Strings.MovCat));
             }
 
-            if (input.Equals("done", StringComparison.OrdinalIgnoreCase))
+            if (input.Equals(Strings.Done, StringComparison.OrdinalIgnoreCase))
             {
                 foreach( var SeatCoord in SeatCoords)
                 {

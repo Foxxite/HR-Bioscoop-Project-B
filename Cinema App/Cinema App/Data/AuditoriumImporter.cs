@@ -13,28 +13,35 @@ namespace Cinema_App
         public Auditorium Auditorium;
 
         Controller Controller;
+        /// <summary>
+        /// Creates auditorium using png file
+        /// </summary>
+        /// <param name="controller"></param>
         public AuditoriumImporter(Controller controller)
         {
             Controller = controller;
 
             string AuditoriumName = "";
-            Console.WriteLine("Enter the auditorium name: ");
+            Console.WriteLine(Strings.EnterAudi);
             AuditoriumName = Console.ReadLine();
 
             Auditorium = new Auditorium(AuditoriumName);
 
             string FilePath = "";
 
-            Console.WriteLine("Enter absolute path for image file: ");
+            Console.WriteLine(Strings.EnterAudiPath);
             FilePath = Console.ReadLine();
 
             if (File.Exists(FilePath))
             {
                 ParseImageData(FilePath);
-
             }
         }
         
+        /// <summary>
+        /// Parses image data and creates a new jagged Seat array.
+        /// </summary>
+        /// <param name="fp"></param>
         void ParseImageData(string fp)
         {
             Bitmap img = new Bitmap(fp);
@@ -62,7 +69,7 @@ namespace Cinema_App
 
             Auditorium.SetSeats(seats);
             Controller.DataStore.AddAuditorium(Auditorium);
-            Console.WriteLine("done");
+            Console.WriteLine(Strings.Done);
             Console.ReadLine();
         }
     }

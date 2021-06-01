@@ -17,7 +17,7 @@ namespace Cinema_App
         {
             DrawTitleBar();
 
-            Menu mainmenu = new Menu(Controller, "Catering");
+            Menu mainmenu = new Menu(Controller, Strings.Catering);
 
             foreach (CateringItem caterItem in Controller.DataStore.GetCateringItems())
             {
@@ -27,7 +27,7 @@ namespace Cinema_App
 
             mainmenu.AddEmptyLine();
 
-            mainmenu.AddMenuOption("return to main menu", (x) => { Controller.ShowMainMenu(); }, false);
+            mainmenu.AddMenuOption(Strings.ReturnToMainOption, (x) => { Controller.ShowMainMenu(); }, false);
 
             Controller.SwitchView(mainmenu);
         }

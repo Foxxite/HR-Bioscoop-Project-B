@@ -115,6 +115,33 @@ namespace Cinema_App {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Basket.
+        /// </summary>
+        public static string Basket {
+            get {
+                return ResourceManager.GetString("Basket", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to cancel.
+        /// </summary>
+        public static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Catering.
+        /// </summary>
+        public static string Catering {
+            get {
+                return ResourceManager.GetString("Catering", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Catering menu.
         /// </summary>
         public static string CateringMenu {
@@ -196,6 +223,24 @@ namespace Cinema_App {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Checkout.
+        /// </summary>
+        public static string Checkout {
+            get {
+                return ResourceManager.GetString("Checkout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to done.
+        /// </summary>
+        public static string Done {
+            get {
+                return ResourceManager.GetString("Done", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email-address has been changed succesfully!.
         /// </summary>
         public static string EmailChangeSucces {
@@ -228,6 +273,24 @@ namespace Cinema_App {
         public static string EnterAge {
             get {
                 return ResourceManager.GetString("EnterAge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the auditorium name: .
+        /// </summary>
+        public static string EnterAudi {
+            get {
+                return ResourceManager.GetString("EnterAudi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter absolute path for image file:.
+        /// </summary>
+        public static string EnterAudiPath {
+            get {
+                return ResourceManager.GetString("EnterAudiPath", resourceCulture);
             }
         }
         
@@ -273,6 +336,24 @@ namespace Cinema_App {
         public static string EnterPW {
             get {
                 return ResourceManager.GetString("EnterPW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the desired seat(s), type &apos;cancel&apos; to go back to the movies or press done if you want to add the seats to your basket:.
+        /// </summary>
+        public static string EnterSeats {
+            get {
+                return ResourceManager.GetString("EnterSeats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ex: For seat X:10 Y:12 enter &apos;10,12&apos; without the qoutes. For multiple seats enter the cooridinates seperated by a space. Ex: &apos;10,12 10,13&apos;..
+        /// </summary>
+        public static string EnterSeatsExample {
+            get {
+                return ResourceManager.GetString("EnterSeatsExample", resourceCulture);
             }
         }
         
@@ -453,6 +534,24 @@ namespace Cinema_App {
         public static string NameNotEmpty {
             get {
                 return ResourceManager.GetString("NameNotEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your order-id: .
+        /// </summary>
+        public static string OrderID {
+            get {
+                return ResourceManager.GetString("OrderID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order created succesfully.
+        /// </summary>
+        public static string Ordersucces {
+            get {
+                return ResourceManager.GetString("Ordersucces", resourceCulture);
             }
         }
         
