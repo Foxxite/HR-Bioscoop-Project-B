@@ -25,6 +25,11 @@ namespace Cinema_App
 
             mainMenu.AddMenuOption(Strings.ReturnToMainOption, (x) => { Controller.ShowMainMenu(); }, false);
 
+            if(Controller.CurrentUser.Permlevel == Program.ADMIN_PERM_LEVEL)
+            {
+
+            }
+
             Controller.SwitchView(mainMenu);
         }
 

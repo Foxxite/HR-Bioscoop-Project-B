@@ -48,13 +48,21 @@ namespace Cinema_App
             // Show options if user is logged in.
             else
             {
-                mainMenu.AddMenuOption(Strings.CateringMenu, (x) => { ViewCateringMenu(); }, false);
                 mainMenu.AddMenuOption(Strings.ViewCurrentMovies, (x) => { ViewMovies(); }, null);
-                mainMenu.AddMenuOption("Basket", (x) => { ViewBasket(); }, null); 
+                mainMenu.AddMenuOption(Strings.CateringMenu, (x) => { ViewCateringMenu(); }, false);   
+                
+                if(CurrentUser.Permlevel == Program.ADMIN_PERM_LEVEL)
+                {
+                    mainMenu.AddMenuOption("import audi", (x) => { new AuditoriumImporter(this); }, null);
+                }
+                else
+                {
+                    mainMenu.AddMenuOption(Strings.Basket, (x) => { ViewBasket(); }, null);
+                }
+
                 mainMenu.AddMenuOption(Strings.ViewAcc, (x) => { ViewUserInfo(); }, null);
                 mainMenu.AddMenuOption(Strings.ChangeAcc, (x) => { ChangeUserInfo(); }, null);
                 mainMenu.AddMenuOption(Strings.LogOut, (x) => { LogOut(); }, null);
-                mainMenu.AddMenuOption("import audi", (x) => { new AuditoriumImporter(this); }, null);
             }
             
             //Always show those options
@@ -117,7 +125,7 @@ namespace Cinema_App
 
         private void ViewBasket()
         {
-            View_Basket vb = new View_Basket(this, "Basket");
+            View_Basket vb = new View_Basket(this, Strings.Basket);
             SwitchView(vb);
         }
 

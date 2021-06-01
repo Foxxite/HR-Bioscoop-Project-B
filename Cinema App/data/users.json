@@ -43,5 +43,14 @@
     "Name": "Y",
     "EmailAddress": "Y",
     "Age": 6
+  },
+  {
+    "GUID": "305fd3f7-84d2-4b51-b2bf-9c1540efb9f9",
+    "Username": "admin",
+    "Password": "P4fQ5UKhgIzNePoFdNRYRQ==",
+    "Permlevel": 777,
+    "Name": "admin",
+    "EmailAddress": "admin@admin.com",
+    "Age": 69
   }
 ]

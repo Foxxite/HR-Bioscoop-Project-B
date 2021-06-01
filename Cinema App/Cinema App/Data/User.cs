@@ -42,6 +42,20 @@ namespace Cinema_App
             Permlevel = 0;
         }
 
+        [JsonConstructor]
+        public User(Guid guid, string username, string password, string name, string emailaddress, int age, int permlevel)
+        {
+            GUID = guid;
+
+            Username = username;
+            Password = password;
+            Name = name;
+            EmailAddress = emailaddress;
+            Age = age;
+
+            Permlevel = permlevel;
+        }
+
         /// <summary>
         /// Creates salt based on user info.
         /// </summary>
