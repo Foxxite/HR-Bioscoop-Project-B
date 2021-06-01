@@ -48,15 +48,18 @@ namespace Cinema_App
             // Show options if user is logged in.
             else
             {
-                mainMenu.AddMenuOption(Strings.ViewCurrentMovies, (x) => { ViewMovies(); }, null);
-                mainMenu.AddMenuOption(Strings.CateringMenu, (x) => { ViewCateringMenu(); }, false);   
+                
                 
                 if(CurrentUser.Permlevel == Program.ADMIN_PERM_LEVEL)
                 {
+                    mainMenu.AddMenuOption("Manage MNovies", (x) => { ViewMovies(); }, null);
+                    mainMenu.AddMenuOption("Manage Catering Items", (x) => { ViewCateringMenu(); }, false);
                     mainMenu.AddMenuOption("import audi", (x) => { new AuditoriumImporter(this); }, null);
                 }
                 else
                 {
+                    mainMenu.AddMenuOption(Strings.ViewCurrentMovies, (x) => { ViewMovies(); }, null);
+                    mainMenu.AddMenuOption(Strings.CateringMenu, (x) => { ViewCateringMenu(); }, false);
                     mainMenu.AddMenuOption(Strings.Basket, (x) => { ViewBasket(); }, null);
                 }
 

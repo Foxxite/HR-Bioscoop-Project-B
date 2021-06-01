@@ -40,9 +40,17 @@ namespace Cinema_App
 
             Menu movieMenu = new Menu(Controller, "Movie Menu", fullScreen: false);
 
+            if (Controller.CurrentUser.Permlevel == Program.ADMIN_PERM_LEVEL)
+            {
+                movieMenu.AddMenuOption("Set Audi", (x) => { NewMenuAudi(); }, null);
+                movieMenu.AddMenuOption("Delete Movie", (x) => { Controller.DataStore.DeleteMovie(Movie); Controller.SwitchView(MovieCatalogue); }, null);
+            }
+            else
+            {
+                movieMenu.AddMenuOption("Reservate seat", (x) => { Controller.SwitchView(new View_ReserveSeats(Movie, Controller, "Seat Reservation")); }, null);
+            }
+
             movieMenu.AddMenuOption(Strings.ReturnToMainOption, (x) => { Controller.SwitchView(MovieCatalogue); }, null);
-            movieMenu.AddMenuOption("Set Audi", (x) => { NewMenuAudi(); }, null);
-            movieMenu.AddMenuOption("Reservate seat", (x) => { Controller.SwitchView(new View_ReserveSeats(Movie, Controller, "Seat Reservation")); }, null);
 
             Controller.SwitchView(movieMenu, false);
         }

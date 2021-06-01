@@ -9662,5 +9662,15 @@
     "Name": "Fatman",
     "Price": 4.99,
     "StockAvailable": 0
+  },
+  {
+    "Auditorium": null,
+    "Description": "This is a tragic movie of the cooperation of pg3",
+    "AgeRating": 5,
+    "ReviewScore": 4.5,
+    "TrailerUrl": "aegrtshbtfgyrtsgrgsr.nl",
+    "Name": "The sad story of project group 3",
+    "Price": 0.0,
+    "StockAvailable": 0
   }
 ]

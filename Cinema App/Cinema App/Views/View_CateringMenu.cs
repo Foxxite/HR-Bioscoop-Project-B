@@ -24,6 +24,10 @@ namespace Cinema_App
                 mainmenu.AddMenuOption($"{caterItem.Name}; €{caterItem.Price}", (catitem) => ShowCaterItemInformation(catitem), caterItem);
             }
 
+            if (Controller.CurrentUser.Permlevel == Program.ADMIN_PERM_LEVEL)
+            {
+                mainmenu.AddMenuOption("Add New Catering Item", (x) => { }, null);
+            }
 
             mainmenu.AddEmptyLine();
 

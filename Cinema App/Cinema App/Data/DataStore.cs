@@ -124,6 +124,12 @@ namespace Cinema_App
             SaveMovieData();
         }
 
+        public void DeleteMovie(Movie movie)
+        {
+            Movies.Remove(movie);
+            SaveMovieData();
+        }
+
         public void SaveMovieData()
         {
             var movieData = JsonConvert.SerializeObject(Movies, Formatting.Indented);
@@ -133,6 +139,12 @@ namespace Cinema_App
         public void AddCaterItem(CateringItem cateringItem)
         {
             CateringItems.Add(cateringItem);
+            SaveCaterItemData();
+        }
+
+        public void DeleteCateringItem(CateringItem cateringItem)
+        {
+            CateringItems.Remove(cateringItem);
             SaveCaterItemData();
         }
 

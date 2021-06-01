@@ -23,12 +23,12 @@ namespace Cinema_App
                 mainMenu.AddMenuOption(movie.Name, (mov) => ShowMovieInformation(mov), movie);
             }
 
-            mainMenu.AddMenuOption(Strings.ReturnToMainOption, (x) => { Controller.ShowMainMenu(); }, false);
-
-            if(Controller.CurrentUser.Permlevel == Program.ADMIN_PERM_LEVEL)
+            if (Controller.CurrentUser.Permlevel == Program.ADMIN_PERM_LEVEL)
             {
-
+                mainMenu.AddMenuOption("Add New Movie", (x) => { Controller.SwitchView(new View_MovieAdd(Controller, "Add movie")); }, null);
             }
+
+            mainMenu.AddMenuOption(Strings.ReturnToMainOption, (x) => { Controller.ShowMainMenu(); }, false);
 
             Controller.SwitchView(mainMenu);
         }
