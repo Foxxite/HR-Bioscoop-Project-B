@@ -17,6 +17,7 @@ namespace Cinema_App
         {
             DrawTitleBar();
 
+            
             Console.WriteLine("Enter movie title:");
             string movTitle = Console.ReadLine();
             while (string.IsNullOrEmpty(movTitle))
@@ -27,6 +28,7 @@ namespace Cinema_App
                 Console.ForegroundColor = ConsoleColor.White;
             }
 
+            Console.WriteLine();
             Console.WriteLine("Enter the full movie description:");
             string movDesc = Console.ReadLine();
             while (string.IsNullOrEmpty(movDesc))
@@ -37,6 +39,7 @@ namespace Cinema_App
                 Console.ForegroundColor = ConsoleColor.White;
             }
 
+            Console.WriteLine();
             Console.WriteLine("Enter age rating");
             bool correctAge = false;
             int movAge = 0;
@@ -55,6 +58,7 @@ namespace Cinema_App
                 }
             }
 
+            Console.WriteLine();
             Console.WriteLine("Enter review score:");
             double movRating = -1;
 
@@ -71,6 +75,7 @@ namespace Cinema_App
                 }
             }
 
+            Console.WriteLine();
             Console.WriteLine("Enter trailer url:");
             string movUrl = Console.ReadLine();
             while (string.IsNullOrEmpty(movUrl))
@@ -82,6 +87,8 @@ namespace Cinema_App
             }
 
             Controller.DataStore.AddMovie(new Movie(movTitle, movDesc, movAge, movRating, movUrl));
+
+            Controller.SwitchToLastView();
         }
 
         public static double GetDouble(string value, double defaultValue)

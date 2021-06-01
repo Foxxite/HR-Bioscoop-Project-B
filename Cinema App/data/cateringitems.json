@@ -1,28 +1,38 @@
 [
   {
- 
+    "Description": null,
     "Name": "Popcorn",
     "Price": 4.99,
     "StockAvailable": 0
   },
   {
+    "Description": null,
     "Name": "Coke",
     "Price": 3.99,
     "StockAvailable": 0
   },
   {
+    "Description": null,
     "Name": "Fanta",
     "Price": 3.99,
     "StockAvailable": 0
   },
   {
+    "Description": null,
     "Name": "Chips",
     "Price": 2.95,
     "StockAvailable": 0
   },
   {
+    "Description": null,
     "Name": "Redbull",
-    "Price": 4.50,
+    "Price": 4.5,
+    "StockAvailable": 0
+  },
+  {
+    "Description": null,
+    "Name": "Popcorn extreme",
+    "Price": 10.0,
     "StockAvailable": 0
   }
 ]

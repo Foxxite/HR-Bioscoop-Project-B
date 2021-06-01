@@ -26,7 +26,7 @@ namespace Cinema_App
 
             if (Controller.CurrentUser.Permlevel == Program.ADMIN_PERM_LEVEL)
             {
-                mainmenu.AddMenuOption("Add New Catering Item", (x) => { }, null);
+                mainmenu.AddMenuOption("Add New Catering Item", (x) => { Controller.SwitchView(new View_CateringItemAdd(Controller, "Add catering item")); }, null);
             }
 
             mainmenu.AddEmptyLine();
