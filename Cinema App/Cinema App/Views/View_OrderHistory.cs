@@ -24,7 +24,7 @@ namespace Cinema_App
         public void RenderForUser()
         {
             List<Order> Orders = Controller.DataStore.GetOrdersByGUID(Controller.CurrentUser);
-            Menu OrderHis = new Menu(Controller, "Order history");
+            Menu OrderHis = new Menu(Controller, Strings.OrderHistory);
 
             foreach(Order order in Orders)
             {
@@ -38,12 +38,12 @@ namespace Cinema_App
         public void RenderForAmdin()
         {
             List<Order> Orders = Controller.DataStore.GetOrders();
-            Menu OrderHis = new Menu(Controller, "Order history");
+            Menu OrderHis = new Menu(Controller, Strings.OrderHistory);
 
             foreach (Order order in Orders)
             {
                 User oUser = Controller.DataStore.GetUserByGUID(order.UserId);
-                string username = (oUser != null ? oUser.Username : "Invalid User");
+                string username = (oUser != null ? oUser.Username : Strings.InvalidUser);
                 OrderHis.AddMenuOption($"{order.OrderId}    {order.OrderDate}   {username}", (order) => { Controller.SwitchView(new View_Order(order, Controller, Title)); }, order);
             }
 

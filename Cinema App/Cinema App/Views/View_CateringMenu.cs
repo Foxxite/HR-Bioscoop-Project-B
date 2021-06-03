@@ -26,7 +26,7 @@ namespace Cinema_App
 
             if (Controller.CurrentUser.Permlevel == Program.ADMIN_PERM_LEVEL)
             {
-                mainmenu.AddMenuOption("Add New Catering Item", (x) => { Controller.SwitchView(new View_CateringItemAdd(Controller, "Add catering item")); }, null);
+                mainmenu.AddMenuOption(Strings.AddCateringItem, (x) => { Controller.SwitchView(new View_CateringItemAdd(Controller, Strings.AddCateringItem)); }, null);
             }
 
             mainmenu.AddEmptyLine();
@@ -42,24 +42,5 @@ namespace Cinema_App
 
             Controller.SwitchView(ii);
         }
-        //void CaterItem()
-        //{
-        //    CateringItem cateringItem = new CateringItem("Popcorn", "Our delicious new pepcorn!", 4.50, 100);
-        //}
-
-        //void CaterItem1()
-        //{
-        //    CateringItem cateringItem = new CateringItem("Coke", "Fresh coke, now with less sugar!", 2.95, 100);
-        //}
-
-        //void CaterItem2()
-        //{
-        //    CateringItem cateringItem = new CateringItem("Fanta", "Fresh fanta, now with less sugar!", 2.95, 100);
-        //}
-
-        //void CaterItem3()
-        //{
-        //    CateringItem cateringItem = new CateringItem("Chips", "Our delicious new chips!", 3.50, 100);
-        //}
     }
 }

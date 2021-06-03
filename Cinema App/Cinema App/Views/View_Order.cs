@@ -25,10 +25,10 @@ namespace Cinema_App
 
             if (Controller.CurrentUser.Permlevel == Program.ADMIN_PERM_LEVEL)
             {
-                View LastView = new View_OrderHistory(Controller, "Order History");
+                View LastView = new View_OrderHistory(Controller, Strings.OrderHistory);
 
                 Menu menu = new Menu(Controller, "", fullScreen:false);
-                menu.AddMenuOption("Delete", (x) => { Controller.DataStore.DeleteOrder(Order); Controller.SwitchView(LastView); }, null);
+                menu.AddMenuOption(Strings.Delete, (x) => { Controller.DataStore.DeleteOrder(Order); Controller.SwitchView(LastView); }, null);
                 menu.AddMenuOption(Strings.ReturnToMainOption, (x) => { Controller.SwitchView(LastView); }, null);
 
                 Controller.SwitchView(menu, false);

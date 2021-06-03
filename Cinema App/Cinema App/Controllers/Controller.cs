@@ -24,7 +24,7 @@ namespace Cinema_App
         /// <param name="args">Arguments passed to the app. Will be ignored for now.</param>
         public Controller(string[] args)
         {
-            Console.WriteLine("Loading...");
+            Console.WriteLine(Strings.Loading);
 
             DataStore = new DataStore();
             Basket = new Basket();
@@ -51,9 +51,9 @@ namespace Cinema_App
 
                 if(CurrentUser.Permlevel == Program.ADMIN_PERM_LEVEL)
                 {
-                    mainMenu.AddMenuOption("Manage Movies", (x) => { ViewMovies(); }, null);
-                    mainMenu.AddMenuOption("Manage Catering Items", (x) => { ViewCateringMenu(); }, false);
-                    mainMenu.AddMenuOption("import audi", (x) => { new AuditoriumImporter(this); }, null);
+                    mainMenu.AddMenuOption(Strings.MangeMovies, (x) => { ViewMovies(); }, null);
+                    mainMenu.AddMenuOption(Strings.ManageCateringItems, (x) => { ViewCateringMenu(); }, false);
+                    mainMenu.AddMenuOption(Strings.ImportAuditorium, (x) => { new AuditoriumImporter(this); }, null);
                 }
                 else
                 {
@@ -61,7 +61,7 @@ namespace Cinema_App
                     mainMenu.AddMenuOption(Strings.CateringMenu, (x) => { ViewCateringMenu(); }, false);
                     mainMenu.AddMenuOption(Strings.Basket, (x) => { ViewBasket(); }, null);
                 }
-                mainMenu.AddMenuOption("Order History", (x) => { SwitchView(new View_OrderHistory(this, "Order History")); }, null); 
+                mainMenu.AddMenuOption(Strings.OrderHistory, (x) => { SwitchView(new View_OrderHistory(this, Strings.OrderHistory)); }, null); 
                 mainMenu.AddMenuOption(Strings.ViewAcc, (x) => { ViewUserInfo(); }, null);
                 mainMenu.AddMenuOption(Strings.ChangeAcc, (x) => { ChangeUserInfo(); }, null); 
                 mainMenu.AddMenuOption(Strings.LogOut, (x) => { LogOut(); }, null);

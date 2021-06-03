@@ -18,29 +18,29 @@ namespace Cinema_App
             DrawTitleBar();
 
             
-            Console.WriteLine("Enter movie title:");
+            Console.WriteLine(Strings.EnterMovieTitle);
             string movTitle = Console.ReadLine();
             while (string.IsNullOrEmpty(movTitle))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Movie title can't be empty");
+                Console.WriteLine(Strings.EmptyInput);
                 movTitle = Console.ReadLine();
                 Console.ForegroundColor = ConsoleColor.White;
             }
 
             Console.WriteLine();
-            Console.WriteLine("Enter the full movie description:");
+            Console.WriteLine(Strings.EnterMovieDesc);
             string movDesc = Console.ReadLine();
             while (string.IsNullOrEmpty(movDesc))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Movie description can't be empty");
+                Console.WriteLine(Strings.EmptyInput);
                 movDesc = Console.ReadLine();
                 Console.ForegroundColor = ConsoleColor.White;
             }
 
             Console.WriteLine();
-            Console.WriteLine("Enter age rating");
+            Console.WriteLine(Strings.EnterMovieAgeRating);
             bool correctAge = false;
             int movAge = 0;
             while (!correctAge)
@@ -59,7 +59,7 @@ namespace Cinema_App
             }
 
             Console.WriteLine();
-            Console.WriteLine("Enter review score:");
+            Console.WriteLine(Strings.EnterMovieReviewScore);
             double movRating = -1;
 
             while (movRating == -1)
@@ -70,18 +70,18 @@ namespace Cinema_App
                 if (String.IsNullOrEmpty(input) || movRating == -1)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Invalid Double");
+                    Console.WriteLine(Strings.InvalidDoubleInput);
                     Console.ForegroundColor = ConsoleColor.White;
                 }
             }
 
             Console.WriteLine();
-            Console.WriteLine("Enter trailer url:");
+            Console.WriteLine(Strings.EnterMovieTrailerUrl);
             string movUrl = Console.ReadLine();
             while (string.IsNullOrEmpty(movUrl))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Movie trailer url can't be empty");
+                Console.WriteLine(Strings.EmptyInput);
                 movUrl = Console.ReadLine();
                 Console.ForegroundColor = ConsoleColor.White;
             }

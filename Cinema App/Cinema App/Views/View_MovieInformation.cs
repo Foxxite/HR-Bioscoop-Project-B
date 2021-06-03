@@ -38,50 +38,33 @@ namespace Cinema_App
 
             DrawField(Strings.MoviePrice, Movie.Price.ToString());
 
-            Menu movieMenu = new Menu(Controller, "Movie Menu", fullScreen: false);
+            Menu movieMenu = new Menu(Controller, "", fullScreen: false);
 
             if (Controller.CurrentUser.Permlevel == Program.ADMIN_PERM_LEVEL)
             {
-                movieMenu.AddMenuOption("Set Audi", (x) => { NewMenuAudi(); }, null);
-                movieMenu.AddMenuOption("Delete Movie", (x) => { Controller.DataStore.DeleteMovie(Movie); Controller.SwitchView(MovieCatalogue); }, null);
+                movieMenu.AddMenuOption(Strings.MovieSetAuditorium, (x) => { NewMenuAudi(); }, null);
+                movieMenu.AddMenuOption(Strings.Delete, (x) => { Controller.DataStore.DeleteMovie(Movie); Controller.SwitchView(MovieCatalogue); }, null);
             }
             else
             {
-                movieMenu.AddMenuOption("Reservate seat", (x) => { Controller.SwitchView(new View_ReserveSeats(Movie, Controller, "Seat Reservation")); }, null);
+                movieMenu.AddMenuOption(Strings.ReservateSeat, (x) => { Controller.SwitchView(new View_ReserveSeats(Movie, Controller, Strings.SeatReservation)); }, null);
             }
 
             movieMenu.AddMenuOption(Strings.ReturnToMainOption, (x) => { Controller.SwitchView(MovieCatalogue); }, null);
 
             Controller.SwitchView(movieMenu, false);
         }
+
         void NewMenuAudi()
         {
-            Menu AudiAdding = new Menu(Controller, "Add auditorium", "");
-            Controller.ClearScreen();
+            Menu AudiAdding = new Menu(Controller, Strings.MovieSetAuditorium);
 
             foreach (Auditorium audi in Controller.DataStore.GetAuditoria())
             {
                 AudiAdding.AddMenuOption(audi.Name, (audi) => { Movie.SetAuditorium(audi); Controller.DataStore.SaveMovieData(); }, audi);
             }
 
-
-
             Controller.SwitchView(AudiAdding);
         }
-
-        
-        /// <summary>
-        /// Draws a field from the movie class in a pretty way.
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="field"></param>
-        private void DrawField(string name, string field)
-        {
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"{name}: ");
-            Console.ForegroundColor = ConsoleColor.White;
-            WordWrap($"{field}\n");
-        }
-
     }
 }

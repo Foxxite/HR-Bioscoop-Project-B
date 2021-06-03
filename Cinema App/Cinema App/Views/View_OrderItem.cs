@@ -37,9 +37,9 @@ namespace Cinema_App
 
             if(Controller.CurrentUser.Permlevel == Program.ADMIN_PERM_LEVEL)
             {
-                Menu adminMenu = new Menu(Controller, "Admin menu", fullScreen:false);
+                Menu adminMenu = new Menu(Controller, "", fullScreen:false);
 
-                adminMenu.AddMenuOption("Remove Item", (x) => { Controller.DataStore.DeleteCateringItem(CateringItem); Controller.SwitchView(cateringMenu); }, null);
+                adminMenu.AddMenuOption(Strings.RemoveItem, (x) => { Controller.DataStore.DeleteCateringItem(CateringItem); Controller.SwitchView(cateringMenu); }, null);
                 adminMenu.AddMenuOption(Strings.ReturnToMainOption, (x) => { Controller.SwitchView(cateringMenu); }, null);
 
                 Controller.SwitchView(adminMenu, false);
@@ -60,14 +60,5 @@ namespace Cinema_App
                 Controller.SwitchView(cateringMenu);
             }
         }
-
-        private void DrawField(string name, string field)
-        {
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"{name}: ");
-            Console.ForegroundColor = ConsoleColor.White;
-            WordWrap($"{field}\n");
-        }
     }
-
 }

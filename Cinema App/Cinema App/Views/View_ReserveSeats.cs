@@ -107,11 +107,9 @@ namespace Cinema_App
             Console.WriteLine("\n\n");
 
 
-
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine(Strings.EnterSeats + "\n");
             Console.WriteLine(Strings.EnterSeatsExample + "\n");
-            //Console.WriteLine("To reserve multiple seats in the same row, enter the coordinate of the seat and add *(amount). Ex: 10,12*3.\n");
 
             string input = Console.ReadLine();
             Console.SetCursorPosition(0, Console.CursorTop-1);
@@ -129,18 +127,15 @@ namespace Cinema_App
                 {
                     Movie.Auditorium.Seats[SeatCoord.X][SeatCoord.Y].SetSeatName(Movie.Name + $"{SeatCoord.X}:{SeatCoord.Y}");
                     Controller.Basket.AddItem(Movie.Auditorium.Seats[SeatCoord.X][SeatCoord.Y]);
-                    //Controller.Basket.AddItem(new Seat($"{Movie.Name} {SeatCoord.X}:{SeatCoord.Y}"));
-                   //Movie.Auditorium.Seats[SeatCoord.X][SeatCoord.Y].Price= 0;
                 }
-                Controller.SwitchView(new View_Basket(Controller, "Basket"));
+
+                Controller.SwitchView(new View_Basket(Controller, Strings.Basket));
             }
 
             var coordSet = input.Split(' ');
 
             foreach (var coord in coordSet)
             {
-
-
                 try
                 {
                     var seatCoord = coord.Split(',');
@@ -165,7 +160,6 @@ namespace Cinema_App
 
             InternalRender();
         }
-
 
         bool IsSeatInResverationList(int x, int y)
         {

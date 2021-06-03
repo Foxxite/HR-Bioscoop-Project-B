@@ -75,6 +75,19 @@ namespace Cinema_App
         }
 
         /// <summary>
+        /// Draws a field in a pretty way.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="field"></param>
+        protected void DrawField(string name, string field)
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine($"{name}: ");
+            Console.ForegroundColor = ConsoleColor.White;
+            WordWrap($"{field}\n");
+        }
+
+        /// <summary>
         /// Write a long string pritty to the console
         /// </summary>
         /// <param name="paragraph"></param>

@@ -88,6 +88,24 @@ namespace Cinema_App {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Catering Item.
+        /// </summary>
+        public static string AddCateringItem {
+            get {
+                return ResourceManager.GetString("AddCateringItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add New Movie.
+        /// </summary>
+        public static string AddMovie {
+            get {
+                return ResourceManager.GetString("AddMovie", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Age has been changed succesfully!.
         /// </summary>
         public static string AgeChangeSucces {
@@ -178,7 +196,7 @@ namespace Cinema_App {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Change email-address\n.
+        ///   Looks up a localized string similar to Change email-address.
         /// </summary>
         public static string ChangeMail {
             get {
@@ -232,6 +250,15 @@ namespace Cinema_App {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to done.
         /// </summary>
         public static string Done {
@@ -255,6 +282,15 @@ namespace Cinema_App {
         public static string EmailNotValid {
             get {
                 return ResourceManager.GetString("EmailNotValid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input can not be empty!.
+        /// </summary>
+        public static string EmptyInput {
+            get {
+                return ResourceManager.GetString("EmptyInput", resourceCulture);
             }
         }
         
@@ -304,11 +340,65 @@ namespace Cinema_App {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter item name:.
+        /// </summary>
+        public static string EnterItemName {
+            get {
+                return ResourceManager.GetString("EnterItemName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to   Enter your email-address:.
         /// </summary>
         public static string EnterMail {
             get {
                 return ResourceManager.GetString("EnterMail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the movie&apos;s age rating:.
+        /// </summary>
+        public static string EnterMovieAgeRating {
+            get {
+                return ResourceManager.GetString("EnterMovieAgeRating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the movie&apos;s description:.
+        /// </summary>
+        public static string EnterMovieDesc {
+            get {
+                return ResourceManager.GetString("EnterMovieDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the movie&apos;s review score:.
+        /// </summary>
+        public static string EnterMovieReviewScore {
+            get {
+                return ResourceManager.GetString("EnterMovieReviewScore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter movie&apos;s title:.
+        /// </summary>
+        public static string EnterMovieTitle {
+            get {
+                return ResourceManager.GetString("EnterMovieTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the movie&apos;s trailer url:.
+        /// </summary>
+        public static string EnterMovieTrailerUrl {
+            get {
+                return ResourceManager.GetString("EnterMovieTrailerUrl", resourceCulture);
             }
         }
         
@@ -327,6 +417,15 @@ namespace Cinema_App {
         public static string EnterNewPW {
             get {
                 return ResourceManager.GetString("EnterNewPW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter price:.
+        /// </summary>
+        public static string EnterPrice {
+            get {
+                return ResourceManager.GetString("EnterPrice", resourceCulture);
             }
         }
         
@@ -385,11 +484,47 @@ namespace Cinema_App {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Import Auditorium.
+        /// </summary>
+        public static string ImportAuditorium {
+            get {
+                return ResourceManager.GetString("ImportAuditorium", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid Double.
+        /// </summary>
+        public static string InvalidDoubleInput {
+            get {
+                return ResourceManager.GetString("InvalidDoubleInput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid User.
+        /// </summary>
+        public static string InvalidUser {
+            get {
+                return ResourceManager.GetString("InvalidUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Press any key to return to the main menu.
         /// </summary>
         public static string KeyPressToReturn {
             get {
                 return ResourceManager.GetString("KeyPressToReturn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading....
+        /// </summary>
+        public static string Loading {
+            get {
+                return ResourceManager.GetString("Loading", resourceCulture);
             }
         }
         
@@ -448,6 +583,24 @@ namespace Cinema_App {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Manage Catering Items.
+        /// </summary>
+        public static string ManageCateringItems {
+            get {
+                return ResourceManager.GetString("ManageCateringItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage Movies.
+        /// </summary>
+        public static string MangeMovies {
+            get {
+                return ResourceManager.GetString("MangeMovies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Movie Catalogue.
         /// </summary>
         public static string MovCat {
@@ -493,6 +646,15 @@ namespace Cinema_App {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Set Auditorium.
+        /// </summary>
+        public static string MovieSetAuditorium {
+            get {
+                return ResourceManager.GetString("MovieSetAuditorium", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Title.
         /// </summary>
         public static string MovieTitle {
@@ -534,6 +696,24 @@ namespace Cinema_App {
         public static string NameNotEmpty {
             get {
                 return ResourceManager.GetString("NameNotEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string OrderHisotry {
+            get {
+                return ResourceManager.GetString("OrderHisotry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order History.
+        /// </summary>
+        public static string OrderHistory {
+            get {
+                return ResourceManager.GetString("OrderHistory", resourceCulture);
             }
         }
         
@@ -620,6 +800,24 @@ namespace Cinema_App {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Remove Item.
+        /// </summary>
+        public static string RemoveItem {
+            get {
+                return ResourceManager.GetString("RemoveItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reservate seat.
+        /// </summary>
+        public static string ReservateSeat {
+            get {
+                return ResourceManager.GetString("ReservateSeat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Press any key to return to the main menu....
         /// </summary>
         public static string ReturnToMain {
@@ -634,6 +832,24 @@ namespace Cinema_App {
         public static string ReturnToMainOption {
             get {
                 return ResourceManager.GetString("ReturnToMainOption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Seat Reservation.
+        /// </summary>
+        public static string SeatReservation {
+            get {
+                return ResourceManager.GetString("SeatReservation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total.
+        /// </summary>
+        public static string Total {
+            get {
+                return ResourceManager.GetString("Total", resourceCulture);
             }
         }
         
@@ -751,6 +967,15 @@ namespace Cinema_App {
         public static string WaitingMess {
             get {
                 return ResourceManager.GetString("WaitingMess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome.
+        /// </summary>
+        public static string Welcome {
+            get {
+                return ResourceManager.GetString("Welcome", resourceCulture);
             }
         }
         

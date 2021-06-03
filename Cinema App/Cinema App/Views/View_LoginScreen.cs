@@ -61,7 +61,7 @@ namespace Cinema_App
 
             Console.WriteLine();
             Console.Beep();
-            Console.WriteLine($"  Welcome {Controller.CurrentUser.Name},");
+            Console.WriteLine(Strings.Welcome + $" {Controller.CurrentUser.Name},");
             Console.WriteLine(Strings.WaitingMess);
 
             Console.ForegroundColor = ConsoleColor.White;

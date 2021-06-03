@@ -17,18 +17,18 @@ namespace Cinema_App
         {
             DrawTitleBar();
 
-            Console.WriteLine("Enter catering item name:");
+            Console.WriteLine(Strings.EnterItemName);
             string catItemName = Console.ReadLine();
             while (string.IsNullOrEmpty(catItemName))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Catering item name can't be empty");
+                Console.WriteLine(Strings.EmptyInput);
                 catItemName = Console.ReadLine();
                 Console.ForegroundColor = ConsoleColor.White;
             }
 
             Console.WriteLine();
-            Console.WriteLine("Enter price:");
+            Console.WriteLine(Strings.EnterPrice);
             double catItemPrice = -1;
 
             while (catItemPrice == -1)
@@ -39,7 +39,7 @@ namespace Cinema_App
                 if (String.IsNullOrEmpty(input) || catItemPrice == -1)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Invalid Double");
+                    Console.WriteLine(Strings.InvalidDoubleInput);
                     Console.ForegroundColor = ConsoleColor.White;
                 }
             }

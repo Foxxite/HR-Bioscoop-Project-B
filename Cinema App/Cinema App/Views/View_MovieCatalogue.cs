@@ -16,7 +16,7 @@ namespace Cinema_App
         {
             DrawTitleBar();
 
-            Menu mainMenu = new Menu(Controller, "Movie Catalogue");
+            Menu mainMenu = new Menu(Controller, Strings.MovCat);
            
             foreach (Movie movie in Controller.DataStore.GetMovies())
             {
@@ -25,7 +25,7 @@ namespace Cinema_App
 
             if (Controller.CurrentUser.Permlevel == Program.ADMIN_PERM_LEVEL)
             {
-                mainMenu.AddMenuOption("Add New Movie", (x) => { Controller.SwitchView(new View_MovieAdd(Controller, "Add movie")); }, null);
+                mainMenu.AddMenuOption(Strings.AddMovie, (x) => { Controller.SwitchView(new View_MovieAdd(Controller, Strings.AddMovie)); }, null);
             }
 
             mainMenu.AddMenuOption(Strings.ReturnToMainOption, (x) => { Controller.ShowMainMenu(); }, false);

@@ -126,6 +126,12 @@
   <data name="Accinfo" xml:space="preserve">
     <value>Account information</value>
   </data>
+  <data name="AddCateringItem" xml:space="preserve">
+    <value>Add Catering Item</value>
+  </data>
+  <data name="AddMovie" xml:space="preserve">
+    <value>Add New Movie</value>
+  </data>
   <data name="AgeChangeSucces" xml:space="preserve">
     <value>Age has been changed succesfully!</value>
   </data>
@@ -157,7 +163,7 @@
     <value>Change age</value>
   </data>
   <data name="ChangeMail" xml:space="preserve">
-    <value>Change email-address\n</value>
+    <value>Change email-address</value>
   </data>
   <data name="ChangeName" xml:space="preserve">
     <value>Change name</value>
@@ -174,6 +180,9 @@
   <data name="Checkout" xml:space="preserve">
     <value>Checkout</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
   <data name="Done" xml:space="preserve">
     <value>done</value>
   </data>
@@ -182,6 +191,9 @@
   </data>
   <data name="EmailNotValid" xml:space="preserve">
     <value>  Enter a valid email-address!</value>
+  </data>
+  <data name="EmptyInput" xml:space="preserve">
+    <value>Input can not be empty!</value>
   </data>
   <data name="EmptyString" xml:space="preserve">
     <value>**empty**</value>
@@ -198,14 +210,35 @@
   <data name="EnterCreditcard" xml:space="preserve">
     <value>Enter your creditcard number: </value>
   </data>
+  <data name="EnterItemName" xml:space="preserve">
+    <value>Enter item name:</value>
+  </data>
   <data name="EnterMail" xml:space="preserve">
     <value>  Enter your email-address:</value>
+  </data>
+  <data name="EnterMovieAgeRating" xml:space="preserve">
+    <value>Enter the movie's age rating:</value>
+  </data>
+  <data name="EnterMovieDesc" xml:space="preserve">
+    <value>Enter the movie's description:</value>
+  </data>
+  <data name="EnterMovieReviewScore" xml:space="preserve">
+    <value>Enter the movie's review score:</value>
+  </data>
+  <data name="EnterMovieTitle" xml:space="preserve">
+    <value>Enter movie's title:</value>
+  </data>
+  <data name="EnterMovieTrailerUrl" xml:space="preserve">
+    <value>Enter the movie's trailer url:</value>
   </data>
   <data name="EnterName" xml:space="preserve">
     <value>  Enter your name:</value>
   </data>
   <data name="EnterNewPW" xml:space="preserve">
     <value>Enter your new password</value>
+  </data>
+  <data name="EnterPrice" xml:space="preserve">
+    <value>Enter price:</value>
   </data>
   <data name="EnterPW" xml:space="preserve">
     <value>  Enter your password:</value>
@@ -225,8 +258,20 @@
   <data name="GroupInfo" xml:space="preserve">
     <value>Created by: INF1C group 3</value>
   </data>
+  <data name="ImportAuditorium" xml:space="preserve">
+    <value>Import Auditorium</value>
+  </data>
+  <data name="InvalidDoubleInput" xml:space="preserve">
+    <value>Invalid Double</value>
+  </data>
+  <data name="InvalidUser" xml:space="preserve">
+    <value>Invalid User</value>
+  </data>
   <data name="KeyPressToReturn" xml:space="preserve">
     <value>Press any key to return to the main menu</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Loading...</value>
   </data>
   <data name="LoadingMessage" xml:space="preserve">
     <value>Loading...</value>
@@ -246,6 +291,12 @@
   <data name="MainMenuName" xml:space="preserve">
     <value>Main Menu</value>
   </data>
+  <data name="ManageCateringItems" xml:space="preserve">
+    <value>Manage Catering Items</value>
+  </data>
+  <data name="MangeMovies" xml:space="preserve">
+    <value>Manage Movies</value>
+  </data>
   <data name="MovCat" xml:space="preserve">
     <value>Movie Catalogue</value>
   </data>
@@ -261,6 +312,9 @@
   <data name="MoviePrice" xml:space="preserve">
     <value>Price</value>
   </data>
+  <data name="MovieSetAuditorium" xml:space="preserve">
+    <value>Set Auditorium</value>
+  </data>
   <data name="MovieTitle" xml:space="preserve">
     <value>Title</value>
   </data>
@@ -275,6 +329,9 @@
   </data>
   <data name="NameNotEmpty" xml:space="preserve">
     <value>  Name cannot be empty!</value>
+  </data>
+  <data name="OrderHistory" xml:space="preserve">
+    <value>Order History</value>
   </data>
   <data name="OrderID" xml:space="preserve">
     <value>Your order-id: </value>
@@ -304,11 +361,23 @@
   <data name="RegScreen" xml:space="preserve">
     <value>Registration Screen</value>
   </data>
+  <data name="RemoveItem" xml:space="preserve">
+    <value>Remove Item</value>
+  </data>
+  <data name="ReservateSeat" xml:space="preserve">
+    <value>Reservate seat</value>
+  </data>
   <data name="ReturnToMain" xml:space="preserve">
     <value>Press any key to return to the main menu...</value>
   </data>
   <data name="ReturnToMainOption" xml:space="preserve">
     <value>Return to Main Menu</value>
+  </data>
+  <data name="SeatReservation" xml:space="preserve">
+    <value>Seat Reservation</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
   </data>
   <data name="UserNameChangeSucces" xml:space="preserve">
     <value>Username has been changed succesfully!</value>
@@ -348,6 +417,9 @@
   </data>
   <data name="WaitingMess" xml:space="preserve">
     <value>  You will be redirected to the main menu in a few moments...</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome</value>
   </data>
   <data name="WelcomeMessage" xml:space="preserve">
     <value>Welcome</value>
