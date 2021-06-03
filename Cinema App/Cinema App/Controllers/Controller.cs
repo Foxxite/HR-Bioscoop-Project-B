@@ -48,11 +48,10 @@ namespace Cinema_App
             // Show options if user is logged in.
             else
             {
-                
-                
+
                 if(CurrentUser.Permlevel == Program.ADMIN_PERM_LEVEL)
                 {
-                    mainMenu.AddMenuOption("Manage MNovies", (x) => { ViewMovies(); }, null);
+                    mainMenu.AddMenuOption("Manage Movies", (x) => { ViewMovies(); }, null);
                     mainMenu.AddMenuOption("Manage Catering Items", (x) => { ViewCateringMenu(); }, false);
                     mainMenu.AddMenuOption("import audi", (x) => { new AuditoriumImporter(this); }, null);
                 }
@@ -62,9 +61,9 @@ namespace Cinema_App
                     mainMenu.AddMenuOption(Strings.CateringMenu, (x) => { ViewCateringMenu(); }, false);
                     mainMenu.AddMenuOption(Strings.Basket, (x) => { ViewBasket(); }, null);
                 }
-
+                mainMenu.AddMenuOption("Order History", (x) => { SwitchView(new View_OrderHistory(this, "Order History")); }, null); 
                 mainMenu.AddMenuOption(Strings.ViewAcc, (x) => { ViewUserInfo(); }, null);
-                mainMenu.AddMenuOption(Strings.ChangeAcc, (x) => { ChangeUserInfo(); }, null);
+                mainMenu.AddMenuOption(Strings.ChangeAcc, (x) => { ChangeUserInfo(); }, null); 
                 mainMenu.AddMenuOption(Strings.LogOut, (x) => { LogOut(); }, null);
             }
             
@@ -93,6 +92,11 @@ namespace Cinema_App
         public void SwitchToLastView()
         {
             SwitchView(LastView);
+        }
+        
+        public View GetLastView()
+        {
+            return LastView;
         }
 
         /// <summary>

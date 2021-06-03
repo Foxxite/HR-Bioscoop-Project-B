@@ -38,14 +38,16 @@ namespace Cinema_App
 
             Order order = new Order(Basket.GetAllItems(), Controller);
             Controller.DataStore.AddOrder(order);
+        
 
             Console.WriteLine("\n"+ Strings.Ordersucces +"\n\n" + Strings.OrderID  + $"{order.OrderId}\n\n" + Strings.KeyPressToReturn);
             
             Console.ReadKey();
             Controller.ShowMainMenu();
         }
+
         /// <summary>
-        /// 
+        /// Verifies creditnumber
         /// </summary>
         /// <param name="cardNumber"></param>
         /// <returns></returns>

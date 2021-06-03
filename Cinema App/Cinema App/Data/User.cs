@@ -12,7 +12,7 @@ namespace Cinema_App
     class User
     {
         [JsonProperty]
-        private Guid GUID;
+        public Guid GUID { get; }
 
         [JsonProperty]
         public string Username { get; set; }

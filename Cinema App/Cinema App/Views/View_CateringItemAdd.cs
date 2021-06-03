@@ -15,6 +15,8 @@ namespace Cinema_App
 
         public override void Render()
         {
+            DrawTitleBar();
+
             Console.WriteLine("Enter catering item name:");
             string catItemName = Console.ReadLine();
             while (string.IsNullOrEmpty(catItemName))

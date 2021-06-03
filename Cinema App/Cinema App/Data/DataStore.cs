@@ -94,6 +94,12 @@ namespace Cinema_App
             File.WriteAllText(USER_FILE, userData);
         }
 
+        public void DeleteUserData(User user)
+        {
+            Users.Remove(user);
+            SaveUserData();
+        }
+
         public void AddAuditorium(Auditorium auditorium)
         {
             Auditoria.Add(auditorium);
@@ -160,6 +166,12 @@ namespace Cinema_App
             SaveOrderData();
         }
 
+        public void DeleteOrder(Order order)
+        {
+            Orders.Remove(order);
+            SaveOrderData();
+        }
+
         public void SaveOrderData()
         {
             var orderitemData = JsonConvert.SerializeObject(Orders, Formatting.Indented);
@@ -203,9 +215,19 @@ namespace Cinema_App
             return Users.Find(u => u.Username == username);
         }
 
+        public User GetUserByGUID(Guid guid)
+        {
+            return Users.Find(u => u.GUID == guid);
+        }
+
         public Order GetOrderByID(short orderId)
         {
             return Orders.Find(o => o.OrderId == orderId);
+        }
+
+        public List<Order> GetOrdersByGUID(User user)
+        {
+            return Orders.FindAll(o => o.UserId == user.GUID);
         }
     }
 }
