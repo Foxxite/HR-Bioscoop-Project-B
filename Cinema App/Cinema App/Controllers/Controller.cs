@@ -61,7 +61,8 @@ namespace Cinema_App
                     mainMenu.AddMenuOption(Strings.CateringMenu, (x) => { ViewCateringMenu(); }, false);
                     mainMenu.AddMenuOption(Strings.Basket, (x) => { ViewBasket(); }, null);
                 }
-                mainMenu.AddMenuOption(Strings.OrderHistory, (x) => { SwitchView(new View_OrderHistory(this, Strings.OrderHistory)); }, null); 
+                mainMenu.AddMenuOption("Order History", (x) => { SwitchView(new View_OrderHistory(this, "Order History")); }, null);
+                mainMenu.AddMenuOption("Manage Accounts", (x) => { SwitchView(new View_ManageAcc(this, "Manage Accounts")); }, null); 
                 mainMenu.AddMenuOption(Strings.ViewAcc, (x) => { ViewUserInfo(); }, null);
                 mainMenu.AddMenuOption(Strings.ChangeAcc, (x) => { ChangeUserInfo(); }, null); 
                 mainMenu.AddMenuOption(Strings.LogOut, (x) => { LogOut(); }, null);
