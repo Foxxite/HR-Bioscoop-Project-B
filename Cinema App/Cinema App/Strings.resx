@@ -330,6 +330,9 @@
   <data name="NameNotEmpty" xml:space="preserve">
     <value>  Name cannot be empty!</value>
   </data>
+  <data name="OrderHisotry" xml:space="preserve">
+    <value />
+  </data>
   <data name="OrderHistory" xml:space="preserve">
     <value>Order History</value>
   </data>
