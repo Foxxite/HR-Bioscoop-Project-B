@@ -15,13 +15,13 @@ namespace Cinema_App
         {
             DrawTitleBar();
 
-            Menu menu = new Menu(Controller, "Manage Accounts");
+            Menu menu = new Menu(Controller, Strings.ManageAccounts);
 
             List<User> Users = Controller.DataStore.GetUsers();
 
             foreach(User user in Users)
             {
-                menu.AddMenuOption(user.Username, (x) => { Controller.SwitchView(new View_UserInformation(Controller, "Manage Account", cUser: user)); },null);
+                menu.AddMenuOption(user.Username, (x) => { Controller.SwitchView(new View_UserInformation(Controller, Strings.ManageAccounts, cUser: user)); },null);
             }
 
             menu.AddMenuOption(Strings.ReturnToMainOption, (x) => { Controller.ShowMainMenu(); }, null);

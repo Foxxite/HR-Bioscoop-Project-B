@@ -583,6 +583,15 @@ namespace Cinema_App {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Manage Accounts.
+        /// </summary>
+        public static string ManageAccounts {
+            get {
+                return ResourceManager.GetString("ManageAccounts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Manage Catering Items.
         /// </summary>
         public static string ManageCateringItems {
@@ -696,15 +705,6 @@ namespace Cinema_App {
         public static string NameNotEmpty {
             get {
                 return ResourceManager.GetString("NameNotEmpty", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        public static string OrderHisotry {
-            get {
-                return ResourceManager.GetString("OrderHisotry", resourceCulture);
             }
         }
         

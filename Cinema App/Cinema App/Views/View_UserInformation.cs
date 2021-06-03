@@ -9,7 +9,7 @@ namespace Cinema_App
         User CurrentUser;
         public View_UserInformation(Controller controller, string title, string subTitle = "", int permLevel = 0, User cUser = null) : base(controller, title, subTitle, permLevel)
         {
-            CurrentUser = cUser;
+            CurrentUser = (cUser == null ? cUser : Controller.CurrentUser);
             return;
         }
 
@@ -17,28 +17,19 @@ namespace Cinema_App
         {
             DrawTitleBar();
 
-            if (CurrentUser == null)
-            {
-                DrawField(Strings.VarUserName, Controller.CurrentUser.Username);
-                DrawField(Strings.VarName, Controller.CurrentUser.Name);
-                DrawField(Strings.VarAge, Controller.CurrentUser.Age.ToString());
-                DrawField(Strings.VarEmailAddress, Controller.CurrentUser.EmailAddress);
-            }
-            else
-            {
-                DrawField(Strings.VarUserName, CurrentUser.Username);
-                DrawField(Strings.VarName, CurrentUser.Name);
-                DrawField(Strings.VarAge, CurrentUser.Age.ToString());
-                DrawField(Strings.VarEmailAddress, CurrentUser.EmailAddress);
-            }
+            DrawField(Strings.VarUserName, CurrentUser.Username);
+            DrawField(Strings.VarName, CurrentUser.Name);
+            DrawField(Strings.VarAge, CurrentUser.Age.ToString());
+            DrawField(Strings.VarEmailAddress, CurrentUser.EmailAddress);
+
             Console.WriteLine();
 
             if (Controller.CurrentUser.Permlevel == Program.ADMIN_PERM_LEVEL)
             {
-                View LastView = new View_ManageAcc(Controller, "Manage Accounts");
+                View LastView = new View_ManageAcc(Controller, Strings.ManageAccounts);
 
                 Menu menu = new Menu(Controller, "", fullScreen: false);
-                menu.AddMenuOption("Delete", (x) => { Controller.DataStore.DeleteUserData(CurrentUser); Controller.SwitchView(LastView); }, null);
+                menu.AddMenuOption(Strings.Delete, (x) => { Controller.DataStore.DeleteUserData(CurrentUser); Controller.SwitchView(LastView); }, null);
                 menu.AddMenuOption(Strings.ReturnToMainOption, (x) => { Controller.SwitchView(LastView); }, null);
 
                 Controller.SwitchView(menu, false);
@@ -48,8 +39,6 @@ namespace Cinema_App
             Console.WriteLine(Strings.KeyPressToReturn);
             Console.ReadKey();
             Controller.ShowMainMenu();
-
-            
         }
 
         /// <summary>
