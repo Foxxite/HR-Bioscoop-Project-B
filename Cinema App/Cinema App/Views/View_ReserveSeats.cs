@@ -77,12 +77,15 @@ namespace Cinema_App
                 {
                     var seat = Movie.Auditorium.Seats[X][Y];
 
-                    if (IsSeatInResverationList(X, Y))
+                    if (IsSeatInResverationList(X, Y) )
                         Console.BackgroundColor = ConsoleColor.DarkGray;
                     else
                         Console.BackgroundColor = ConsoleColor.Black;
-
-                    Console.ForegroundColor = mapping.ConsoleMapping.GetValueOrDefault(seat.Price);
+                    if (Movie.Auditorium.Seats[X][Y].StockAvailable == 1)              
+                        Console.ForegroundColor = mapping.ConsoleMapping.GetValueOrDefault(seat.Price);                   
+                    else                   
+                        Console.ForegroundColor = ConsoleColor.DarkGray;
+                    
                     Console.Write("#");
                     Console.BackgroundColor = ConsoleColor.Black;
                     Console.Write("  ");
@@ -126,6 +129,7 @@ namespace Cinema_App
                 foreach( var SeatCoord in SeatCoords)
                 {
                     Movie.Auditorium.Seats[SeatCoord.X][SeatCoord.Y].SetSeatName(Movie.Name + $"{SeatCoord.X}:{SeatCoord.Y}");
+                    //Movie.Auditorium.Seats[SeatCoord.X][SeatCoord.Y].StockAvailable = 0;
                     Controller.Basket.AddItem(Movie.Auditorium.Seats[SeatCoord.X][SeatCoord.Y]);
                 }
 
@@ -150,7 +154,7 @@ namespace Cinema_App
                     int Y = int.Parse(y);
 
                     // Only continue with seat if coord is vailid
-                    if (X > 0 && X < width && Y > 0 && Y < height)
+                    if (X > 0 && X < width && Y > 0 && Y < height && Movie.Auditorium.Seats[X][Y].StockAvailable == 1 && !IsSeatInResverationList(X,Y) )
                     {
                         SeatCoords.Add(new SeatCoord(X, Y));
                     }

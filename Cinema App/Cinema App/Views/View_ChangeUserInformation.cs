@@ -69,7 +69,7 @@ namespace Cinema_App
             Console.WriteLine("\n" + Strings.ReturnToMain);
             Console.ReadKey();
 
-            Controller.SwitchView(UserMenu);
+            Controller.SwitchView(this);
 
         }
         void ChangePassword()
@@ -118,7 +118,7 @@ namespace Cinema_App
             Console.WriteLine("\n" + Strings.KeyPressToReturn);
             Console.ReadKey();
 
-            Controller.SwitchView(UserMenu);
+            Controller.SwitchView(this);
         }
         void ChangeName()
         {
@@ -149,7 +149,7 @@ namespace Cinema_App
             Console.WriteLine("\n" + Strings.KeyPressToReturn);
             Console.ReadKey();
 
-            Controller.SwitchView(UserMenu);
+            Controller.SwitchView(this);
         }
         void ChangeAge()
         {
@@ -188,7 +188,7 @@ namespace Cinema_App
             Console.WriteLine("\n" + Strings.KeyPressToReturn);
             Console.ReadKey();
 
-            Controller.SwitchView(UserMenu);
+            Controller.SwitchView(this);
         }
         void ChangeEmailAddress()
         {
@@ -219,7 +219,7 @@ namespace Cinema_App
             Console.WriteLine("\n" + Strings.KeyPressToReturn);
             Console.ReadKey();
             
-            Controller.SwitchView(UserMenu);
+            Controller.SwitchView(this);
         }
 
         private bool CorrectPassword(string username, string password)

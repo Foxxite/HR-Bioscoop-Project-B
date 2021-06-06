@@ -53,6 +53,7 @@ namespace Cinema_App
                 {
                     mainMenu.AddMenuOption(Strings.MangeMovies, (x) => { ViewMovies(); }, null);
                     mainMenu.AddMenuOption(Strings.ManageCateringItems, (x) => { ViewCateringMenu(); }, false);
+                    mainMenu.AddMenuOption(Strings.ManageAccounts, (x) => { SwitchView(new View_ManageAcc(this, Strings.ManageAccounts)); }, null);
                     mainMenu.AddMenuOption(Strings.ImportAuditorium, (x) => { new AuditoriumImporter(this); }, null);
                 }
                 else
@@ -63,7 +64,6 @@ namespace Cinema_App
                 }
                 
                 mainMenu.AddMenuOption(Strings.OrderHistory, (x) => { SwitchView(new View_OrderHistory(this, Strings.OrderHistory)); }, null);
-                mainMenu.AddMenuOption(Strings.ManageAccounts, (x) => { SwitchView(new View_ManageAcc(this, Strings.ManageAccounts)); }, null); 
                 mainMenu.AddMenuOption(Strings.ViewAcc, (x) => { ViewUserInfo(); }, null);
                 mainMenu.AddMenuOption(Strings.ChangeAcc, (x) => { ChangeUserInfo(); }, null); 
                 mainMenu.AddMenuOption(Strings.LogOut, (x) => { LogOut(); }, null);

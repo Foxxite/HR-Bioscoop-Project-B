@@ -38,7 +38,11 @@ namespace Cinema_App
 
             Order order = new Order(Basket.GetAllItems(), Controller);
             Controller.DataStore.AddOrder(order);
-        
+            
+            foreach(BasketItem item in Basket.GetAllItems())
+            {
+                item.Item.StockAvailable -= 1;
+            }
 
             Console.WriteLine("\n"+ Strings.Ordersucces +"\n\n" + Strings.OrderID  + $"{order.OrderId}\n\n" + Strings.KeyPressToReturn);
             

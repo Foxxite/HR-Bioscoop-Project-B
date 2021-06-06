@@ -971,7 +971,7 @@ namespace Cinema_App {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Welcome.
+        ///   Looks up a localized string similar to   Welcome.
         /// </summary>
         public static string Welcome {
             get {

@@ -9,7 +9,7 @@ namespace Cinema_App
         User CurrentUser;
         public View_UserInformation(Controller controller, string title, string subTitle = "", int permLevel = 0, User cUser = null) : base(controller, title, subTitle, permLevel)
         {
-            CurrentUser = (cUser == null ? cUser : Controller.CurrentUser);
+            CurrentUser = (cUser != null ? cUser : Controller.CurrentUser);
             return;
         }
 
@@ -24,10 +24,9 @@ namespace Cinema_App
 
             Console.WriteLine();
 
-            if (Controller.CurrentUser.Permlevel == Program.ADMIN_PERM_LEVEL)
-            {
+            if (Controller.CurrentUser.Permlevel == Program.ADMIN_PERM_LEVEL && CurrentUser != Controller.CurrentUser)
+            {                
                 View LastView = new View_ManageAcc(Controller, Strings.ManageAccounts);
-
                 Menu menu = new Menu(Controller, "", fullScreen: false);
                 menu.AddMenuOption(Strings.Delete, (x) => { Controller.DataStore.DeleteUserData(CurrentUser); Controller.SwitchView(LastView); }, null);
                 menu.AddMenuOption(Strings.ReturnToMainOption, (x) => { Controller.SwitchView(LastView); }, null);

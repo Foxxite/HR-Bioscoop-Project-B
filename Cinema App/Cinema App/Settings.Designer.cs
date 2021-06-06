@@ -61,7 +61,7 @@ namespace Cinema_App {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ../../../../../data.
+        ///   Looks up a localized string similar to /data.
         /// </summary>
         internal static string DefaultDataLocation {
             get {

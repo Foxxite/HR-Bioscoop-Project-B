@@ -30,6 +30,10 @@ namespace Cinema_App
         /// </summary>
         public DataStore()
         {
+            //CreateDataDirectory if not exist
+            if (!Directory.Exists(PATH))            
+                Directory.CreateDirectory(PATH);
+            
             // Create the users file if not exist.
             if (!File.Exists(USER_FILE))
                 File.Create(USER_FILE);

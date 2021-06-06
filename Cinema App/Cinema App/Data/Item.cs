@@ -11,7 +11,7 @@ namespace Cinema_App
     {
         public string Name { get; set; }
         public double Price { get; }
-        public int StockAvailable { get; }
+        public int StockAvailable { get; set; }
 
         /// <summary>
         /// Create a new instance of an Item
@@ -26,7 +26,7 @@ namespace Cinema_App
             StockAvailable = stock;
         }
 
-        public bool IsAvailable() { return false; }
+        public bool IsAvailable() { return StockAvailable > 0; }
 
         ///<summary>
         /// Method to check if seats are available

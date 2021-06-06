@@ -422,7 +422,7 @@
     <value>  You will be redirected to the main menu in a few moments...</value>
   </data>
   <data name="Welcome" xml:space="preserve">
-    <value>Welcome</value>
+    <value>  Welcome</value>
   </data>
   <data name="WelcomeMessage" xml:space="preserve">
     <value>Welcome</value>

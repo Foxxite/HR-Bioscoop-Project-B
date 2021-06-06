@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 
 namespace Cinema_App
@@ -92,7 +93,7 @@ namespace Cinema_App
             Console.WriteLine(Strings.EnterMail);
             string enteredEmailAddress = Console.ReadLine().Trim();
 
-            while (String.IsNullOrEmpty(enteredEmailAddress) && !IsValidEmail(enteredEmailAddress))
+            while (String.IsNullOrEmpty(enteredEmailAddress) || !IsValidEmail(enteredEmailAddress))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(Strings.EmailNotValid);
@@ -141,15 +142,11 @@ namespace Cinema_App
 
         bool IsValidEmail(string email)
         {
-            try
-            {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == email;
-            }
-            catch
-            {
-                return false;
-            }
+            string pattern = @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
+
+            Regex rg = new Regex(pattern);
+
+            return rg.IsMatch(email);
         }
     }
 }
