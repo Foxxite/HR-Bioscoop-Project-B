@@ -68,5 +68,32 @@ namespace Cinema_App {
                 return ResourceManager.GetString("DefaultDataLocation", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to xQJoYv0NO.
+        /// </summary>
+        internal static string SMTPPass {
+            get {
+                return ResourceManager.GetString("SMTPPass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to mail.foxxite.com.
+        /// </summary>
+        internal static string SMTPServer {
+            get {
+                return ResourceManager.GetString("SMTPServer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to cinemaapp@foxxite.com.
+        /// </summary>
+        internal static string SMTPUser {
+            get {
+                return ResourceManager.GetString("SMTPUser", resourceCulture);
+            }
+        }
     }
 }

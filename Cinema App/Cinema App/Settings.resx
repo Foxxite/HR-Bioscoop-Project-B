@@ -120,4 +120,13 @@
   <data name="DefaultDataLocation" xml:space="preserve">
     <value>/data</value>
   </data>
+  <data name="SMTPPass" xml:space="preserve">
+    <value>xQJoYv0NO</value>
+  </data>
+  <data name="SMTPServer" xml:space="preserve">
+    <value>mail.foxxite.com</value>
+  </data>
+  <data name="SMTPUser" xml:space="preserve">
+    <value>cinemaapp@foxxite.com</value>
+  </data>
 </root>

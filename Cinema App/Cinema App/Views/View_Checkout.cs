@@ -40,9 +40,11 @@ namespace Cinema_App
             Controller.DataStore.AddOrder(order);
             
             foreach(BasketItem item in Basket.GetAllItems())
-            {
                 item.Item.StockAvailable -= 1;
-            }
+
+            // Send Email
+            MailSender mailSender = new MailSender();
+            mailSender.SendOrderMail(order, Controller.CurrentUser);
 
             Console.WriteLine("\n"+ Strings.Ordersucces +"\n\n" + Strings.OrderID  + $"{order.OrderId}\n\n" + Strings.KeyPressToReturn);
             
