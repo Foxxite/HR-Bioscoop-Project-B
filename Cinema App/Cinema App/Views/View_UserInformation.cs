@@ -39,19 +39,5 @@ namespace Cinema_App
             Console.ReadKey();
             Controller.ShowMainMenu();
         }
-
-        /// <summary>
-        /// Draws a field from the User class in a pretty way.
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="field"></param>
-        private void DrawField(string name, string field)
-        {
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"{name}: ");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine($"{field}\n");
-        }
-
     }
 }

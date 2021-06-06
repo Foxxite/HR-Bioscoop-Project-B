@@ -18,19 +18,27 @@ namespace Cinema_App
 
         private string PATH = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation;
 
-        private string USER_FILE = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation + "/users.json";
-        private string ITEM_FILE = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation + "/items.json";
-        private string MOVIE_FILE = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation + "/movies.json";
-        private string CATERINGITEM_FILE = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation + "/cateringitems.json";
-        private string ORDER_FILE = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation + "/orders.json";
-        private string AUDITORIUM_FILE = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Settings.DefaultDataLocation + "/auditoria.json";
+        private string USER_FILE =  "/users.json";
+        private string ITEM_FILE =  "/items.json";
+        private string MOVIE_FILE =  "/movies.json";
+        private string CATERINGITEM_FILE = "/cateringitems.json";
+        private string ORDER_FILE =  "/orders.json";
+        private string AUDITORIUM_FILE = "/auditoria.json";
 
         /// <summary>
         /// Initializes the DataStore class for use
         /// </summary>
         public DataStore()
         {
-            //CreateDataDirectory if not exist
+            // Make sure all CONSTANTS use the correct path
+            USER_FILE = PATH + USER_FILE;
+            ITEM_FILE = PATH + ITEM_FILE;
+            MOVIE_FILE = PATH + MOVIE_FILE;
+            CATERINGITEM_FILE = PATH + CATERINGITEM_FILE;
+            ORDER_FILE = PATH + ORDER_FILE;
+            AUDITORIUM_FILE = PATH + AUDITORIUM_FILE;
+
+            // Create data directory if not exist
             if (!Directory.Exists(PATH))            
                 Directory.CreateDirectory(PATH);
             
