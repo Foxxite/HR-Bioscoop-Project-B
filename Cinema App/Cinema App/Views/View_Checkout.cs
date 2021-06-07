@@ -49,6 +49,7 @@ namespace Cinema_App
             Console.WriteLine("\n"+ Strings.Ordersucces +"\n\n" + Strings.OrderID  + $"{order.OrderId}\n\n" + Strings.KeyPressToReturn);
             
             Console.ReadKey();
+            Basket.EmptyBasket();
             Controller.ShowMainMenu();
         }
 

@@ -59,5 +59,10 @@ namespace Cinema_App
         {
             return Items;
         }
+
+        public void EmptyBasket()
+        {
+            Items.Clear();
+        }
     }
 }
